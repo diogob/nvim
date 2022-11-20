@@ -5,6 +5,7 @@ set softtabstop=2
 set shiftwidth=2
 set number
 set termguicolors
+set clipboard+=unnamedplus
 
 
 sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=
@@ -55,8 +56,8 @@ cmp.setup({
       end,
     },
     window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
