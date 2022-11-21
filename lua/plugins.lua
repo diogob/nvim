@@ -3,7 +3,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- colorschemes
-  use {'dracula/vim', as = 'dracula'}
+  use { 'dracula/vim', as = 'dracula' }
   use "lunarvim/Onedarker.nvim"
 
   -- general language support
@@ -49,7 +49,7 @@ return require('packer').startup(function(use)
   -- Navigation
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use {
     "folke/which-key.nvim",
@@ -64,26 +64,25 @@ return require('packer').startup(function(use)
       require("trouble").setup {}
     end
   }
-   use {
-        "hrsh7th/nvim-cmp",
-        requires = {
-          "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp","hrsh7th/vim-vsnip","hrsh7th/cmp-vsnip",
-            "hrsh7th/cmp-nvim-lua", 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc', 'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'
-        }
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", "hrsh7th/vim-vsnip", "hrsh7th/cmp-vsnip",
+      "hrsh7th/cmp-nvim-lua", 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc', 'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'
     }
-    use({
-      'weilbith/nvim-code-action-menu',
-      cmd = 'CodeActionMenu',
-    })
-    use {
-      'kosayoda/nvim-lightbulb',
-      requires = 'antoinemadec/FixCursorHold.nvim',
-    }
-    use { 'yamatsum/nvim-cursorline' }
-    use {
-      'numToStr/Comment.nvim',
-      config = function()
-        require('Comment').setup()
-      end
-    }
-  end)
+  }
+  use({
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+  })
+  use {
+    'kosayoda/nvim-lightbulb',
+    requires = 'antoinemadec/FixCursorHold.nvim',
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+end)
