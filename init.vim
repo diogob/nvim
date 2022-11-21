@@ -1,4 +1,3 @@
-colorscheme dracula
 set expandtab
 set tabstop=2
 set softtabstop=2
@@ -8,13 +7,14 @@ set termguicolors
 set clipboard+=unnamedplus
 set cursorline
 
+colorscheme dracula
 
 sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=
 sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=
 sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=
 sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=
 
-autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+" autocmd BufWritePre * lua vim.lsp.buf.format()
 
 lua require("plugins")
 lua require("lsp")
@@ -31,6 +31,7 @@ require("vgit").setup()
 
 -- vgit
 vim.o.updatetime = 300
+vim.wo.signcolumn = 'yes'
 
 -- treesitter
 require'nvim-treesitter.configs'.setup {

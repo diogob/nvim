@@ -3,7 +3,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- colorschemes
-  use { 'dracula/vim', as = 'dracula' }
+  use 'Mofiqul/dracula.nvim'
   use "lunarvim/Onedarker.nvim"
 
   -- general language support
