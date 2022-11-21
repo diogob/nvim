@@ -27,9 +27,9 @@ wk.register({
   },
   c = {
     name = "Config",
-    c =  { "<cmd>e $MYVIMRC<cr>", "Edit init.vim" },
-    l =  { "<cmd>Mason<cr>", "External Packages" },
-    u =  { "<cmd>PackerSync<cr>", "Update plugins" },
+    c = { "<cmd>e $MYVIMRC<cr>", "Edit init.vim" },
+    l = { "<cmd>Mason<cr>", "External Packages" },
+    u = { "<cmd>PackerSync<cr>", "Update plugins" },
   },
   h = { "<cmd>noh<cr>", "Highlight" },
   a = { "<cmd>CodeActionMenu<cr>", "Code actions" },
