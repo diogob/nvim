@@ -32,11 +32,17 @@ wk.register({
     u = { "<cmd>PackerSync<cr>", "Update plugins" },
   },
   h = { "<cmd>noh<cr>", "Highlight" },
+  b = {
+    name = "Buffer",
+    r = { "<cmd>e!<cr>", "Reload" },
+    c = { "<cmd>bd<cr>", "Close" },
+  },
   a = { "<cmd>CodeActionMenu<cr>", "Code actions" },
   w = {
     name = "Workspace"
   },
   l = {
-    name = "LSP"
+    name = "LSP",
+    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Search symbols" },
   }
 }, { prefix = "<leader>" })
