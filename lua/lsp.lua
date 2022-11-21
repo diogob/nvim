@@ -1,4 +1,4 @@
-local opts = { noremap=true, silent=true }
+local apply_defaults = require("plenary").tbl.apply_defaults
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
@@ -11,21 +11,23 @@ local on_attach = function(client, bufnr)
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wl', function()
+-- vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Grep" })
+  vim.keymap.set('n', '<leader>lD', vim.lsp.buf.declaration, apply_defaults({ desc = "Declaration" }, bufopts))
+  vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, apply_defaults({ desc = "Definition" }, bufopts))
+  vim.keymap.set('n', '<leader>lh', vim.lsp.buf.hover, apply_defaults({ desc = "Hove" }, bufopts))
+  vim.keymap.set('n', '<leader>li', vim.lsp.buf.implementation, apply_defaults({ desc = "Implementation" }, bufopts))
+  vim.keymap.set('n', '<leader>lt', vim.lsp.buf.type_definition, apply_defaults({ desc = "Type definition" }, bufopts))
+  vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, apply_defaults({ desc = "Rename" }, bufopts))
+  vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, apply_defaults({ desc = "Code Action" }, bufopts))
+  vim.keymap.set('n', '<leader>lr', vim.lsp.buf.references, apply_defaults({ desc = "References" }, bufopts))
+  vim.keymap.set('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end, apply_defaults({ desc = "Format" }, bufopts))
+
+  -- workspace
+  vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, apply_defaults({ desc = "Add folder" }, bufopts))
+  vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, apply_defaults({ desc = "Remove folder" }, bufopts))
+  vim.keymap.set('n', '<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
-  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  end, apply_defaults({ desc = "List folders" }, bufopts))
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()

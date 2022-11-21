@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   -- UI improvements
   use {
     'akinsho/bufferline.nvim',
-    tag = "v3.*", 
+    tag = "v3.*",
     requires = 'nvim-tree/nvim-web-devicons',
   }
   use {
@@ -41,7 +41,7 @@ return require('packer').startup(function(use)
   }
   use({
     "kylechui/nvim-surround",
-    tag = "*", 
+    tag = "*",
   })
   use {
     "p00f/nvim-ts-rainbow",
@@ -71,4 +71,12 @@ return require('packer').startup(function(use)
             "hrsh7th/cmp-nvim-lua", 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc', 'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'
         }
     }
-end)
+    use({
+      'weilbith/nvim-code-action-menu',
+      cmd = 'CodeActionMenu',
+    })
+    use {
+      'kosayoda/nvim-lightbulb',
+      requires = 'antoinemadec/FixCursorHold.nvim',
+    }
+  end)
