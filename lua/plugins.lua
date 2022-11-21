@@ -13,6 +13,20 @@ return require('packer').startup(function(use)
   }
   use 'neovim/nvim-lspconfig'
   use { "williamboman/mason.nvim" }
+  use({
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+  })
+  use {
+    'kosayoda/nvim-lightbulb',
+    requires = 'antoinemadec/FixCursorHold.nvim',
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
 
   -- UI improvements
   use {
@@ -25,6 +39,13 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   use 'nvim-tree/nvim-web-devicons'
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", "hrsh7th/vim-vsnip", "hrsh7th/cmp-vsnip",
+      "hrsh7th/cmp-nvim-lua", 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc', 'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'
+    }
+  }
 
   -- Version control
   use {
@@ -62,27 +83,6 @@ return require('packer').startup(function(use)
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
       require("trouble").setup {}
-    end
-  }
-  use {
-    "hrsh7th/nvim-cmp",
-    requires = {
-      "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", "hrsh7th/vim-vsnip", "hrsh7th/cmp-vsnip",
-      "hrsh7th/cmp-nvim-lua", 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc', 'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'
-    }
-  }
-  use({
-    'weilbith/nvim-code-action-menu',
-    cmd = 'CodeActionMenu',
-  })
-  use {
-    'kosayoda/nvim-lightbulb',
-    requires = 'antoinemadec/FixCursorHold.nvim',
-  }
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
     end
   }
 end)
