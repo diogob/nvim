@@ -79,4 +79,11 @@ return require('packer').startup(function(use)
       'kosayoda/nvim-lightbulb',
       requires = 'antoinemadec/FixCursorHold.nvim',
     }
+    use { 'yamatsum/nvim-cursorline' }
+    use {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('Comment').setup()
+      end
+    }
   end)
