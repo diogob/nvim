@@ -37,12 +37,16 @@ wk.register({
     r = { "<cmd>e!<cr>", "Reload" },
     c = { "<cmd>bd<cr>", "Close" },
   },
-  a = { "<cmd>CodeActionMenu<cr>", "Code actions" },
   w = {
-    name = "Workspace"
+    name = "Workspace",
+    D = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Diagnostics" },
   },
   l = {
     name = "LSP",
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Search symbols" },
+    a = { "<cmd>CodeActionMenu<cr>", "Code Actions" },
+    r = { "<cmd>TroubleToggle lsp_references<cr>", "All references" },
+    d = { "<cmd>TroubleToggle lsp_definitions<cr>", "Definition" },
+    D = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
   }
 }, { prefix = "<leader>" })
