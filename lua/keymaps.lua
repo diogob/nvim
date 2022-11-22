@@ -8,7 +8,10 @@ wk.register({
     f = { "<cmd>Telescope find_files<cr>", "Find File" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     s = { "<cmd>Telescope live_grep<cr>", "Search" },
-    b = { "<cmd>Telescope buffers<cr>", "Buffers" }
+    b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+    e = { "<cmd>NvimTreeToggle<cr>", "Explore" },
+    l = { "<cmd>NvimTreeCollapse<cr>", "Collapse explorer" },
+    c = { "<cmd>NvimTreeFindFile<cr>", "Current buffer in explorer" }
   },
   g = {
     name = "Git",

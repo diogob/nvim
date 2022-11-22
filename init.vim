@@ -28,6 +28,7 @@ require("nvim-autopairs").setup()
 require("nvim-web-devicons").setup()
 require("nvim-surround").setup()
 require("vgit").setup()
+require("nvim-tree").setup()
 
 -- vgit
 vim.o.updatetime = 300
