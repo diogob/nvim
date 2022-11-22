@@ -10,11 +10,6 @@ wk.register({
     s = { "<cmd>Telescope live_grep<cr>", "Search" },
     b = { "<cmd>Telescope buffers<cr>", "Buffers" }
   },
-  d = {
-    name = "Diagnostics",
-    t = { "<cmd>TroubleToggle<cr>", "Toggle" },
-    r = { "<cmd>TroubleRefresh<cr>", "Refresh" }
-  },
   g = {
     name = "Git",
     d = { "<cmd>VGit buffer_diff_preview<cr>", "Diff" },
