@@ -29,11 +29,12 @@ wk.register({
     l = { "<cmd>Mason<cr>", "External Packages" },
     u = { "<cmd>PackerSync<cr>", "Update plugins" },
   },
-  h = { "<cmd>noh<cr>", "Highlight" },
   b = {
     name = "Buffer",
     r = { "<cmd>e!<cr>", "Reload" },
     c = { "<cmd>bd<cr>", "Close" },
+    n = { "<cmd>bnext<cr>", "Next buffer" },
+    p = { "<cmd>bprevious<cr>", "Previous buffer" },
   },
   w = {
     name = "Workspace",
@@ -46,5 +47,6 @@ wk.register({
     r = { "<cmd>TroubleToggle lsp_references<cr>", "All references" },
     d = { "<cmd>TroubleToggle lsp_definitions<cr>", "Definition" },
     D = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
-  }
+  },
+  h = { "<cmd>noh<cr>", "Highlight" },
 }, { prefix = "<leader>" })
