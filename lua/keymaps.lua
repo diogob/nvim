@@ -49,4 +49,5 @@ wk.register({
     D = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
   },
   h = { "<cmd>noh<cr>", "Highlight" },
+  r = { "<cmd>e!<cr>", "Reload buffer" },
 }, { prefix = "<leader>" })

@@ -15,6 +15,7 @@ sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=
 sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=
 
 " autocmd BufWritePre * lua vim.lsp.buf.format()
+autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()
 
 lua require("plugins")
 lua require("lsp")
