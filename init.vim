@@ -87,7 +87,18 @@ cmp.setup({
       -- { name = 'snippy' }, -- For snippy users.
     }, {
       { name = 'buffer' },
-    })
+    }),
+    enabled = function()
+      local context = require 'cmp.config.context'
+      -- disable command mode completion
+      if vim.api.nvim_get_mode().mode == 'c' then
+        return false
+      else
+        -- disable completion in comments
+        return not context.in_treesitter_capture("comment") 
+          and not context.in_syntax_group("Comment")
+      end
+    end
   })
 
   -- Set configuration for specific filetype.
