@@ -6,6 +6,8 @@ set number
 set termguicolors
 set clipboard+=unnamedplus
 set cursorline
+set smartindent
+set smarttab
 
 colorscheme dracula
 
@@ -30,6 +32,7 @@ require("nvim-web-devicons").setup()
 require("nvim-surround").setup()
 require("vgit").setup()
 require("nvim-tree").setup()
+require('spectre').setup()
 
 -- vgit
 vim.o.updatetime = 300
@@ -40,6 +43,9 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
+  },
+  indent = {
+    enable = true
   },
   rainbow = {
     enable = true,

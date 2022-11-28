@@ -68,6 +68,7 @@ return require('packer').startup(function(use)
     "p00f/nvim-ts-rainbow",
   }
   -- Navigation
+  use 'windwp/nvim-spectre'
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { { 'nvim-lua/plenary.nvim' } }

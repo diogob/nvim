@@ -48,6 +48,11 @@ wk.register({
     d = { "<cmd>TroubleToggle lsp_definitions<cr>", "Definition" },
     D = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
   },
+  s = {
+    name = "Search & Replace",
+    o = { "<cmd>lua require('spectre').open()<cr>", "Open panel" },
+    w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search word" },
+  },
   h = { "<cmd>noh<cr>", "Highlight" },
   r = { "<cmd>e!<cr>", "Reload buffer" },
 }, { prefix = "<leader>" })
