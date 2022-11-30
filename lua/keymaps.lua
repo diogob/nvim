@@ -8,7 +8,6 @@ wk.register({
     f = { "<cmd>Telescope find_files<cr>", "Find File" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     s = { "<cmd>Telescope live_grep<cr>", "Search" },
-    b = { "<cmd>Telescope buffers<cr>", "Buffers" },
     e = { "<cmd>NvimTreeToggle<cr>", "Explore" },
     l = { "<cmd>NvimTreeCollapse<cr>", "Collapse explorer" },
     c = { "<cmd>NvimTreeFindFile<cr>", "Current buffer in explorer" }
@@ -21,7 +20,8 @@ wk.register({
     r = { "<cmd>VGit buffer_hunk_reset<cr>", "Revert hunk" },
     u = { "<cmd>VGit buffer_reset<cr>", "Revert buffer" },
     p = { "<cmd>VGit project_diff_preview<cr>", "Project diff" },
-    b = { "<cmd>Telescope git_branches<cr>", "Branches" }
+    b = { "<cmd>Telescope git_branches<cr>", "Search branches" },
+    c = { "<cmd>Telescope git_commits<cr>", "Search commits" }
   },
   c = {
     name = "Config",
@@ -31,6 +31,7 @@ wk.register({
   },
   b = {
     name = "Buffer",
+    s = { "<cmd>Telescope buffers<cr>", "Search" },
     r = { "<cmd>e!<cr>", "Reload" },
     c = { "<cmd>bd<cr>", "Close" },
     n = { "<cmd>bnext<cr>", "Next buffer" },
@@ -39,6 +40,7 @@ wk.register({
   w = {
     name = "Workspace",
     D = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Diagnostics" },
+    s = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Search symbols" },
   },
   l = {
     name = "LSP",
