@@ -11,6 +11,7 @@ local on_attach = function(client, bufnr)
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, apply_defaults({ desc = "Info" }, bufopts))
   vim.keymap.set('n', '<leader>li', vim.lsp.buf.hover, apply_defaults({ desc = "Info" }, bufopts))
   vim.keymap.set('n', '<leader>lR', vim.lsp.buf.rename, apply_defaults({ desc = "Rename" }, bufopts))
   vim.keymap.set('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end,
