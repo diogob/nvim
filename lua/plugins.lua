@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
   }
 
   -- UI improvements
+  use 'rcarriga/nvim-notify'
   use {
     'akinsho/bufferline.nvim',
     tag = "v3.*",
@@ -64,9 +65,7 @@ return require('packer').startup(function(use)
     "kylechui/nvim-surround",
     tag = "*",
   })
-  use {
-    "p00f/nvim-ts-rainbow",
-  }
+  --
   -- Navigation
   use 'windwp/nvim-spectre'
   use {

@@ -8,6 +8,8 @@ set clipboard+=unnamedplus
 set cursorline
 set smartindent
 set smarttab
+set autoread
+set syntax=on
 
 colorscheme dracula
 
@@ -15,9 +17,6 @@ sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numh
 sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=
 sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=
 sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=
-
-" autocmd BufWritePre * lua vim.lsp.buf.format()
-autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()
 
 lua require("plugins")
 lua require("lsp")
@@ -34,6 +33,9 @@ require("vgit").setup()
 require("nvim-tree").setup()
 require('spectre').setup()
 
+-- set default notification
+vim.notify = require("notify")
+
 -- vgit
 vim.o.updatetime = 300
 vim.wo.signcolumn = 'yes'
@@ -46,11 +48,6 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = true
-  },
-  rainbow = {
-    enable = true,
-    extended_mode = false,
-    max_file_lines = nil,
   }
 }
 
@@ -128,3 +125,10 @@ cmp.setup({
     })
   })
 EOF
+
+
+autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+
+" notification after file change
+autocmd FileChangedShellPost * lua vim.notify("File changed on disk. Buffer reloaded.")
