@@ -24,6 +24,14 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, apply_defaults({ desc = "List folders" }, bufopts))
+
+  -- LSP Signature plugin
+  require "lsp_signature".on_attach({
+    bind = true, -- This is mandatory, otherwise border config won't get registered.
+    handler_opts = {
+      border = "rounded"
+    }
+  }, bufnr)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
