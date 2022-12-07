@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
+  use 'simrat39/symbols-outline.nvim'
 
   -- UI improvements
   use 'rcarriga/nvim-notify'
@@ -65,6 +66,8 @@ return require('packer').startup(function(use)
     "kylechui/nvim-surround",
     tag = "*",
   })
+  use "p00f/nvim-ts-rainbow"
+
   --
   -- Navigation
   use 'windwp/nvim-spectre'

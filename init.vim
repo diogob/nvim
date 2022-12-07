@@ -32,6 +32,7 @@ require("nvim-surround").setup()
 require("vgit").setup()
 require("nvim-tree").setup()
 require('spectre').setup()
+require("symbols-outline").setup()
 
 -- set default notification
 vim.notify = require("notify")
@@ -48,6 +49,10 @@ require'nvim-treesitter.configs'.setup {
   },
   indent = {
     enable = true
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true, -- 
   }
 }
 
@@ -129,6 +134,5 @@ EOF
 
 autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
-
 " notification after file change
 autocmd FileChangedShellPost * lua vim.notify("File changed on disk. Buffer reloaded.")
