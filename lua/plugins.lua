@@ -67,7 +67,6 @@ return require('packer').startup(function(use)
     "kylechui/nvim-surround",
     tag = "*",
   })
-  use "p00f/nvim-ts-rainbow"
 
   --
   -- Navigation
