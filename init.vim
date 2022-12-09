@@ -57,6 +57,14 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+-- neotest
+require("neotest").setup({
+	adapters = {
+		require("neotest-deno"),
+	}
+})
+
+
 -- cmp
 local cmp = require('cmp')
 

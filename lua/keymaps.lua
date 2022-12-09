@@ -59,4 +59,12 @@ wk.register({
   },
   h = { "<cmd>noh<cr>", "Highlight" },
   r = { "<cmd>e!<cr>", "Reload buffer" },
+  t = {
+    name = "Tests",
+    b = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run buffer" },
+    c = { "<cmd>lua require('neotest').run.run()<cr>", "Run current" },
+    s = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop tests" },
+    o = { "<cmd>lua require('neotest').output.open({ enter = false })<cr>", "Show output" },
+    S = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Show summary" }
+  }
 }, { prefix = "<leader>" })

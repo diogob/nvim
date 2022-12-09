@@ -29,6 +29,15 @@ return require('packer').startup(function(use)
   }
   use 'simrat39/symbols-outline.nvim'
   use 'ray-x/lsp_signature.nvim'
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim"
+    }
+  }
+  use "markemmons/neotest-deno"
 
   -- UI improvements
   use 'rcarriga/nvim-notify'
