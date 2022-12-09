@@ -18,7 +18,8 @@ wk.register({
     h = { "<cmd>VGit buffer_history_preview<cr>", "History" },
     s = { "<cmd>VGit buffer_hunk_stage<cr>", "Stage hunk" },
     r = { "<cmd>VGit buffer_hunk_reset<cr>", "Revert hunk" },
-    u = { "<cmd>VGit buffer_reset<cr>", "Revert buffer" },
+    R = { "<cmd>VGit buffer_reset<cr>", "Revert buffer" },
+    S = { "<cmd>VGit buffer_stage<cr>", "Stage buffer" },
     p = { "<cmd>VGit project_diff_preview<cr>", "Project diff" },
     b = { "<cmd>Telescope git_branches<cr>", "Search branches" },
     c = { "<cmd>Telescope git_commits<cr>", "Search commits" }

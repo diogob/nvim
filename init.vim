@@ -30,7 +30,12 @@ require("nvim-autopairs").setup()
 require("nvim-web-devicons").setup()
 require("nvim-surround").setup()
 require("vgit").setup()
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  diagnostics = {
+    enable = true,
+    show_on_dirs = true
+  }
+})
 require('spectre').setup()
 require("symbols-outline").setup()
 
