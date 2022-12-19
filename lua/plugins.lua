@@ -38,6 +38,8 @@ return require('packer').startup(function(use)
     }
   }
   use "markemmons/neotest-deno"
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
 
   -- UI improvements
   use 'rcarriga/nvim-notify'

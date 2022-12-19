@@ -58,6 +58,7 @@ wk.register({
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search word" },
   },
   h = { "<cmd>noh<cr>", "Highlight" },
+  p = { "<cmd>Prettier<cr>", "Prettier" },
   r = { "<cmd>e!<cr>", "Reload buffer" },
   t = {
     name = "Tests",
