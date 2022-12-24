@@ -24,7 +24,9 @@ lua require("keymaps")
 
 lua << EOF
 require("bufferline").setup()
-require("lualine").setup()
+require("lualine").setup({
+  options = { theme = 'dracula-nvim' }
+})
 require("mason").setup()
 require("nvim-autopairs").setup()
 require("nvim-web-devicons").setup()
