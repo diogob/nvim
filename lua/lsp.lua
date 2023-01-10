@@ -65,3 +65,7 @@ lsp.sumneko_lua.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
+lsp.solargraph.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
