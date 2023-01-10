@@ -36,10 +36,14 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp = require('lspconfig')
+
 lsp.denols.setup {
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("deno.json"),
-  capabilities = capabilities
+  capabilities = capabilities,
+  init_options = {
+    lint = true,
+  },
 }
 vim.g.markdown_fenced_languages = { -- required by denols config
   "ts=typescript"
@@ -47,13 +51,17 @@ vim.g.markdown_fenced_languages = { -- required by denols config
 lsp.tsserver.setup {
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("package.json"),
-  capabilities = capabilities
+  capabilities = capabilities,
+  init_options = {
+    lint = true,
+  },
+  single_file_support = false
 }
 lsp.hls.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
-require 'lspconfig'.sumneko_lua.setup {
+lsp.sumneko_lua.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
