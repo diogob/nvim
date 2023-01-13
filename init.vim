@@ -18,11 +18,11 @@ sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=
 sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=
 sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=
 
-lua require("plugins")
-lua require("lsp")
-lua require("keymaps")
-
 lua << EOF
+require("plugins")
+require("lsp")
+require("keymaps")
+
 require("bufferline").setup()
 require("lualine").setup({
   options = { theme = 'dracula-nvim' }

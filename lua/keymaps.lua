@@ -5,7 +5,7 @@ local wk = require("which-key")
 wk.register({
   f = {
     name = "File",
-    f = { "<cmd>Telescope find_files<cr>", "Find File" },
+    f = { "<cmd>Telescope find_files wrap_results=true<cr>", "Find File" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     s = { "<cmd>Telescope live_grep<cr>", "Search" },
     e = { "<cmd>NvimTreeToggle<cr>", "Explore" },
