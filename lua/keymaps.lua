@@ -33,10 +33,8 @@ wk.register({
   b = {
     name = "Buffer",
     s = { "<cmd>Telescope buffers<cr>", "Search" },
-    r = { "<cmd>e!<cr>", "Reload" },
     c = { "<cmd>bd<cr>", "Close" },
-    n = { "<cmd>bnext<cr>", "Next buffer" },
-    p = { "<cmd>bprevious<cr>", "Previous buffer" },
+    C = { "<cmd>%bd | e# | bd#<cr>", "Close others" },
   },
   w = {
     name = "Workspace",
@@ -60,6 +58,9 @@ wk.register({
   h = { "<cmd>noh<cr>", "Highlight" },
   p = { "<cmd>Prettier<cr>", "Prettier" },
   r = { "<cmd>e!<cr>", "Reload buffer" },
+  ["<tab>"] = { "<cmd>e#<cr>", "Previous buffer" },
+  ["]"] = { "<cmd>bnext<cr>", "Next buffer" },
+  ["["] = { "<cmd>bprevious<cr>", "Previous buffer" },
   t = {
     name = "Tests",
     b = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run buffer" },
