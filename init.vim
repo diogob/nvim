@@ -24,8 +24,12 @@ require("lsp")
 require("keymaps")
 
 require("bufferline").setup()
+local function treesitter_statusline()
+   return vim.fn['nvim_treesitter#statusline'](90)
+end
 require("lualine").setup({
-  options = { theme = 'dracula-nvim' }
+  options = { theme = 'dracula-nvim' },
+  sections = { lualine_c = { 'filename', treesitter_statusline } }
 })
 require("mason").setup()
 require("nvim-autopairs").setup()
