@@ -61,6 +61,7 @@ wk.register({
   ["<tab>"] = { "<cmd>e#<cr>", "Previous buffer" },
   ["]"] = { "<cmd>bnext<cr>", "Next buffer" },
   ["["] = { "<cmd>bprevious<cr>", "Previous buffer" },
+  q = { "<cmd>TroubleClose<cr>", "Close Diagnostics" },
   t = {
     name = "Tests",
     b = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run buffer" },
