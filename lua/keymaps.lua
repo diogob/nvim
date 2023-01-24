@@ -59,8 +59,8 @@ wk.register({
   p = { "<cmd>Prettier<cr>", "Prettier" },
   r = { "<cmd>e!<cr>", "Reload buffer" },
   ["<tab>"] = { "<cmd>e#<cr>", "Previous buffer" },
-  ["]"] = { "<cmd>bnext<cr>", "Next buffer" },
-  ["["] = { "<cmd>bprevious<cr>", "Previous buffer" },
+  ["]"] = { "<cmd>bnext<cr>", "Right buffer" },
+  ["["] = { "<cmd>bprevious<cr>", "Left buffer" },
   q = { "<cmd>TroubleClose<cr>", "Close Diagnostics" },
   t = {
     name = "Tests",
