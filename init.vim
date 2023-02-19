@@ -32,7 +32,6 @@ require("lualine").setup({
   sections = { lualine_c = { 'filename', treesitter_statusline } }
 })
 require("mason").setup()
-require("nvim-autopairs").setup()
 require("nvim-web-devicons").setup()
 require("nvim-surround").setup()
 require("vgit").setup()

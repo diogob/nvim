@@ -60,10 +60,6 @@ return require('packer').startup(function(use)
   }
 
   -- Editting goodies
-  use {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-  }
   use({
     "kylechui/nvim-surround",
     tag = "*",
