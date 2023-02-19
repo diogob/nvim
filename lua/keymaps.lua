@@ -46,8 +46,8 @@ wk.register({
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Search symbols" },
     S = { "<cmd>SymbolsOutline<cr>", "Symbols Tree" },
     a = { "<cmd>CodeActionMenu<cr>", "Code Actions" },
-    r = { "<cmd>TroubleToggle lsp_references<cr>", "All references" },
-    d = { "<cmd>TroubleToggle lsp_definitions<cr>", "Definition" },
+    r = { "<cmd>Telescope lsp_references<cr>", "All references" },
+    d = { "<cmd>Telescope lsp_definitions<cr>", "Definition" },
     D = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
   },
   s = {
