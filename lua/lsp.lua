@@ -69,3 +69,7 @@ lsp.solargraph.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
+lsp.tailwindcss.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
