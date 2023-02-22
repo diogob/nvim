@@ -8,9 +8,7 @@ wk.register({
     f = { "<cmd>Telescope find_files wrap_results=true<cr>", "Find File" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     s = { "<cmd>Telescope live_grep<cr>", "Search" },
-    e = { "<cmd>NvimTreeToggle<cr>", "Explore" },
-    l = { "<cmd>NvimTreeCollapse<cr>", "Collapse explorer" },
-    c = { "<cmd>NvimTreeFindFile<cr>", "Current buffer in explorer" }
+    e = { "<cmd>NvimTreeFindFileToggle<cr>", "Explore" }
   },
   g = {
     name = "Git",
@@ -27,7 +25,7 @@ wk.register({
   c = {
     name = "Config",
     c = { "<cmd>e $MYVIMRC<cr>", "Edit init.vim" },
-    l = { "<cmd>Mason<cr>", "External Packages" },
+    p = { "<cmd>Mason<cr>", "External Packages (Mason)" },
     u = { "<cmd>PackerSync<cr>", "Update plugins" },
   },
   b = {
@@ -60,14 +58,7 @@ wk.register({
   ["<tab>"] = { "<cmd>e#<cr>", "Previous buffer" },
   ["]"] = { "<cmd>bnext<cr>", "Right buffer" },
   ["["] = { "<cmd>bprevious<cr>", "Left buffer" },
-  q = { "<cmd>wincmd o<cr>", "Close other windows" },
+  o = { "<cmd>wincmd o<cr>", "Close other windows" },
+  q = { "<cmd>qall!<cr>", "Quit" },
   x = { "<cmd>xall!<cr>", "Save and quit" },
-  t = {
-    name = "Tests",
-    b = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run buffer" },
-    c = { "<cmd>lua require('neotest').run.run()<cr>", "Run current" },
-    s = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop tests" },
-    o = { "<cmd>lua require('neotest').output.open({ enter = false })<cr>", "Show output" },
-    S = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Show summary" }
-  }
 }, { prefix = "<leader>" })
