@@ -56,12 +56,12 @@ wk.register({
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search word" },
   },
   h = { "<cmd>noh<cr>", "Highlight" },
-  p = { "<cmd>Prettier<cr>", "Prettier" },
   r = { "<cmd>e!<cr>", "Reload buffer" },
   ["<tab>"] = { "<cmd>e#<cr>", "Previous buffer" },
   ["]"] = { "<cmd>bnext<cr>", "Right buffer" },
   ["["] = { "<cmd>bprevious<cr>", "Left buffer" },
   q = { "<cmd>wincmd o<cr>", "Close other windows" },
+  x = { "<cmd>xall!<cr>", "Save and quit" },
   t = {
     name = "Tests",
     b = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run buffer" },

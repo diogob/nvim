@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
   }
   use 'simrat39/symbols-outline.nvim'
   use 'ray-x/lsp_signature.nvim'
-  use('MunifTanjim/prettier.nvim')
+  use('jose-elias-alvarez/null-ls.nvim')
 
   -- UI improvements
   use 'rcarriga/nvim-notify'
