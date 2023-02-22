@@ -64,7 +64,7 @@ return require('packer').startup(function(use)
     "kylechui/nvim-surround",
     tag = "*",
   })
-
+  use 'echasnovski/mini.pairs'
   --
   -- Navigation
   use 'windwp/nvim-spectre'
