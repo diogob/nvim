@@ -1,0 +1,10 @@
+[submodule "dracula"]
+	path = pack/plugins/start/dracula
+	url = https://github.com/Mofiqul/dracula.nvim
+	branch = main
+[submodule "nvim-treesitter"]
+	path = pack/plugins/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "bufferline"]
+	path = pack/plugins/start/bufferline
+	url = https://github.com/akinsho/bufferline.nvim

@@ -2,15 +2,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- colorschemes
-  use 'Mofiqul/dracula.nvim'
-  use "lunarvim/Onedarker.nvim"
-
   -- general language support
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
   use 'neovim/nvim-lspconfig'
   use { "williamboman/mason.nvim" }
   use({
@@ -33,11 +25,6 @@ return require('packer').startup(function(use)
 
   -- UI improvements
   use 'rcarriga/nvim-notify'
-  use {
-    'akinsho/bufferline.nvim',
-    tag = "v3.*",
-    requires = 'nvim-tree/nvim-web-devicons',
-  }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
