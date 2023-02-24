@@ -65,3 +65,6 @@
 [submodule "which-key"]
 	path = pack/plugins/opt/which-key
 	url = https://github.com/folke/which-key.nvim
+[submodule "nvim-spectre"]
+	path = pack/plugins/opt/nvim-spectre
+	url = https://github.com/windwp/nvim-spectre

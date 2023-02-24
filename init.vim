@@ -41,7 +41,6 @@ require("nvim-tree").setup({
     show_on_dirs = true
   }
 })
-require('spectre').setup()
 
 -- set default notification
 

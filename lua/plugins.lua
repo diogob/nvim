@@ -79,6 +79,12 @@ vim.schedule(function()
   require("which-key").setup()
 end)
 
+
+packadd_defer('nvim-spectre')
+vim.schedule(function()
+  require('spectre').setup()
+end)
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -91,7 +97,4 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lua", 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc', 'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'
     }
   }
-
-  -- Navigation
-  use 'windwp/nvim-spectre'
 end)
