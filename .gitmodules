@@ -44,3 +44,6 @@
 [submodule "nvim-notify"]
 	path = pack/plugins/opt/nvim-notify
 	url = https://github.com/rcarriga/nvim-notify
+[submodule "lualine"]
+	path = pack/plugins/start/lualine
+	url = https://github.com/nvim-lualine/lualine.nvim

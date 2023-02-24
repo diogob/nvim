@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/diogo/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/diogo/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
   ["mini.pairs"] = {
     loaded = true,
     path = "/home/diogo/.local/share/nvim/site/pack/packer/start/mini.pairs",
