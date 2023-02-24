@@ -57,11 +57,6 @@ return require('packer').startup(function(use)
     }
   }
 
-  -- Version control
-  use {
-    'tanvirtin/vgit.nvim',
-  }
-
   -- Editting goodies
   use({
     "kylechui/nvim-surround",
