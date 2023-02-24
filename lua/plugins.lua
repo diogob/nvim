@@ -27,13 +27,11 @@ packadd_defer('nvim-code-action-menu')
 packadd_defer('nvim-lightbulb')
 packadd_defer('lsp_signature')
 packadd_defer('Comment')
+packadd_defer('null-ls')
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-
-  -- general language support
-  use('jose-elias-alvarez/null-ls.nvim')
 
   -- UI improvements
   use 'rcarriga/nvim-notify'

@@ -38,3 +38,6 @@
 [submodule "Comment"]
 	path = pack/plugins/opt/Comment
 	url = https://github.com/numToStr/Comment.nvim
+[submodule "null-ls"]
+	path = pack/plugins/opt/null-ls
+	url = https://github.com/jose-elias-alvarez/null-ls.nvim
