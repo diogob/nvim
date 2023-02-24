@@ -44,6 +44,11 @@ vim.schedule(function()
   vim.notify = require("notify")
 end)
 
+packadd_defer('nvim-surround')
+vim.schedule(function()
+  require("nvim-surround").setup()
+end)
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -58,10 +63,6 @@ return require('packer').startup(function(use)
   }
 
   -- Editting goodies
-  use({
-    "kylechui/nvim-surround",
-    tag = "*",
-  })
   use 'echasnovski/mini.pairs'
   --
   -- Navigation

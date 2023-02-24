@@ -35,7 +35,6 @@ require("lualine").setup({
 })
 require("mason").setup()
 require("nvim-web-devicons").setup()
-require("nvim-surround").setup()
 require("vgit").setup()
 require("nvim-tree").setup({
   diagnostics = {
