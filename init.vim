@@ -10,6 +10,8 @@ set smartindent
 set smarttab
 set autoread
 set syntax=on
+set signcolumn=yes
+set updatetime=300
 
 colorscheme dracula
 
@@ -22,49 +24,7 @@ lua << EOF
 require("plugins")
 require("lsp")
 require("keymaps")
-
-
-require("bufferline").setup()
-local function treesitter_statusline()
-   return vim.fn['nvim_treesitter#statusline'](90)
-end
-require("lualine").setup({
-  options = { theme = 'dracula-nvim' },
-  sections = { lualine_c = { 'filename', treesitter_statusline } }
-})
-require("mason").setup()
-require("nvim-web-devicons").setup()
-require("vgit").setup()
-require("nvim-tree").setup({
-  diagnostics = {
-    enable = true,
-    show_on_dirs = true
-  }
-})
-
--- set default notification
-
--- vgit
-vim.o.updatetime = 300
-vim.wo.signcolumn = 'yes'
-
--- treesitter
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-  indent = {
-    enable = true
-  },
-}
-
--- null-ls
-
-
--- cmp
 EOF
-
 
 autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif

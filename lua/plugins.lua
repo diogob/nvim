@@ -1,3 +1,33 @@
+-- Configure plugins from start directory here
+require("bufferline").setup()
+local function treesitter_statusline()
+  return vim.fn['nvim_treesitter#statusline'](90)
+end
+require("lualine").setup({
+  options = { theme = 'dracula-nvim' },
+  sections = { lualine_c = { 'filename', treesitter_statusline } }
+})
+require("mason").setup()
+require("nvim-web-devicons").setup()
+require("vgit").setup()
+require("nvim-tree").setup({
+  diagnostics = {
+    enable = true,
+    show_on_dirs = true
+  }
+})
+require'nvim-treesitter.configs'.setup({
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+  indent = {
+    enable = true
+  },
+})
+
+-- Next we configure the opt plugins
+
 -- Source plugin and its configuration immediately
 -- @param plugin String with name of plugin as subdirectory in 'pack'
 local packadd = function(plugin)
