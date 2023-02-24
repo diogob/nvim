@@ -63,6 +63,7 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+require('Comment').setup()
 -- null-ls
 local null_ls = require("null-ls")
 local sources = {

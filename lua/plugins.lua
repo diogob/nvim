@@ -26,18 +26,13 @@ end
 packadd_defer('nvim-code-action-menu')
 packadd_defer('nvim-lightbulb')
 packadd_defer('lsp_signature')
+packadd_defer('Comment')
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
   -- general language support
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  }
   use('jose-elias-alvarez/null-ls.nvim')
 
   -- UI improvements

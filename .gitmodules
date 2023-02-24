@@ -35,3 +35,6 @@
 [submodule "nvim-tree"]
 	path = pack/plugins/start/nvim-tree
 	url = https://github.com/nvim-tree/nvim-tree.lua
+[submodule "Comment"]
+	path = pack/plugins/opt/Comment
+	url = https://github.com/numToStr/Comment.nvim
