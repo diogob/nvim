@@ -56,3 +56,9 @@
 [submodule "mini.pairs"]
 	path = pack/plugins/opt/mini.pairs
 	url = https://github.com/echasnovski/mini.pairs
+[submodule "trouble"]
+	path = pack/plugins/opt/trouble
+	url = https://github.com/folke/trouble.nvim
+[submodule "telescope"]
+	path = pack/plugins/opt/telescope
+	url = https://github.com/nvim-telescope/telescope.nvim

@@ -54,6 +54,27 @@ vim.schedule(function()
   require('mini.pairs').setup()
 end)
 
+packadd_defer('trouble')
+vim.schedule(function()
+  require('trouble').setup()
+end)
+
+packadd_defer('telescope')
+
+vim.schedule(function()
+  local trouble = require("trouble.providers.telescope")
+  local telescope = require("telescope")
+
+  telescope.setup {
+    defaults = {
+      mappings = {
+        i = { ["<c-t>"] = trouble.open_with_trouble },
+        n = { ["<c-t>"] = trouble.open_with_trouble },
+      },
+    },
+  }
+end)
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -70,18 +91,9 @@ return require('packer').startup(function(use)
   -- Navigation
   use 'windwp/nvim-spectre'
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-  }
-  use {
     "folke/which-key.nvim",
     config = function()
       require("which-key").setup {}
-    end
-  }
-  use {
-    "folke/trouble.nvim",
-    config = function()
-      require("trouble").setup {}
     end
   }
 end)
