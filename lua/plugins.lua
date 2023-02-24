@@ -26,8 +26,18 @@ end
 packadd_defer('nvim-code-action-menu')
 packadd_defer('nvim-lightbulb')
 packadd_defer('lsp_signature')
+
 packadd_defer('Comment')
+vim.schedule(function()  require('Comment').setup() end)
+
 packadd_defer('null-ls')
+vim.schedule(function()
+  local null_ls = require("null-ls")
+  local sources = {
+    null_ls.builtins.formatting.prettier,
+  }
+  null_ls.setup({ sources = sources })
+end)
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
