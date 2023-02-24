@@ -41,3 +41,6 @@
 [submodule "null-ls"]
 	path = pack/plugins/opt/null-ls
 	url = https://github.com/jose-elias-alvarez/null-ls.nvim
+[submodule "nvim-notify"]
+	path = pack/plugins/opt/nvim-notify
+	url = https://github.com/rcarriga/nvim-notify

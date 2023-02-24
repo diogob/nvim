@@ -39,12 +39,16 @@ vim.schedule(function()
   null_ls.setup({ sources = sources })
 end)
 
+packadd_defer('nvim-notify')
+vim.schedule(function()
+  vim.notify = require("notify")
+end)
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
   -- UI improvements
-  use 'rcarriga/nvim-notify'
   use {
     'nvim-lualine/lualine.nvim',
   }

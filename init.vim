@@ -46,7 +46,6 @@ require("nvim-tree").setup({
 require('spectre').setup()
 
 -- set default notification
-vim.notify = require("notify")
 
 -- vgit
 vim.o.updatetime = 300
