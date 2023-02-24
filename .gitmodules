@@ -53,3 +53,6 @@
 [submodule "nvim-surround"]
 	path = pack/plugins/opt/nvim-surround
 	url = https://github.com/kylechui/nvim-surround
+[submodule "mini.pairs"]
+	path = pack/plugins/opt/mini.pairs
+	url = https://github.com/echasnovski/mini.pairs

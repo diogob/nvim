@@ -49,6 +49,11 @@ vim.schedule(function()
   require("nvim-surround").setup()
 end)
 
+packadd_defer('mini.pairs')
+vim.schedule(function()
+  require('mini.pairs').setup()
+end)
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -62,9 +67,6 @@ return require('packer').startup(function(use)
     }
   }
 
-  -- Editting goodies
-  use 'echasnovski/mini.pairs'
-  --
   -- Navigation
   use 'windwp/nvim-spectre'
   use {

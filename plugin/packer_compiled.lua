@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/diogo/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
-  ["mini.pairs"] = {
-    loaded = true,
-    path = "/home/diogo/.local/share/nvim/site/pack/packer/start/mini.pairs",
-    url = "https://github.com/echasnovski/mini.pairs"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/diogo/.local/share/nvim/site/pack/packer/start/nvim-cmp",

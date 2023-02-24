@@ -23,7 +23,6 @@ require("plugins")
 require("lsp")
 require("keymaps")
 
-require('mini.pairs').setup()
 
 require("bufferline").setup()
 local function treesitter_statusline()
