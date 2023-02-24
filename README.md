@@ -16,3 +16,9 @@ end)
 ```
 
 If the deferred loading does not work try using `packadd` instead of `packadd_defer`.
+
+## Updating plugins 
+
+```sh
+git submodule update --remote --init --depth 1 --recursive
+```
