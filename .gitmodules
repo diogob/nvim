@@ -62,3 +62,6 @@
 [submodule "telescope"]
 	path = pack/plugins/opt/telescope
 	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "which-key"]
+	path = pack/plugins/opt/which-key
+	url = https://github.com/folke/which-key.nvim

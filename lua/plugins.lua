@@ -60,7 +60,6 @@ vim.schedule(function()
 end)
 
 packadd_defer('telescope')
-
 vim.schedule(function()
   local trouble = require("trouble.providers.telescope")
   local telescope = require("telescope")
@@ -73,6 +72,11 @@ vim.schedule(function()
       },
     },
   }
+end)
+
+packadd_defer('which-key')
+vim.schedule(function()
+  require("which-key").setup()
 end)
 
 return require('packer').startup(function(use)
@@ -90,10 +94,4 @@ return require('packer').startup(function(use)
 
   -- Navigation
   use 'windwp/nvim-spectre'
-  use {
-    "folke/which-key.nvim",
-    config = function()
-      require("which-key").setup {}
-    end
-  }
 end)
