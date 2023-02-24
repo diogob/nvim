@@ -158,7 +158,7 @@ vim.schedule(function()
         return false
       else
         -- disable completion in comments
-        return not context.in_treesitter_capture("comment") 
+        return not context.in_treesitter_capture("comment")
           and not context.in_syntax_group("Comment")
       end
     end
