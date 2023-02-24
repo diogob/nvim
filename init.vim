@@ -44,7 +44,6 @@ require("nvim-tree").setup({
   }
 })
 require('spectre').setup()
-require("symbols-outline").setup()
 
 -- set default notification
 vim.notify = require("notify")

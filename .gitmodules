@@ -8,3 +8,30 @@
 [submodule "bufferline"]
 	path = pack/plugins/start/bufferline
 	url = https://github.com/akinsho/bufferline.nvim
+[submodule "nvim-lspconfig"]
+	path = pack/plugins/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "mason"]
+	path = pack/plugins/start/mason
+	url = https://github.com/williamboman/mason.nvim
+[submodule "nvim-code-action-menu"]
+	path = pack/plugins/opt/nvim-code-action-menu
+	url = https://github.com/weilbith/nvim-code-action-menu
+[submodule "FixCursorHold"]
+	path = pack/plugins/start/FixCursorHold
+	url = https://github.com/antoinemadec/FixCursorHold.nvim
+[submodule "nvim-lightbulb"]
+	path = pack/plugins/opt/nvim-lightbulb
+	url = https://github.com/kosayoda/nvim-lightbulb
+[submodule "plenary"]
+	path = pack/plugins/start/plenary
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "nvim-web-devicons"]
+	path = pack/plugins/start/nvim-web-devicons
+	url = https://github.com/nvim-tree/nvim-web-devicons
+[submodule "lsp_signature"]
+	path = pack/plugins/opt/lsp_signature
+	url = https://github.com/ray-x/lsp_signature.nvim
+[submodule "nvim-tree"]
+	path = pack/plugins/start/nvim-tree
+	url = https://github.com/nvim-tree/nvim-tree.lua
