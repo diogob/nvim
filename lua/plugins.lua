@@ -10,12 +10,6 @@ require("lualine").setup({
 require("mason").setup()
 require("nvim-web-devicons").setup()
 require("vgit").setup()
-require("nvim-tree").setup({
-  diagnostics = {
-    enable = true,
-    show_on_dirs = true
-  }
-})
 require'nvim-treesitter.configs'.setup({
   highlight = {
     enable = true,
