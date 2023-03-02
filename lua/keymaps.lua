@@ -33,7 +33,7 @@ vim.schedule(function()
       name = "Buffer",
       s = { "<cmd>Telescope buffers<cr>", "Search" },
       c = { "<cmd>bd<cr>", "Close" },
-      C = { "<cmd>%bd | e# | bd#<cr>", "Close others" },
+      C = { "<cmd>%bd! | e# | bd#<cr>", "Close others" },
     },
     w = {
       name = "Workspace",
