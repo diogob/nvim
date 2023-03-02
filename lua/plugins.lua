@@ -106,7 +106,11 @@ end)
 
 packadd_defer('which-key')
 vim.schedule(function()
-  require("which-key").setup()
+  require("which-key").setup({
+    window = {
+      border = "single"
+    }
+  })
 end)
 
 
@@ -116,6 +120,8 @@ vim.schedule(function()
 end)
 
 packadd('nvim-cmp')
+packadd('cmp-vsnip')
+packadd('vim-vsnip')
 packadd('cmp-buffer')
 packadd('cmp-nvim-lsp')
 packadd('cmp-path')
@@ -147,6 +153,7 @@ vim.schedule(function()
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
+      { name = 'vsnip' },
       { name = 'emoji' }, -- For vsnip users.
       { name = 'buffer' },
       { name = 'path' },

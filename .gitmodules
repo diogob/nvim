@@ -83,3 +83,9 @@
 [submodule "cmp-emoji"]
 	path = pack/plugins/opt/cmp-emoji
 	url = https://github.com/hrsh7th/cmp-emoji
+[submodule "cmp-vsnip"]
+	path = pack/plugins/opt/cmp-vsnip
+	url = https://github.com/hrsh7th/cmp-vsnip
+[submodule "vim-vsnip"]
+	path = pack/plugins/opt/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip
