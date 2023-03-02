@@ -22,3 +22,9 @@ If the deferred loading does not work try using `packadd` instead of `packadd_de
 ```sh
 git submodule update --remote --init --depth 1 --recursive
 ```
+
+## Removing plugins
+
+```sh
+git submodule deinit pack/plugins/<path-to-plugin>
+```
