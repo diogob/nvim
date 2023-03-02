@@ -15,6 +15,8 @@ vim.schedule(function()
       name = "Git",
       d = { "<cmd>VGit buffer_diff_preview<cr>", "Diff" },
       h = { "<cmd>VGit buffer_history_preview<cr>", "History" },
+      j = { "<cmd>VGit hunk_down<cr>", "Hunk down" },
+      k = { "<cmd>VGit hunk_up<cr>", "Hunk up" },
       s = { "<cmd>VGit buffer_hunk_stage<cr>", "Stage hunk" },
       r = { "<cmd>VGit buffer_hunk_reset<cr>", "Revert hunk" },
       R = { "<cmd>VGit buffer_reset<cr>", "Revert buffer" },
