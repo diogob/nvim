@@ -9,7 +9,7 @@ vim.schedule(function()
       f = { "<cmd>Telescope find_files wrap_results=true<cr>", "Find File" },
       r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
       s = { "<cmd>Telescope live_grep<cr>", "Search" },
-      e = { "<cmd>NvimTreeFindFileToggle<cr>", "Explore" }
+      e = { "<cmd>e %:p:h<cr>", "Explore" }
     },
     g = {
       name = "Git",
