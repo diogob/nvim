@@ -21,7 +21,7 @@ vim.schedule(function()
       r = { "<cmd>VGit buffer_hunk_reset<cr>", "Revert hunk" },
       R = { "<cmd>VGit buffer_reset<cr>", "Revert buffer" },
       S = { "<cmd>VGit buffer_stage<cr>", "Stage buffer" },
-      p = { "<cmd>VGit project_diff_preview<cr>", "Project diff" },
+      p = { "<cmd>DiffviewOpen<cr>", "Project diff" },
       b = { "<cmd>Telescope git_branches<cr>", "Search branches" },
       c = { "<cmd>Telescope git_commits<cr>", "Search commits" }
     },

@@ -113,6 +113,11 @@ vim.schedule(function()
   require('spectre').setup()
 end)
 
+packadd_defer('diffview')
+vim.schedule(function()
+  require('diffview').setup()
+end)
+
 packadd('nvim-cmp')
 packadd('cmp-vsnip')
 packadd('vim-vsnip')
