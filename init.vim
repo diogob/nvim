@@ -10,7 +10,7 @@ set smartindent
 set smarttab
 set autoread
 set syntax=on
-set signcolumn=yes
+set signcolumn=yes:2
 set updatetime=300
 
 colorscheme dracula

@@ -9,7 +9,6 @@ require("lualine").setup({
 })
 require("mason").setup()
 require("nvim-web-devicons").setup()
-require("vgit").setup()
 require'nvim-treesitter.configs'.setup({
   highlight = {
     enable = true,
@@ -111,6 +110,14 @@ end)
 packadd_defer('nvim-spectre')
 vim.schedule(function()
   require('spectre').setup()
+end)
+
+packadd_defer('gitsigns')
+vim.schedule(function()
+  require('gitsigns').setup({
+    sign_priority=100,
+    current_line_blame = true
+  })
 end)
 
 packadd_defer('diffview')

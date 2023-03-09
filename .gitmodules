@@ -92,3 +92,6 @@
 [submodule "diffview"]
 	path = pack/plugins/opt/diffview
 	url = https://github.com/sindrets/diffview.nvim
+[submodule "gitsigns"]
+	path = pack/plugins/opt/gitsignsgst
+	url = https://github.com/lewis6991/gitsigns.nvim.git
