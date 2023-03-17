@@ -30,3 +30,7 @@ autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb(
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 " notification after file change
 autocmd FileChangedShellPost * lua vim.notify("File changed on disk. Buffer reloaded.")
+
+" fix lingering netrw buffers
+autocmd FileType netrw setl bufhidden=wipe
+let g:netrw_fastbrowse=0
