@@ -95,3 +95,9 @@
 [submodule "gitsigns"]
 	path = pack/plugins/opt/gitsignsgst
 	url = https://github.com/lewis6991/gitsigns.nvim.git
+[submodule "tokyonight"]
+	path = pack/plugins/start/tokyonight
+	url = https://github.com/folke/tokyonight.nvim
+[submodule "nightfox"]
+	path = pack/plugins/start/nightfox
+	url = https://github.com/EdenEast/nightfox.nvim

@@ -13,7 +13,7 @@ set syntax=on
 set signcolumn=yes:2
 set updatetime=300
 
-colorscheme dracula
+colorscheme nightfox
 
 sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=
 sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=
