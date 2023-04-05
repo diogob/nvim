@@ -93,7 +93,7 @@
 	path = pack/plugins/opt/diffview
 	url = https://github.com/sindrets/diffview.nvim
 [submodule "gitsigns"]
-	path = pack/plugins/opt/gitsignsgst
+	path = pack/plugins/opt/gitsigns/gitsignsgst
 	url = https://github.com/lewis6991/gitsigns.nvim.git
 [submodule "tokyonight"]
 	path = pack/plugins/start/tokyonight
