@@ -83,12 +83,6 @@
 [submodule "cmp-emoji"]
 	path = pack/plugins/opt/cmp-emoji
 	url = https://github.com/hrsh7th/cmp-emoji
-[submodule "cmp-vsnip"]
-	path = pack/plugins/opt/cmp-vsnip
-	url = https://github.com/hrsh7th/cmp-vsnip
-[submodule "vim-vsnip"]
-	path = pack/plugins/opt/vim-vsnip
-	url = https://github.com/hrsh7th/vim-vsnip
 [submodule "diffview"]
 	path = pack/plugins/opt/diffview
 	url = https://github.com/sindrets/diffview.nvim
@@ -98,3 +92,9 @@
 [submodule "nightfox"]
 	path = pack/plugins/start/nightfox
 	url = https://github.com/EdenEast/nightfox.nvim
+[submodule "luasnip"]
+	path = pack/plugins/opt/luasnip
+	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "cmp_luasnip"]
+	path = pack/plugins/opt/cmp_luasnip
+	url = https://github.com/saadparwaiz1/cmp_luasnip
