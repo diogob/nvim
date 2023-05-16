@@ -1,5 +1,4 @@
 -- Configure plugins from start directory here
-require("bufferline").setup()
 local function treesitter_statusline()
   return vim.fn['nvim_treesitter#statusline'](90)
 end

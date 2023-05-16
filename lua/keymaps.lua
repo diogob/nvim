@@ -58,8 +58,6 @@ vim.schedule(function()
     h = { "<cmd>noh<cr>", "Highlight" },
     r = { "<cmd>e!<cr>", "Reload buffer" },
     ["<tab>"] = { "<cmd>e#<cr>", "Previous buffer" },
-    ["]"] = { "<cmd>bnext<cr>", "Right buffer" },
-    ["["] = { "<cmd>bprevious<cr>", "Left buffer" },
     [":"] = { "<cmd>Telescope command_history<cr>", "Commmand history" },
     o = { "<cmd>wincmd o<cr>", "Close other windows" },
     q = { "<cmd>qall!<cr>", "Quit" },
