@@ -48,6 +48,10 @@ lsp.denols.setup {
 vim.g.markdown_fenced_languages = { -- required by denols config
   "ts=typescript"
 }
+lsp.eslint.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 lsp.tsserver.setup {
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("package.json"),
