@@ -20,7 +20,7 @@ If the deferred loading does not work try using `packadd` instead of `packadd_de
 ## Updating plugins 
 
 ```sh
-git submodule update --remote
+git submodule update --init --recursive
 ```
 
 ## Removing plugins
