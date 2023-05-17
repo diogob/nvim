@@ -87,6 +87,13 @@ vim.schedule(function()
 
   telescope.setup {
     defaults = {
+      layout_strategy = 'vertical',
+      layout_config = {
+        vertical = {
+          prompt_position = 'top',
+          mirror = true
+        },
+      },
       mappings = {
         i = { ["<c-t>"] = trouble.open_with_trouble },
         n = { ["<c-t>"] = trouble.open_with_trouble },
