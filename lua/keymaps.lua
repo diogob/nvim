@@ -27,8 +27,7 @@ vim.schedule(function()
     c = {
       name = "Config",
       c = { "<cmd>e $MYVIMRC<cr>", "Edit init.vim" },
-      p = { "<cmd>Mason<cr>", "External Packages (Mason)" },
-      u = { "<cmd>PackerSync<cr>", "Update plugins" },
+      p = { "<cmd>Mason<cr>", "External Packages (Mason)" }
     },
     b = {
       name = "Buffer",
