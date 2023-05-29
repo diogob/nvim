@@ -208,3 +208,11 @@ vim.schedule(function()
       })
   })
 end)
+
+-- Telekasten
+packadd_defer('telekasten')
+vim.schedule(function()
+  require('telekasten').setup({
+    home = vim.fn.expand("~/zettelkasten"),
+  })
+end)

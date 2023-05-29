@@ -95,3 +95,6 @@
 [submodule "cmp_luasnip"]
 	path = pack/plugins/opt/cmp_luasnip
 	url = https://github.com/saadparwaiz1/cmp_luasnip
+[submodule "telekasten"]
+	path = pack/plugins/opt/telekasten
+	url = https://github.com/renerocksai/telekasten.nvim.git
