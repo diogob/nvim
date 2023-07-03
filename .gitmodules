@@ -4,7 +4,7 @@
 	branch = main
 [submodule "nvim-treesitter"]
 	path = pack/plugins/start/nvim-treesitter
-	url = https://github.com/nvim-treesitter/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter.git
 [submodule "bufferline"]
 	path = pack/plugins/start/bufferline
 	url = https://github.com/akinsho/bufferline.nvim
