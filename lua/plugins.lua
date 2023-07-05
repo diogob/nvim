@@ -124,6 +124,7 @@ vim.schedule(function()
     current_line_blame = true
   })
 end)
+packadd_defer('vim-fugitive')
 
 packadd_defer('diffview')
 vim.schedule(function()

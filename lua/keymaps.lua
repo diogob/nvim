@@ -17,12 +17,14 @@ vim.schedule(function()
       k = { "<cmd>Gitsigns prev_hunk<cr>", "Previous hunk" },
       s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
       r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset hunk" },
-      R = { "<cmd>Gitsigns reset_buffer<cr>", "Reset buffer" },
-      S = { "<cmd>Gitsigns stage_buffer<cr>", "Stage buffer" },
+      R = { "<cmd>Gread<cr>", "Reset buffer" },
+      S = { "<cmd>Gwrite<cr>", "Stage buffer" },
+      B = { "<cmd>Git blame<cr>", "Blame" },
       d = { "<cmd>Gitsigns preview_hunk<cr>", "Hunk diff" },
       p = { "<cmd>DiffviewOpen<cr>", "Project diff" },
+      P = { "<cmd>DiffviewClose<cr>", "Close Project diff" },
       b = { "<cmd>Telescope git_branches<cr>", "Search branches" },
-      c = { "<cmd>Telescope git_commits<cr>", "Search commits" }
+      c = { "<cmd>Telescope git_commits<cr>", "Search commits" },
     },
     c = {
       name = "Config",
