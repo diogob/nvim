@@ -23,8 +23,13 @@ vim.schedule(function()
       d = { "<cmd>Gitsigns preview_hunk<cr>", "Hunk diff" },
       p = { "<cmd>DiffviewOpen<cr>", "Project diff" },
       P = { "<cmd>DiffviewClose<cr>", "Close Project diff" },
-      b = { "<cmd>Telescope git_branches<cr>", "Search branches" },
-      c = { "<cmd>Telescope git_commits<cr>", "Search commits" },
+      c = { "<cmd>Git commit<cr>", "Commit" },
+      l = {
+        name = "List",
+        c = { "<cmd>Telescope git_commits<cr>", "Commits" },
+        b = { "<cmd>Telescope git_branches<cr>", "Branches" },
+        s = { "<cmd>Telescope git_stash<cr>", "Stash" },
+      },
     },
     c = {
       name = "Config",
