@@ -21,8 +21,8 @@ vim.schedule(function()
       S = { "<cmd>Gwrite<cr>", "Stage buffer" },
       B = { "<cmd>Git blame<cr>", "Blame" },
       d = { "<cmd>Gitsigns preview_hunk<cr>", "Hunk diff" },
-      p = { "<cmd>DiffviewOpen<cr>", "Project diff" },
-      P = { "<cmd>DiffviewClose<cr>", "Close Project diff" },
+      D = { "<cmd>DiffviewOpen<cr>", "Project diff" },
+      C = { "<cmd>DiffviewClose<cr>", "Close Project diff" },
       c = { "<cmd>Git commit<cr>", "Commit" },
       l = {
         name = "List",
