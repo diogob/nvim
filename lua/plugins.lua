@@ -75,6 +75,12 @@ vim.schedule(function()
   require('mini.pairs').setup()
 end)
 
+packadd_defer('mini.splitjoin')
+vim.schedule(function()
+  require('mini.splitjoin').setup()
+end)
+
+
 packadd_defer('trouble')
 vim.schedule(function()
   require('trouble').setup()
