@@ -76,6 +76,5 @@ vim.schedule(function()
     o = { "<cmd>wincmd o<cr>", "Close other windows" },
     q = { "<cmd>qall!<cr>", "Quit" },
     x = { "<cmd>xall!<cr>", "Save and quit" },
-    z = { "<cmd>set foldmethod=indent<cr>", "Fold on indent" },
   }, { prefix = "<leader>" })
 end)

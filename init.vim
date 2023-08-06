@@ -34,3 +34,8 @@ autocmd FileChangedShellPost * lua vim.notify("File changed on disk. Buffer relo
 " fix lingering netrw buffers
 autocmd FileType netrw setl bufhidden=wipe
 let g:netrw_fastbrowse=0
+
+"fold with treesitter
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set nofoldenable " Disable folding at startup.

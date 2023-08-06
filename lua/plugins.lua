@@ -7,13 +7,23 @@ require("lualine").setup({
 })
 require("mason").setup()
 require("nvim-web-devicons").setup()
-require'nvim-treesitter.configs'.setup({
+require 'nvim-treesitter.configs'.setup({
+  ensure_installed = { "lua", "vim", "vimdoc", "query", "typescript", "haskell" },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
   indent = {
     enable = true
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn", -- set to `false` to disable one of the mappings
+      node_incremental = "gnn",
+      scope_incremental = "grc",
+      node_decremental = "gnm",
+    },
   },
 })
 
@@ -49,7 +59,7 @@ packadd_defer('nvim-lightbulb')
 packadd_defer('lsp_signature')
 
 packadd_defer('Comment')
-vim.schedule(function()  require('Comment').setup() end)
+vim.schedule(function() require('Comment').setup() end)
 
 packadd_defer('null-ls')
 vim.schedule(function()
@@ -126,7 +136,7 @@ end)
 packadd_defer('gitsigns')
 vim.schedule(function()
   require('gitsigns').setup({
-    sign_priority=100,
+    sign_priority = 100,
     current_line_blame = true
   })
 end)
@@ -162,7 +172,7 @@ vim.schedule(function()
       documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-b>'] = cmp.mapping.scroll_docs( -4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
@@ -183,7 +193,7 @@ vim.schedule(function()
       else
         -- disable completion in comments
         return not context.in_treesitter_capture("comment")
-          and not context.in_syntax_group("Comment")
+            and not context.in_syntax_group("Comment")
       end
     end
   })
@@ -193,8 +203,8 @@ vim.schedule(function()
     sources = cmp.config.sources({
       { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
     }, {
-        { name = 'buffer' },
-      })
+      { name = 'buffer' },
+    })
   })
 
   -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
@@ -211,8 +221,8 @@ vim.schedule(function()
     sources = cmp.config.sources({
       { name = 'path' }
     }, {
-        { name = 'cmdline' }
-      })
+      { name = 'cmdline' }
+    })
   })
 end)
 
