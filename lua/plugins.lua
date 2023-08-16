@@ -57,6 +57,7 @@ end
 packadd_defer('nvim-code-action-menu')
 packadd_defer('nvim-lightbulb')
 packadd_defer('lsp_signature')
+packadd_defer('auto-save')
 
 packadd_defer('Comment')
 vim.schedule(function() require('Comment').setup() end)
