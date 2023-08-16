@@ -104,3 +104,6 @@
 [submodule "mini.splitjoin"]
 	path = pack/plugins/opt/mini.splitjoin
 	url = https://github.com/echasnovski/mini.splitjoin.git
+[submodule "auto-save"]
+	path = pack/plugins/opt/auto-save
+	url = https://github.com/pocco81/auto-save.nvim.git
