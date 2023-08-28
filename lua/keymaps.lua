@@ -38,7 +38,7 @@ vim.schedule(function()
     },
     b = {
       name = "Buffer",
-      s = { "<cmd>Telescope buffers<cr>", "Search" },
+      s = { "<cmd>lua require('custom/telescope').buffers_with_delete()<cr>", "Search" },
       c = { "<cmd>bd<cr>", "Close" },
       C = { "<cmd>%bd! | e# | bd#<cr>", "Close others" },
     },
