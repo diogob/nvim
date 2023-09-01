@@ -13,6 +13,7 @@ vim.schedule(function()
     },
     g = {
       name = "Git",
+      f = { "<cmd>Telescope git_status<cr>", "Changed files" },
       j = { "<cmd>Gitsigns next_hunk<cr>", "Next hunk" },
       k = { "<cmd>Gitsigns prev_hunk<cr>", "Previous hunk" },
       s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
