@@ -44,9 +44,6 @@
 [submodule "lualine"]
 	path = pack/plugins/start/lualine
 	url = https://github.com/nvim-lualine/lualine.nvim
-[submodule "vgit"]
-	path = pack/plugins/start/vgit
-	url = https://github.com/tanvirtin/vgit.nvim
 [submodule "nvim-surround"]
 	path = pack/plugins/opt/nvim-surround
 	url = https://github.com/kylechui/nvim-surround
