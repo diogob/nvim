@@ -59,9 +59,6 @@ packadd_defer('nvim-lightbulb')
 packadd_defer('lsp_signature')
 packadd_defer('auto-save')
 
-packadd_defer('Comment')
-vim.schedule(function() require('Comment').setup() end)
-
 packadd_defer('null-ls')
 vim.schedule(function()
   local null_ls = require("null-ls")
@@ -84,6 +81,18 @@ end)
 packadd_defer('mini.pairs')
 vim.schedule(function()
   require('mini.pairs').setup()
+end)
+
+packadd_defer('mini.comment')
+vim.schedule(function()
+  require('mini.comment').setup({
+    options = {
+      custom_commentstring = nil,
+      ignore_blank_line = true,
+      start_of_line = false,
+      pad_comment_parts = true,
+    },
+  })
 end)
 
 packadd_defer('mini.splitjoin')
@@ -173,7 +182,7 @@ vim.schedule(function()
       documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-      ['<C-b>'] = cmp.mapping.scroll_docs( -4),
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),

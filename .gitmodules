@@ -32,9 +32,6 @@
 [submodule "lsp_signature"]
 	path = pack/plugins/opt/lsp_signature
 	url = https://github.com/ray-x/lsp_signature.nvim
-[submodule "Comment"]
-	path = pack/plugins/opt/Comment
-	url = https://github.com/numToStr/Comment.nvim
 [submodule "null-ls"]
 	path = pack/plugins/opt/null-ls
 	url = https://github.com/jose-elias-alvarez/null-ls.nvim
@@ -104,3 +101,6 @@
 [submodule "auto-save"]
 	path = pack/plugins/opt/auto-save
 	url = https://github.com/pocco81/auto-save.nvim.git
+[submodule "mini.comment"]
+	path = pack/plugins/opt/mini.comment
+	url = https://github.com/echasnovski/mini.comment.git
