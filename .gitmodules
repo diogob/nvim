@@ -104,3 +104,6 @@
 [submodule "mini.comment"]
 	path = pack/plugins/opt/mini.comment
 	url = https://github.com/echasnovski/mini.comment.git
+[submodule "mini.completion"]
+	path = pack/plugins/opt/mini.completion
+	url = https://github.com/echasnovski/mini.completion.git
