@@ -34,11 +34,13 @@ local on_attach = function(client, bufnr)
   }, bufnr)
 end
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp = require('lspconfig')
 
 lsp.denols.setup {
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("deno.json"),
+  capabilities = capabilities,
   init_options = {
     lint = true,
   },
@@ -48,10 +50,12 @@ vim.g.markdown_fenced_languages = { -- required by denols config
 }
 lsp.eslint.setup {
   on_attach = on_attach,
+  capabilities = capabilities,
 }
 lsp.tsserver.setup {
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("package.json"),
+  capabilities = capabilities,
   init_options = {
     lint = true,
   },
@@ -59,13 +63,17 @@ lsp.tsserver.setup {
 }
 lsp.hls.setup {
   on_attach = on_attach,
+  capabilities = capabilities
 }
 lsp.lua_ls.setup {
   on_attach = on_attach,
+  capabilities = capabilities
 }
 lsp.solargraph.setup {
   on_attach = on_attach,
+  capabilities = capabilities
 }
 lsp.tailwindcss.setup {
   on_attach = on_attach,
+  capabilities = capabilities
 }
