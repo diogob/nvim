@@ -23,6 +23,8 @@ vim.schedule(function()
       B = { "<cmd>Git blame<cr>", "Blame" },
       d = { "<cmd>Gitsigns preview_hunk<cr>", "Hunk diff" },
       D = { "<cmd>DiffviewOpen<cr>", "Project diff" },
+      H = { "<cmd>DiffviewFileHistory<cr>", "Project History" },
+      F = { "<cmd>DiffviewFileHistory %<cr>", "File History" },
       C = { "<cmd>DiffviewClose<cr>", "Close Project diff" },
       c = { "<cmd>Git commit<cr>", "Commit" },
       l = {
