@@ -77,3 +77,7 @@ lsp.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
+lsp.yamlls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
