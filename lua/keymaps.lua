@@ -27,6 +27,7 @@ vim.schedule(function()
       F = { "<cmd>DiffviewFileHistory %<cr>", "File History" },
       C = { "<cmd>DiffviewClose<cr>", "Close Project diff" },
       c = { "<cmd>Git commit<cr>", "Commit" },
+      h = { "<cmd>Gitsigns setqflist<cr>", "List hunks" },
       l = {
         name = "List",
         c = { "<cmd>Telescope git_commits<cr>", "Commits" },
