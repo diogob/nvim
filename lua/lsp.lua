@@ -52,6 +52,36 @@ lsp.eslint.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+local prettier = {
+  formatCommand = 'prettierd "${INPUT}"',
+  formatStdin = true,
+  env = {
+    string.format('PRETTIERD_DEFAULT_CONFIG=%s', vim.fn.expand('~/.config/nvim/utils/linter-config/.prettierrc.json')),
+  },
+}
+local languages = {
+  typescript = { prettier },
+  typescriptreact = { prettier },
+}
+local efmls_config = {
+  filetypes = vim.tbl_keys(languages),
+  settings = {
+    rootMarkers = { '.git/' },
+    languages = languages,
+  },
+  init_options = {
+    documentFormatting = true,
+    documentRangeFormatting = true,
+  },
+}
+
+lsp.efm.setup(vim.tbl_extend('force', efmls_config, {
+  on_attach = on_attach,
+  root_dir = lsp.util.root_pattern("package.json"),
+  capabilities = capabilities,
+}))
+
 lsp.tsserver.setup {
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("package.json"),

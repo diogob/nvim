@@ -104,3 +104,9 @@
 [submodule "mini.comment"]
 	path = pack/plugins/opt/mini.comment
 	url = https://github.com/echasnovski/mini.comment.git
+[submodule "typescript-tools"]
+	path = pack/plugins/opt/typescript-tools
+	url = https://github.com/pmizio/typescript-tools.nvim
+[submodule "efmls-configs-nvim"]
+	path = pack/plugins/opt/efmls-configs-nvim
+	url = https://github.com/creativenull/efmls-configs-nvim.git

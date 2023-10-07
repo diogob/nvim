@@ -59,14 +59,7 @@ packadd_defer('nvim-lightbulb')
 packadd_defer('lsp_signature')
 packadd_defer('auto-save')
 
-packadd_defer('null-ls')
-vim.schedule(function()
-  local null_ls = require("null-ls")
-  local sources = {
-    null_ls.builtins.formatting.prettier,
-  }
-  null_ls.setup({ sources = sources })
-end)
+packadd('efmls-configs-nvim')
 
 packadd_defer('nvim-notify')
 vim.schedule(function()
@@ -154,7 +147,11 @@ packadd_defer('vim-fugitive')
 
 packadd_defer('diffview')
 vim.schedule(function()
-  require('diffview').setup()
+  require('diffview').setup({
+    view = {
+      merge_tool = { layout = 'diff3_mixed' }
+    }
+  })
 end)
 
 packadd('nvim-cmp')
@@ -243,3 +240,6 @@ vim.schedule(function()
     home = vim.fn.expand("~/zettelkasten"),
   })
 end)
+
+-- typescript LSP support
+packadd('typescript-tools')
