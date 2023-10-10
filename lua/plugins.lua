@@ -119,6 +119,8 @@ vim.schedule(function()
       },
     },
   }
+
+  require('telescope').load_extension('textcase')
 end)
 
 packadd_defer('which-key')
@@ -244,8 +246,13 @@ end)
 -- typescript LSP support
 packadd('typescript-tools')
 
+-- Manipulate text case
+packadd('text-case')
+require('textcase').setup({})
+vim.api.nvim_set_keymap('n', 'ga.', '<cmd>TextCaseOpenTelescope<CR>', { desc = "Telescope" })
+vim.api.nvim_set_keymap('v', 'ga.', "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
 
 packadd('oil')
-  require('oil').setup({
-    default_file_explorer = true
-  })
+require('oil').setup({
+  default_file_explorer = true
+})

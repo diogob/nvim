@@ -113,3 +113,6 @@
 [submodule "oil"]
 	path = pack/plugins/opt/oil
 	url = https://github.com/stevearc/oil.nvim.git
+[submodule "text-case"]
+	path = pack/plugins/opt/text-case
+	url = https://github.com/johmsalas/text-case.nvim.git
