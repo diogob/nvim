@@ -243,3 +243,9 @@ end)
 
 -- typescript LSP support
 packadd('typescript-tools')
+
+
+packadd('oil')
+  require('oil').setup({
+    default_file_explorer = true
+  })

@@ -110,3 +110,6 @@
 [submodule "efmls-configs-nvim"]
 	path = pack/plugins/opt/efmls-configs-nvim
 	url = https://github.com/creativenull/efmls-configs-nvim.git
+[submodule "oil"]
+	path = pack/plugins/opt/oil
+	url = https://github.com/stevearc/oil.nvim.git
