@@ -58,9 +58,13 @@ vim.schedule(function()
       a = { "<cmd>CodeActionMenu<cr>", "Code Actions" },
       r = { "<cmd>TroubleToggle lsp_references<cr>", "All references" },
       d = { "<cmd>Telescope lsp_definitions<cr>", "Definition" },
-      D = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
       n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next diagnostic" },
       N = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Previous diagnostic" },
+    },
+    d = {
+      name = "Diagnostics",
+      d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
+      q = { "<cmd>TroubleToggle document_diagnostics<cr>", "Quickfix" },
     },
     s = {
       name = "Search & Replace",
