@@ -1,5 +1,13 @@
 vim.g.mapleader = ' '
 
+vim.keymap.set("n", "[c", function()
+  require("treesitter-context").go_to_context()
+end, { silent = true, desc = "Previous context" })
+vim.api.nvim_set_keymap('n', 'ga.', '<cmd>TextCaseOpenTelescope<CR>', { desc = "Telescope" })
+vim.api.nvim_set_keymap('v', 'ga.', "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
+vim.api.nvim_set_keymap('n', ']d', "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next diagnostic" })
+vim.api.nvim_set_keymap('n', '[d', "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Previous diagnostic" })
+
 vim.schedule(function()
   local wk = require("which-key")
 
@@ -58,8 +66,6 @@ vim.schedule(function()
       a = { "<cmd>CodeActionMenu<cr>", "Code Actions" },
       r = { "<cmd>TroubleToggle lsp_references<cr>", "All references" },
       d = { "<cmd>Telescope lsp_definitions<cr>", "Definition" },
-      n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next diagnostic" },
-      N = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Previous diagnostic" },
     },
     d = {
       name = "Diagnostics",

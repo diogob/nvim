@@ -19,10 +19,10 @@ require 'nvim-treesitter.configs'.setup({
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "gnn", -- set to `false` to disable one of the mappings
-      node_incremental = "gnn",
+      init_selection = "gk", -- set to `false` to disable one of the mappings
+      node_incremental = "gk",
       scope_incremental = "grc",
-      node_decremental = "gnm",
+      node_decremental = "gj",
     },
   },
 })
@@ -235,6 +235,7 @@ vim.schedule(function()
   })
 end)
 
+packadd_defer('nvim-treesitter-context')
 -- Telekasten
 packadd_defer('telekasten')
 vim.schedule(function()
@@ -249,8 +250,6 @@ packadd('typescript-tools')
 -- Manipulate text case
 packadd('text-case')
 require('textcase').setup({})
-vim.api.nvim_set_keymap('n', 'ga.', '<cmd>TextCaseOpenTelescope<CR>', { desc = "Telescope" })
-vim.api.nvim_set_keymap('v', 'ga.', "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
 
 packadd('oil')
 require('oil').setup({

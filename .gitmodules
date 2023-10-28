@@ -116,3 +116,6 @@
 [submodule "text-case"]
 	path = pack/plugins/opt/text-case
 	url = https://github.com/johmsalas/text-case.nvim.git
+[submodule "nvim-treesitter-context"]
+	path = pack/plugins/opt/nvim-treesitter-context
+	url = https://github.com/nvim-treesitter/nvim-treesitter-context
