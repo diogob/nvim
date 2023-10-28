@@ -11,7 +11,6 @@ set smarttab
 set autoread
 set syntax=on
 set signcolumn=yes:2
-set updatetime=200
 
 colorscheme nightfox
 
@@ -26,11 +25,15 @@ require("lsp")
 require("keymaps")
 EOF
 
+" lightbulb configuration
+set updatetime=200
 autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+
 " notification after file change
 autocmd FileChangedShellPost * lua vim.notify("File changed on disk. Buffer reloaded.")
 
+" configure tsc as make command for typescript
 autocmd FileType typescript,typescriptreact compiler tsc | setlocal makeprg=npx\ tsc\ --noEmit\ --pretty\ false
 
 " fix lingering netrw buffers
