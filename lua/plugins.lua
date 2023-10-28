@@ -66,11 +66,6 @@ vim.schedule(function()
   vim.notify = require("notify")
 end)
 
-packadd_defer('nvim-surround')
-vim.schedule(function()
-  require("nvim-surround").setup()
-end)
-
 packadd_defer('mini.pairs')
 vim.schedule(function()
   require('mini.pairs').setup()
