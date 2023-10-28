@@ -11,6 +11,7 @@ set smarttab
 set autoread
 set syntax=on
 set signcolumn=yes:2
+set updatetime=200
 
 colorscheme nightfox
 
