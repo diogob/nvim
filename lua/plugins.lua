@@ -243,9 +243,6 @@ vim.schedule(function()
   })
 end)
 
--- typescript LSP support
-packadd('typescript-tools')
-
 -- Manipulate text case
 packadd('text-case')
 require('textcase').setup({})
