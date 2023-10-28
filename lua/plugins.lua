@@ -88,6 +88,10 @@ vim.schedule(function()
   require('mini.splitjoin').setup()
 end)
 
+packadd_defer('mini.surround')
+vim.schedule(function()
+  require('mini.surround').setup()
+end)
 
 packadd_defer('trouble')
 vim.schedule(function()

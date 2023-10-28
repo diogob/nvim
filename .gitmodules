@@ -116,3 +116,6 @@
 [submodule "nvim-treesitter-context"]
 	path = pack/plugins/opt/nvim-treesitter-context
 	url = https://github.com/nvim-treesitter/nvim-treesitter-context
+[submodule "mini.surround"]
+	path = pack/plugins/opt/mini.surround
+	url = https://github.com/echasnovski/mini.surround.git
