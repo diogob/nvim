@@ -54,6 +54,14 @@ local packadd_defer = function(plugin)
   vim.schedule(function() packadd(plugin) end)
 end
 
+packadd('oil')
+require('oil').setup({
+  default_file_explorer = true,
+  skip_confirm_for_simple_edits = false,
+  prompt_save_on_select_new_entry = true,
+  use_default_keymaps = true,
+})
+
 packadd_defer('nvim-code-action-menu')
 packadd_defer('nvim-lightbulb')
 packadd_defer('lsp_signature')
@@ -247,7 +255,3 @@ end)
 packadd('text-case')
 require('textcase').setup({})
 
-packadd('oil')
-require('oil').setup({
-  default_file_explorer = true
-})

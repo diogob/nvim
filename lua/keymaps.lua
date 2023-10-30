@@ -70,7 +70,7 @@ vim.schedule(function()
     d = {
       name = "Diagnostics",
       d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
-      q = { "<cmd>TroubleToggle document_diagnostics<cr>", "Quickfix" },
+      q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
     },
     s = {
       name = "Search & Replace",
