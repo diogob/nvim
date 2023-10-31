@@ -7,6 +7,8 @@ vim.api.nvim_set_keymap('n', 'ga.', '<cmd>TextCaseOpenTelescope<CR>', { desc = "
 vim.api.nvim_set_keymap('v', 'ga.', "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
 vim.api.nvim_set_keymap('n', ']d', "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next diagnostic" })
 vim.api.nvim_set_keymap('n', '[d', "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Previous diagnostic" })
+vim.api.nvim_set_keymap('n', ']h', "<cmd>Gitsigns next_hunk<cr>", { desc = "Next Git Hunk" })
+vim.api.nvim_set_keymap('n', '[h', "<cmd>Gitsigns prev_hunk<cr>", { desc = "Previous Git Hunk" })
 
 vim.schedule(function()
   local wk = require("which-key")
@@ -22,8 +24,6 @@ vim.schedule(function()
     g = {
       name = "Git",
       f = { "<cmd>Telescope git_status<cr>", "Changed files" },
-      j = { "<cmd>Gitsigns next_hunk<cr>", "Next hunk" },
-      k = { "<cmd>Gitsigns prev_hunk<cr>", "Previous hunk" },
       s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
       r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset hunk" },
       R = { "<cmd>Gread<cr>", "Reset buffer" },
