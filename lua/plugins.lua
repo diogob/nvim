@@ -96,9 +96,23 @@ vim.schedule(function()
   require('mini.splitjoin').setup()
 end)
 
-packadd_defer('mini.surround')
+packadd_defer('nvim-surround')
 vim.schedule(function()
-  require('mini.surround').setup()
+  require('nvim-surround').setup({
+    keymaps = {
+      insert = "<C-g>s",
+      insert_line = "<C-g>S",
+      normal = "sa",
+      normal_cur = "ss",
+      normal_line = "sS",
+      normal_cur_line = "sSS",
+      visual = "s",
+      visual_line = "S",
+      delete = "sd",
+      change = "sc",
+      change_line = "sC",
+    }
+  })
 end)
 
 packadd_defer('trouble')
@@ -254,4 +268,3 @@ end)
 -- Manipulate text case
 packadd('text-case')
 require('textcase').setup({})
-
