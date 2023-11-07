@@ -60,6 +60,11 @@ require('oil').setup({
   skip_confirm_for_simple_edits = false,
   prompt_save_on_select_new_entry = true,
   use_default_keymaps = true,
+  buf_options = {
+    buflisted = true,
+    bufhidden = "hide",
+  },
+  cleanup_delay_ms = false,
 })
 
 packadd_defer('nvim-code-action-menu')
