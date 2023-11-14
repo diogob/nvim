@@ -32,9 +32,6 @@
 [submodule "lsp_signature"]
 	path = pack/plugins/opt/lsp_signature
 	url = https://github.com/ray-x/lsp_signature.nvim
-[submodule "null-ls"]
-	path = pack/plugins/opt/null-ls
-	url = https://github.com/jose-elias-alvarez/null-ls.nvim
 [submodule "nvim-notify"]
 	path = pack/plugins/opt/nvim-notify
 	url = https://github.com/rcarriga/nvim-notify
