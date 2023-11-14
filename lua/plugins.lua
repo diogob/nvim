@@ -8,7 +8,7 @@ require("lualine").setup({
 require("mason").setup()
 require("nvim-web-devicons").setup()
 require 'nvim-treesitter.configs'.setup({
-  ensure_installed = { "lua", "vim", "vimdoc", "query", "typescript", "haskell" },
+  ensure_installed = { "lua", "vim", "vimdoc", "query", "typescript", "haskell", "tsx", "sql" },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
@@ -142,6 +142,7 @@ vim.schedule(function()
   })
 end)
 
+-- From this line it should be safe to remove without startup errors (keymaps might still be bogus)
 packadd('oil')
 require('oil').setup({
   default_file_explorer = true,
