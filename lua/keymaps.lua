@@ -55,6 +55,7 @@ vim.schedule(function()
       s = { "<cmd>lua require('custom/telescope').buffers_with_delete()<cr>", "Search" },
       c = { "<cmd>bd<cr>", "Close" },
       C = { "<cmd>%bd! | e# | bd#<cr>", "Close others" },
+      f = { "<cmd>normal gqA<cr>", "Format" },
     },
     w = {
       name = "Workspace",

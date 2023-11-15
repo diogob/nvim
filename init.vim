@@ -44,3 +44,16 @@ let g:netrw_fastbrowse=0
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable " Disable folding at startup.
+
+" Create text-object `A` which operates on the whole buffer (i.e. All)
+" Keeps the cursor position in the same position
+function TextObjectAll()
+    let g:restore_position = winsaveview()
+    normal! ggVG
+    " For delete/change ALL, we don't wish to restore cursor position.
+    if index(['c','d'], v:operator) == -1
+        call feedkeys("\<Plug>(RestoreView)")
+    end
+endfunction
+onoremap A :<C-U>call TextObjectAll()<CR>
+nnoremap <silent> <Plug>(RestoreView) :call winrestview(g:restore_position)<CR>
