@@ -150,10 +150,10 @@ require('oil').setup({
   prompt_save_on_select_new_entry = true,
   use_default_keymaps = true,
   buf_options = {
-    buflisted = true,
+    buflisted = false,
     bufhidden = "hide",
   },
-  cleanup_delay_ms = false,
+  cleanup_delay_ms = 2000,
 })
 
 packadd_defer('nvim-code-action-menu')
