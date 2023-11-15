@@ -153,7 +153,7 @@ require('oil').setup({
     buflisted = false,
     bufhidden = "hide",
   },
-  cleanup_delay_ms = 2000,
+  cleanup_delay_ms = 60000,
 })
 
 packadd_defer('nvim-code-action-menu')
