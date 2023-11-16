@@ -8,7 +8,22 @@ require("lualine").setup({
 require("mason").setup()
 require("nvim-web-devicons").setup()
 require 'nvim-treesitter.configs'.setup({
-  ensure_installed = { "lua", "vim", "vimdoc", "query", "typescript", "haskell", "tsx", "sql" },
+  ensure_installed = {
+    "lua",
+    "vim",
+    "vimdoc",
+    "query",
+    "typescript",
+    "haskell",
+    "tsx",
+    "yaml",
+    "json",
+    "markdown",
+    "bash",
+    "git_rebase",
+    "csv",
+    "sql"
+  },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
