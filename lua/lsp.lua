@@ -82,6 +82,7 @@ lsp.efm.setup(vim.tbl_extend('force', efmls_config, {
   capabilities = capabilities,
 }))
 
+--[[
 lsp.tsserver.setup {
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("package.json"),
@@ -91,6 +92,17 @@ lsp.tsserver.setup {
   },
   single_file_support = false
 }
+--]]
+require("typescript-tools").setup {
+  on_attach = on_attach,
+  root_dir = lsp.util.root_pattern("package.json"),
+  capabilities = capabilities,
+  init_options = {
+    lint = true,
+  },
+  single_file_support = false
+}
+
 lsp.hls.setup {
   on_attach = on_attach,
   capabilities = capabilities

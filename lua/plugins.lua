@@ -69,6 +69,7 @@ local packadd_defer = function(plugin)
   vim.schedule(function() packadd(plugin) end)
 end
 
+packadd('typescript-tools')
 packadd('nvim-cmp')
 packadd('luasnip')
 packadd('cmp_luasnip')
