@@ -12,7 +12,7 @@ set autoread
 set syntax=on
 set signcolumn=yes:2
 
-colorscheme nightfox
+colorscheme tokyonight-moon
 
 sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=
 sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=
@@ -57,3 +57,7 @@ function TextObjectAll()
 endfunction
 onoremap A :<C-U>call TextObjectAll()<CR>
 nnoremap <silent> <Plug>(RestoreView) :call winrestview(g:restore_position)<CR>
+
+" Add underline for treesitter context so we do not depend too much on the
+" colorscheme 
+hi TreesitterContextBottom gui=underline guisp=Grey

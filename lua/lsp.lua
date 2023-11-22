@@ -30,7 +30,8 @@ local on_attach = function(client, bufnr)
     bind = true, -- This is mandatory, otherwise border config won't get registered.
     handler_opts = {
       border = "rounded"
-    }
+    },
+    auto_close_after = 5
   }, bufnr)
 end
 
