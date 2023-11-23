@@ -38,9 +38,6 @@
 [submodule "lualine"]
 	path = pack/plugins/start/lualine
 	url = https://github.com/nvim-lualine/lualine.nvim
-[submodule "mini.pairs"]
-	path = pack/plugins/opt/mini.pairs
-	url = https://github.com/echasnovski/mini.pairs
 [submodule "trouble"]
 	path = pack/plugins/opt/trouble
 	url = https://github.com/folke/trouble.nvim
@@ -116,3 +113,6 @@
 [submodule "typescript-tools"]
 	path = pack/plugins/opt/typescript-tools
 	url = https://github.com/pmizio/typescript-tools.nvim.git
+[submodule "ultimate-autopair"]
+	path = pack/plugins/opt/ultimate-autopair
+	url = https://github.com/altermo/ultimate-autopair.nvim.git

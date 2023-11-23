@@ -183,9 +183,9 @@ vim.schedule(function()
   vim.notify = require("notify")
 end)
 
-packadd_defer('mini.pairs')
+packadd_defer('ultimate-autopair')
 vim.schedule(function()
-  require('mini.pairs').setup()
+  require('ultimate-autopair').setup()
 end)
 
 packadd_defer('mini.comment')
