@@ -13,6 +13,8 @@ local on_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, apply_defaults({ desc = "Info" }, bufopts))
   vim.keymap.set('n', '<leader>li', vim.lsp.buf.hover, apply_defaults({ desc = "Info" }, bufopts))
+  vim.keymap.set('n', '<leader>lS', vim.lsp.buf.signature_help, apply_defaults({ desc = "Signature help" }, bufopts))
+  vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, apply_defaults({ desc = "Signature help" }, bufopts))
   vim.keymap.set('n', '<leader>lR', vim.lsp.buf.rename, apply_defaults({ desc = "Rename" }, bufopts))
   vim.keymap.set('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end,
     apply_defaults({ desc = "Format" }, bufopts))
@@ -24,15 +26,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, apply_defaults({ desc = "List folders" }, bufopts))
-
-  -- LSP Signature plugin
-  require "lsp_signature".on_attach({
-    bind = true, -- This is mandatory, otherwise border config won't get registered.
-    handler_opts = {
-      border = "rounded"
-    },
-    auto_close_after = 5
-  }, bufnr)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()

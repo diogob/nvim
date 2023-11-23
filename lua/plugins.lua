@@ -174,7 +174,6 @@ require('oil').setup({
 
 packadd_defer('nvim-code-action-menu')
 packadd_defer('nvim-lightbulb')
-packadd_defer('lsp_signature')
 packadd_defer('auto-save')
 
 packadd('efmls-configs-nvim')
