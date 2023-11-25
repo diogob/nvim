@@ -87,6 +87,12 @@ vim.schedule(function()
       t = { "<cmd>Telekasten toggle_todo<cr>", "Toggle TODO" },
       l = { "<cmd>Telekasten insert_link<cr>", "Insert link" },
     },
+    t = {
+      name = "Tests",
+      t = { "<cmd>lua require('neotest').run.run()<cr>", "Run nearest" },
+      f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run file" },
+      s = { "<cmd>lua require('neotest').summary.toggle(); vim.cmd('w')<cr>", "Summary" }
+    },
     h = { "<cmd>noh<cr>", "Highlight" },
     r = { "<cmd>e!<cr>", "Reload buffer" },
     ["<tab>"] = { "<cmd>e#<cr>", "Previous buffer" },

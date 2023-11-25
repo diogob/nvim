@@ -286,6 +286,19 @@ vim.schedule(function()
   })
 end)
 
+--test runner
+packadd_defer('neotest')
+vim.schedule(function()
+  packadd('neotest-vitest')
+  require('neotest').setup({
+    adapters = {
+      require('neotest-vitest')({
+        vitestCommand = 'yarn test'
+      })
+    }
+  })
+end)
+
 -- Manipulate text case
 packadd('text-case')
 require('textcase').setup({})

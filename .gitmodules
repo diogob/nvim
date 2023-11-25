@@ -116,3 +116,9 @@
 [submodule "ultimate-autopair"]
 	path = pack/plugins/opt/ultimate-autopair
 	url = https://github.com/altermo/ultimate-autopair.nvim.git
+[submodule "neotest"]
+	path = pack/plugins/opt/neotest
+	url = https://github.com/nvim-neotest/neotest.git
+[submodule "neotest-vitest"]
+	path = pack/plugins/opt/neotest-vitest
+	url = https://github.com/marilari88/neotest-vitest.git
