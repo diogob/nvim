@@ -91,7 +91,8 @@ vim.schedule(function()
       name = "Tests",
       t = { "<cmd>lua require('neotest').run.run()<cr>", "Run nearest" },
       f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run file" },
-      s = { "<cmd>lua require('neotest').summary.toggle(); vim.cmd('w')<cr>", "Summary" }
+      s = { "<cmd>lua require('neotest').summary.toggle(); vim.cmd('w')<cr>", "Summary" },
+      o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output" }
     },
     h = { "<cmd>noh<cr>", "Highlight" },
     r = { "<cmd>e!<cr>", "Reload buffer" },
