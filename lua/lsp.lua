@@ -90,11 +90,10 @@ lsp.tsserver.setup {
 require("typescript-tools").setup {
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("package.json"),
-  capabilities = capabilities,
-  init_options = {
-    lint = true,
+  handlers = {
+    ["textDocument/formatting"] = function () end,
+    ["textDocument/rangeFormatting"] = function () end
   },
-  single_file_support = false
 }
 
 lsp.hls.setup {
