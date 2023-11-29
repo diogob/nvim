@@ -94,6 +94,7 @@ require("typescript-tools").setup {
     ["textDocument/formatting"] = function () end,
     ["textDocument/rangeFormatting"] = function () end
   },
+  single_file_support = false
 }
 
 lsp.hls.setup {
