@@ -37,6 +37,8 @@ lsp.denols.setup {
   capabilities = capabilities,
   init_options = {
     lint = true,
+    documentFormatting = false,
+    documentRangeFormatting = false
   },
 }
 vim.g.markdown_fenced_languages = { -- required by denols config
