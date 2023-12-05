@@ -291,6 +291,10 @@ packadd_defer('neotest')
 vim.schedule(function()
   packadd('neotest-vitest')
   require('neotest').setup({
+    discovery = {
+      enabled = false,
+      concurrent = 1
+    },
     adapters = {
       require('neotest-vitest')({
         vitestCommand = 'yarn test'
