@@ -224,14 +224,8 @@ vim.schedule(function()
   })
 end)
 
-packadd_defer('trouble')
-vim.schedule(function()
-  require('trouble').setup()
-end)
-
 packadd_defer('telescope')
 vim.schedule(function()
-  local trouble = require("trouble.providers.telescope")
   local telescope = require("telescope")
 
   telescope.setup {
@@ -242,10 +236,6 @@ vim.schedule(function()
           prompt_position = 'top',
           mirror = true
         },
-      },
-      mappings = {
-        i = { ["<c-t>"] = trouble.open_with_trouble },
-        n = { ["<c-t>"] = trouble.open_with_trouble },
       },
     },
   }

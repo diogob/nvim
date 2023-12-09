@@ -38,9 +38,6 @@
 [submodule "lualine"]
 	path = pack/plugins/start/lualine
 	url = https://github.com/nvim-lualine/lualine.nvim
-[submodule "trouble"]
-	path = pack/plugins/opt/trouble
-	url = https://github.com/folke/trouble.nvim
 [submodule "telescope"]
 	path = pack/plugins/opt/telescope
 	url = https://github.com/nvim-telescope/telescope.nvim

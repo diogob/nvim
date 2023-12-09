@@ -59,19 +59,18 @@ vim.schedule(function()
     },
     w = {
       name = "Workspace",
-      D = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Diagnostics" },
       s = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Search symbols" },
     },
     l = {
       name = "LSP",
       s = { "<cmd>Telescope lsp_document_symbols<cr>", "Search symbols" },
       a = { "<cmd>CodeActionMenu<cr>", "Code Actions" },
-      r = { "<cmd>TroubleToggle lsp_references<cr>", "All references" },
+      r = { "<cmd>Telescope lsp_references<cr>", "All references" },
       d = { "<cmd>Telescope lsp_definitions<cr>", "Definition" },
     },
     d = {
       name = "Diagnostics",
-      d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
+      d = { "<cmd>Telescope diagnostics<cr>", "Document diagnostics" },
       q = { "<cmd>copen<cr>", "Quickfix" },
     },
     s = {
