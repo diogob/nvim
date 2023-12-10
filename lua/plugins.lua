@@ -280,6 +280,7 @@ end)
 packadd_defer('neotest')
 vim.schedule(function()
   packadd('neotest-vitest')
+  packadd('neotest-haskell')
   require('neotest').setup({
     discovery = {
       enabled = false,
@@ -288,7 +289,10 @@ vim.schedule(function()
     adapters = {
       require('neotest-vitest')({
         vitestCommand = 'yarn test'
-      })
+      }),
+      require('neotest-haskell') {
+        frameworks = { 'hspec' },
+      }
     }
   })
 end)
