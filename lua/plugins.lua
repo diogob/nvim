@@ -159,18 +159,8 @@ vim.schedule(function()
 end)
 
 -- From this line it should be safe to remove without startup errors (keymaps might still be bogus)
-packadd('oil')
-require('oil').setup({
-  default_file_explorer = true,
-  skip_confirm_for_simple_edits = false,
-  prompt_save_on_select_new_entry = true,
-  use_default_keymaps = true,
-  buf_options = {
-    buflisted = false,
-    bufhidden = "hide",
-  },
-  cleanup_delay_ms = 60000,
-})
+packadd('mini.files')
+require('mini.files').setup({})
 
 packadd_defer('nvim-code-action-menu')
 packadd_defer('nvim-lightbulb')
