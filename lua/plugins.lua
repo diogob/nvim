@@ -160,7 +160,21 @@ end)
 
 -- From this line it should be safe to remove without startup errors (keymaps might still be bogus)
 packadd('mini.files')
-require('mini.files').setup({})
+require('mini.files').setup({
+  mappings = {
+    close       = 'q',
+    go_in       = '<Right>',
+    go_in_plus  = '<PageDown>',
+    go_out      = '<Left>',
+    go_out_plus = '<PageUp>',
+    reset       = '<BS>',
+    reveal_cwd  = '@',
+    show_help   = 'g?',
+    synchronize = '=',
+    trim_left   = '<',
+    trim_right  = '>',
+  },
+})
 
 packadd_defer('nvim-code-action-menu')
 packadd_defer('nvim-lightbulb')
