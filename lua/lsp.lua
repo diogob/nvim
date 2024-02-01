@@ -50,7 +50,12 @@ lsp.eslint.setup {
 }
 
 local prettier = {
-  formatCommand = '~/.local/share/nvim/mason/bin/prettier "${INPUT}"',
+  formatCanRange = true,
+  formatCommand = string.format(
+    "%s --stdin --stdin-filepath '${INPUT}' ${--range-start:charStart} "
+    .. '${--range-end:charEnd} ${--tab-width:tabWidth} ${--use-tabs:!insertSpaces}',
+    '~/.local/share/nvim/mason/bin/prettier'
+  ),
   formatStdin = true,
   env = {
     string.format('PRETTIERD_DEFAULT_CONFIG=%s', vim.fn.expand('~/.config/nvim/utils/linter-config/.prettierrc.json')),
@@ -93,8 +98,8 @@ require("typescript-tools").setup {
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("package.json"),
   handlers = {
-    ["textDocument/formatting"] = function () end,
-    ["textDocument/rangeFormatting"] = function () end
+    ["textDocument/formatting"] = function() end,
+    ["textDocument/rangeFormatting"] = function() end
   },
   single_file_support = false
 }
