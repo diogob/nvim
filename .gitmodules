@@ -122,3 +122,6 @@
 [submodule "mini.files"]
 	path = pack/plugins/opt/mini.files
 	url = https://github.com/echasnovski/mini.files.git
+[submodule "conform"]
+	path = pack/plugins/opt/conform
+	url = https://github.com/stevearc/conform.nvim
