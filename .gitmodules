@@ -86,15 +86,9 @@
 [submodule "mini.splitjoin"]
 	path = pack/plugins/opt/mini.splitjoin
 	url = https://github.com/echasnovski/mini.splitjoin.git
-[submodule "auto-save"]
-	path = pack/plugins/opt/auto-save
-	url = https://github.com/pocco81/auto-save.nvim.git
 [submodule "mini.comment"]
 	path = pack/plugins/opt/mini.comment
 	url = https://github.com/echasnovski/mini.comment.git
-[submodule "efmls-configs-nvim"]
-	path = pack/plugins/opt/efmls-configs-nvim
-	url = https://github.com/creativenull/efmls-configs-nvim.git
 [submodule "text-case"]
 	path = pack/plugins/opt/text-case
 	url = https://github.com/johmsalas/text-case.nvim.git
@@ -125,3 +119,6 @@
 [submodule "conform"]
 	path = pack/plugins/opt/conform
 	url = https://github.com/stevearc/conform.nvim
+[submodule "auto-save"]
+	path = pack/plugins/opt/auto-save
+	url = https://github.com/okuuva/auto-save.nvim.git
