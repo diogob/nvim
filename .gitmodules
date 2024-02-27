@@ -119,3 +119,6 @@
 [submodule "conform"]
 	path = pack/plugins/opt/conform
 	url = https://github.com/stevearc/conform.nvim
+[submodule "auto-save"]
+	path = pack/plugins/opt/auto-save
+	url = https://github.com/okuuva/auto-save.nvim.git

@@ -182,7 +182,7 @@ packadd_defer("nvim-lightbulb")
 packadd_defer("auto-save")
 vim.schedule(function()
 	require("auto-save").setup({
-		debounce_delay = 250,
+		debounce_delay = 1000,
 	})
 end)
 packadd_defer("conform")
