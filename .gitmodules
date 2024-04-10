@@ -122,3 +122,6 @@
 [submodule "auto-save"]
 	path = pack/plugins/opt/auto-save
 	url = https://github.com/okuuva/auto-save.nvim.git
+[submodule "nvim-nio"]
+	path = pack/plugins/start/nvim-nio
+	url = https://github.com/nvim-neotest/nvim-nio.git
