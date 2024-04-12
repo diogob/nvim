@@ -310,6 +310,7 @@ end)
 packadd_defer("flash")
 vim.schedule(function()
   require("flash").setup()
+  vim.keymap.set("n", "gt", function() require("flash").treesitter_search() end, { desc = 'Treesitter search' })
 end)
 
 --test runner
