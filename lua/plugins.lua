@@ -307,6 +307,11 @@ vim.schedule(function()
   })
 end)
 
+packadd_defer("flash")
+vim.schedule(function()
+  require("flash").setup()
+end)
+
 --test runner
 packadd_defer("neotest")
 vim.schedule(function()

@@ -125,3 +125,6 @@
 [submodule "nvim-nio"]
 	path = pack/plugins/start/nvim-nio
 	url = https://github.com/nvim-neotest/nvim-nio.git
+[submodule "flash"]
+	path = pack/plugins/opt/flash
+	url = https://github.com/folke/flash.nvim.git
