@@ -86,9 +86,11 @@
 [submodule "mini.splitjoin"]
 	path = pack/plugins/opt/mini.splitjoin
 	url = https://github.com/echasnovski/mini.splitjoin.git
+  ignore = dirty
 [submodule "mini.comment"]
 	path = pack/plugins/opt/mini.comment
 	url = https://github.com/echasnovski/mini.comment.git
+  ignore = dirty
 [submodule "text-case"]
 	path = pack/plugins/opt/text-case
 	url = https://github.com/johmsalas/text-case.nvim.git
@@ -113,15 +115,18 @@
 [submodule "neotest-haskell"]
 	path = pack/plugins/opt/neotest-haskell
 	url = https://github.com/mrcjkb/neotest-haskell.git
+  ignore = dirty
 [submodule "mini.files"]
 	path = pack/plugins/opt/mini.files
 	url = https://github.com/echasnovski/mini.files.git
+  ignore = dirty
 [submodule "conform"]
 	path = pack/plugins/opt/conform
 	url = https://github.com/stevearc/conform.nvim
 [submodule "auto-save"]
 	path = pack/plugins/opt/auto-save
 	url = https://github.com/okuuva/auto-save.nvim.git
+  ignore = dirty
 [submodule "nvim-nio"]
 	path = pack/plugins/start/nvim-nio
 	url = https://github.com/nvim-neotest/nvim-nio.git
