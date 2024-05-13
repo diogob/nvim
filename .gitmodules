@@ -136,3 +136,6 @@
 [submodule "grug-far"]
 	path = pack/plugins/opt/grug-far
 	url = https://github.com/MagicDuck/grug-far.nvim.git
+[submodule "gitsigns"]
+	path = pack/plugins/opt/gitsigns
+	url = https://github.com/lewis6991/gitsigns.nvim.git
