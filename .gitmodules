@@ -133,3 +133,6 @@
 [submodule "flash"]
 	path = pack/plugins/opt/flash
 	url = https://github.com/folke/flash.nvim.git
+[submodule "grug-far"]
+	path = pack/plugins/opt/grug-far
+	url = https://github.com/MagicDuck/grug-far.nvim.git

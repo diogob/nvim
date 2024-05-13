@@ -275,9 +275,9 @@ vim.schedule(function()
 	require("telescope").load_extension("textcase")
 end)
 
-packadd_defer("nvim-spectre")
+packadd_defer("grug-far")
 vim.schedule(function()
-	require("spectre").setup()
+	require("grug-far").setup()
 end)
 
 packadd_defer("gitsigns")

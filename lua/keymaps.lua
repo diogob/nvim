@@ -74,8 +74,8 @@ vim.schedule(function()
     },
     s = {
       name = "Search & Replace",
-      o = { "<cmd>lua require('spectre').open()<cr>", "Open panel" },
-      w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search word" },
+      o = { "<cmd>GrugFar<cr>", "Open panel" },
+      w = { "<cmd>lua require('grug-far').grug_far({ prefills = { search = vim.fn.expand(\"<cword>\") } })<cr>", "Search word" },
     },
     n = {
       name = "Notes",
