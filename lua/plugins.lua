@@ -289,15 +289,6 @@ vim.schedule(function()
 end)
 packadd_defer("vim-fugitive")
 
-packadd_defer("diffview")
-vim.schedule(function()
-	require("diffview").setup({
-		view = {
-			merge_tool = { layout = "diff3_mixed" },
-		},
-	})
-end)
-
 packadd_defer("nvim-treesitter-context")
 -- Telekasten
 packadd_defer("telekasten")

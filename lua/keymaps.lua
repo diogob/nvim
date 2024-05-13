@@ -32,10 +32,9 @@ vim.schedule(function()
       S = { "<cmd>Gwrite<cr>", "Stage buffer" },
       B = { "<cmd>Git blame<cr>", "Blame" },
       d = { "<cmd>Gitsigns preview_hunk<cr>", "Hunk diff" },
-      D = { "<cmd>DiffviewOpen<cr>", "Project diff" },
-      H = { "<cmd>DiffviewFileHistory<cr>", "Project History" },
-      F = { "<cmd>DiffviewFileHistory %<cr>", "File History" },
-      C = { "<cmd>DiffviewClose<cr>", "Close Project diff" },
+      m = { "<cmd>Git mergetool<cr>", "Merge Tool" },
+      H = { "<cmd>Gclog<cr>", "Project History" },
+      F = { "<cmd>0GcLog<cr>", "File History" },
       c = { "<cmd>Git commit<cr>", "Commit" },
       h = { "<cmd>Gitsigns setqflist<cr>", "List hunks" },
       l = {
