@@ -116,10 +116,6 @@
 	path = pack/plugins/opt/neotest-haskell
 	url = https://github.com/mrcjkb/neotest-haskell.git
   ignore = dirty
-[submodule "mini.files"]
-	path = pack/plugins/opt/mini.files
-	url = https://github.com/echasnovski/mini.files.git
-  ignore = dirty
 [submodule "conform"]
 	path = pack/plugins/opt/conform
 	url = https://github.com/stevearc/conform.nvim
@@ -139,3 +135,6 @@
 [submodule "gitsigns"]
 	path = pack/plugins/opt/gitsigns
 	url = https://github.com/lewis6991/gitsigns.nvim.git
+[submodule "oil"]
+	path = pack/plugins/opt/oil
+	url = https://github.com/stevearc/oil.nvim.git
