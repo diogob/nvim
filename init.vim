@@ -64,6 +64,9 @@ endfunction
 onoremap A :<C-U>call TextObjectAll()<CR>
 nnoremap <silent> <Plug>(RestoreView) :call winrestview(g:restore_position)<CR>
 
+" replace from selection
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
 " Add underline for treesitter context so we do not depend too much on the
 " colorscheme 
 hi TreesitterContextBottom gui=underline guisp=Grey
