@@ -138,6 +138,3 @@
 [submodule "oil"]
 	path = pack/plugins/opt/oil
 	url = https://github.com/stevearc/oil.nvim.git
-[submodule "comment"]
-	path = pack/plugins/opt/comment
-	url = https://github.com/numToStr/Comment.nvim.git
