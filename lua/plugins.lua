@@ -206,18 +206,10 @@ vim.schedule(function()
 	require("ultimate-autopair").setup()
 end)
 
-packadd_defer("mini.comment")
+packadd_defer("comment")
 vim.schedule(function()
-	require("mini.comment").setup({
-		options = {
-			custom_commentstring = nil,
-			ignore_blank_line = true,
-			start_of_line = false,
-			pad_comment_parts = true,
-		},
-	})
+	require("Comment").setup()
 end)
-
 packadd_defer("mini.splitjoin")
 vim.schedule(function()
 	require("mini.splitjoin").setup()
