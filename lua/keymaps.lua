@@ -63,7 +63,7 @@ vim.schedule(function()
     l = {
       name = "LSP",
       s = { "<cmd>Telescope lsp_document_symbols<cr>", "Search symbols" },
-      a = { "<cmd>CodeActionMenu<cr>", "Code Actions" },
+      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
       r = { "<cmd>Telescope lsp_references<cr>", "All references" },
       d = { "<cmd>Telescope lsp_definitions<cr>", "Definition" },
     },

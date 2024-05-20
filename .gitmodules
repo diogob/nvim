@@ -74,6 +74,7 @@
 [submodule "luasnip"]
 	path = pack/plugins/opt/luasnip
 	url = https://github.com/L3MON4D3/LuaSnip
+  ignore = dirty
 [submodule "cmp_luasnip"]
 	path = pack/plugins/opt/cmp_luasnip
 	url = https://github.com/saadparwaiz1/cmp_luasnip
@@ -132,6 +133,7 @@
 [submodule "grug-far"]
 	path = pack/plugins/opt/grug-far
 	url = https://github.com/MagicDuck/grug-far.nvim.git
+  ignore = dirty
 [submodule "gitsigns"]
 	path = pack/plugins/opt/gitsigns
 	url = https://github.com/lewis6991/gitsigns.nvim.git

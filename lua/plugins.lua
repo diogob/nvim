@@ -163,7 +163,6 @@ end)
 packadd("oil")
 require("oil").setup()
 
-packadd_defer("nvim-code-action-menu")
 packadd_defer("nvim-lightbulb")
 packadd_defer("auto-save")
 vim.schedule(function()
