@@ -140,3 +140,6 @@
 [submodule "oil"]
 	path = pack/plugins/opt/oil
 	url = https://github.com/stevearc/oil.nvim.git
+[submodule "ts-comments"]
+	path = pack/plugins/opt/ts-comments
+	url = https://github.com/folke/ts-comments.nvim.git

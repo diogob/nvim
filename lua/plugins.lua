@@ -309,3 +309,9 @@ end)
 -- Manipulate text case
 packadd("text-case")
 require("textcase").setup({})
+
+-- Improve built-in nvim comments
+packadd_defer("ts-comments")
+vim.schedule(function()
+  require("ts-comments").setup()
+end)
