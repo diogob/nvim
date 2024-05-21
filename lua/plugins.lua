@@ -235,6 +235,8 @@ vim.schedule(function()
 
 	telescope.setup({
 		defaults = {
+      prompt_prefix = " 🔍 ",
+      selection_caret = "❯ ",
 			layout_strategy = "vertical",
 			layout_config = {
 				vertical = {
