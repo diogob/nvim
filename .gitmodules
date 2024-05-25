@@ -68,9 +68,6 @@
 [submodule "tokyonight"]
 	path = pack/plugins/start/tokyonight
 	url = https://github.com/folke/tokyonight.nvim
-[submodule "nightfox"]
-	path = pack/plugins/start/nightfox
-	url = https://github.com/EdenEast/nightfox.nvim
 [submodule "luasnip"]
 	path = pack/plugins/opt/luasnip
 	url = https://github.com/L3MON4D3/LuaSnip
