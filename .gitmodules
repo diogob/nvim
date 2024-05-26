@@ -139,3 +139,6 @@
 [submodule "dracula"]
 	path = pack/plugins/start/dracula
 	url = https://github.com/dracula/vim.git
+[submodule "material"]
+	path = pack/plugins/start/material
+	url = https://github.com/marko-cerovac/material.nvim.git

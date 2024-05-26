@@ -12,7 +12,7 @@ set autoread
 set syntax=on
 set signcolumn=yes:2
 
-colorscheme tokyonight
+colorscheme tokyonight-moon
 
 sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=
 sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=
