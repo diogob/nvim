@@ -136,9 +136,6 @@
 [submodule "ts-comments"]
 	path = pack/plugins/opt/ts-comments
 	url = https://github.com/folke/ts-comments.nvim.git
-[submodule "dracula"]
-	path = pack/plugins/start/dracula
-	url = https://github.com/dracula/vim.git
 [submodule "material"]
 	path = pack/plugins/start/material
 	url = https://github.com/marko-cerovac/material.nvim.git
