@@ -59,40 +59,6 @@ lsp.eslint.setup({
   capabilities = capabilities,
 })
 
--- local prettier = {
---   formatCanRange = true,
---   formatCommand = string.format(
---     "%s --stdin --stdin-filepath '${INPUT}' ${--range-start:charStart} "
---     .. '${--range-end:charEnd} ${--tab-width:tabWidth} ${--use-tabs:!insertSpaces}',
---     '~/.local/share/nvim/mason/bin/prettier'
---   ),
---   formatStdin = true,
---   env = {
---     string.format('PRETTIERD_DEFAULT_CONFIG=%s', vim.fn.expand('~/.config/nvim/utils/linter-config/.prettierrc.json')),
---   },
--- }
--- local languages = {
---   typescript = { prettier },
---   typescriptreact = { prettier },
--- }
--- local efmls_config = {
---   filetypes = vim.tbl_keys(languages),
---   settings = {
---     rootMarkers = { '.git/' },
---     languages = languages,
---   },
---   init_options = {
---     documentFormatting = true,
---     documentRangeFormatting = true,
---   },
--- }
-
--- lsp.efm.setup(vim.tbl_extend('force', efmls_config, {
---   on_attach = on_attach,
---   root_dir = lsp.util.root_pattern("package.json"),
---   capabilities = capabilities,
--- }))
-
 --[[
 lsp.tsserver.setup {
   on_attach = on_attach,
