@@ -317,3 +317,14 @@ packadd_defer("ts-comments")
 vim.schedule(function()
   require("ts-comments").setup()
 end)
+
+require('material').setup({
+  plugins = {
+    "flash",
+    "gitsigns",
+    "neotest",
+    "nvim-cmp",
+    "telescope",
+    "nvim-notify",
+  }
+})
