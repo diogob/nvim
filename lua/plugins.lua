@@ -326,5 +326,6 @@ require('material').setup({
     "nvim-cmp",
     "telescope",
     "nvim-notify",
+    "which-key"
   }
 })
