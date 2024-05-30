@@ -70,3 +70,11 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " Add underline for treesitter context so we do not depend too much on the
 " colorscheme 
 hi TreesitterContextBottom gui=underline guisp=Grey
+
+" reset cursor position with the current line always centered
+function! CentreCursor()
+    let pos = getpos(".")
+    normal! zz
+    call setpos(".", pos)
+endfunction
+autocmd CursorMoved,CursorMovedI * call CentreCursor()
