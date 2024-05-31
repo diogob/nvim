@@ -71,10 +71,6 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " colorscheme 
 hi TreesitterContextBottom gui=underline guisp=Grey
 
-" reset cursor position with the current line always centered
-function! CentreCursor()
-    let pos = getpos(".")
-    normal! zz
-    call setpos(".", pos)
-endfunction
-autocmd CursorMoved,CursorMovedI * call CentreCursor()
+" keep line centered when navigatin in normal mode
+nnoremap <Up> kzz
+nnoremap <Down> jzz
