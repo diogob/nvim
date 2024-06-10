@@ -66,6 +66,7 @@ vim.schedule(function()
       a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
       r = { "<cmd>Telescope lsp_references<cr>", "All references" },
       d = { "<cmd>Telescope lsp_definitions<cr>", "Definition" },
+      v = { "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Definition in split" },
     },
     d = {
       name = "Diagnostics",
