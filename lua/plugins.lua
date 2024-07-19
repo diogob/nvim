@@ -153,7 +153,7 @@ end)
 packadd_defer("which-key")
 vim.schedule(function()
 	require("which-key").setup({
-		window = {
+		win = {
 			border = "single",
 		},
 	})
@@ -300,7 +300,7 @@ vim.schedule(function()
 		},
 		adapters = {
 			require("neotest-vitest")({
-				vitestCommand = "yarn test",
+				vitestCommand = "npx vitest",
 			}),
 			require("neotest-haskell")({
 				frameworks = { "hspec" },
