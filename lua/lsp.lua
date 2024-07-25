@@ -59,12 +59,27 @@ lsp.eslint.setup({
   capabilities = capabilities,
 })
 
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = {vim.api.nvim_buf_get_name(0)},
+    title = ""
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 lsp.tsserver.setup {
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("package.json"),
   capabilities = capabilities,
   init_options = {
     lint = true,
+  },
+  commands = {
+    OrganizeImports = {
+      organize_imports,
+      description = "Organize Imports"
+    }
   },
   single_file_support = false
 }
