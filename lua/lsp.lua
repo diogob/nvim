@@ -92,6 +92,10 @@ lsp.tsserver.setup {
 --   },
 --   single_file_support = false,
 -- })
+lsp.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
 lsp.hls.setup({
   on_attach = on_attach,
