@@ -15,11 +15,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set("n", "<leader>li", vim.lsp.buf.hover, apply_defaults({ desc = "Info" }, bufopts))
   vim.keymap.set("n", "<leader>lS", vim.lsp.buf.signature_help, apply_defaults({ desc = "Signature help" }, bufopts))
   vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, apply_defaults({ desc = "Signature help" }, bufopts))
-  vim.keymap.set("n", "<leader>lR",
-    function()
-      return ":IncRename " .. vim.fn.expand("<cword>")
-    end
-    , apply_defaults({ expr=true,desc = "Rename" }, bufopts))
+  vim.keymap.set("n", "<leader>lR", function()
+    return ":IncRename " .. vim.fn.expand("<cword>")
+  end, apply_defaults({ expr = true, desc = "Rename" }, bufopts))
   vim.keymap.set("n", "<leader>lf", function()
     vim.lsp.buf.format({ async = true })
   end, apply_defaults({ desc = "Format" }, bufopts))
@@ -66,13 +64,13 @@ lsp.eslint.setup({
 local function organize_imports()
   local params = {
     command = "_typescript.organizeImports",
-    arguments = {vim.api.nvim_buf_get_name(0)},
-    title = ""
+    arguments = { vim.api.nvim_buf_get_name(0) },
+    title = "",
   }
   vim.lsp.buf.execute_command(params)
 end
 
-lsp.tsserver.setup {
+lsp.tsserver.setup({
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("package.json"),
   capabilities = capabilities,
@@ -82,11 +80,11 @@ lsp.tsserver.setup {
   commands = {
     OrganizeImports = {
       organize_imports,
-      description = "Organize Imports"
-    }
+      description = "Organize Imports",
+    },
   },
-  single_file_support = false
-}
+  single_file_support = false,
+})
 -- require("typescript-tools").setup({
 --   on_attach = on_attach,
 --   root_dir = lsp.util.root_pattern("package.json"),
@@ -96,10 +94,10 @@ lsp.tsserver.setup {
 --   },
 --   single_file_support = false,
 -- })
-lsp.rust_analyzer.setup {
+lsp.rust_analyzer.setup({
   on_attach = on_attach,
   capabilities = capabilities,
-}
+})
 
 lsp.hls.setup({
   on_attach = on_attach,
