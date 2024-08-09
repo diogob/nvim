@@ -139,3 +139,6 @@
 [submodule "material"]
 	path = pack/plugins/start/material
 	url = https://github.com/marko-cerovac/material.nvim.git
+[submodule "inc-rename"]
+	path = pack/plugins/opt/inc-rename
+	url = https://github.com/smjonas/inc-rename.nvim.git

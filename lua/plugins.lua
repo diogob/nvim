@@ -330,3 +330,9 @@ require("material").setup({
 		"which-key",
 	},
 })
+
+-- Incremental LSP rename
+packadd_defer("inc-rename")
+vim.schedule(function()
+	require("inc_rename").setup()
+end)
