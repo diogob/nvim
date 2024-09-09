@@ -70,7 +70,7 @@ local function organize_imports()
   vim.lsp.buf.execute_command(params)
 end
 
-lsp.tsserver.setup({
+lsp.ts_ls.setup({
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("package.json"),
   capabilities = capabilities,
