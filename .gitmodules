@@ -142,3 +142,6 @@
 [submodule "inc-rename"]
 	path = pack/plugins/opt/inc-rename
 	url = https://github.com/smjonas/inc-rename.nvim.git
+[submodule "blink.cmp"]
+	path = pack/plugins/opt/blink.cmp
+	url = https://github.com/Saghen/blink.cmp.git
