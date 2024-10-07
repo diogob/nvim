@@ -40,13 +40,13 @@ local on_attach = function(client, bufnr)
   end, apply_defaults({ desc = "List folders" }, bufopts))
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lsp = require("lspconfig")
 
 lsp.denols.setup({
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("deno.json"),
-  capabilities = capabilities,
+  -- capabilities = capabilities,
   init_options = {
     lint = true,
     documentFormatting = false,
@@ -58,7 +58,7 @@ vim.g.markdown_fenced_languages = { -- required by denols config
 }
 lsp.eslint.setup({
   on_attach = on_attach,
-  capabilities = capabilities,
+  -- capabilities = capabilities,
 })
 
 local function organize_imports()
@@ -73,7 +73,7 @@ end
 lsp.ts_ls.setup({
   on_attach = on_attach,
   root_dir = lsp.util.root_pattern("package.json"),
-  capabilities = capabilities,
+  -- capabilities = capabilities,
   init_options = {
     lint = true,
   },
@@ -96,20 +96,20 @@ lsp.ts_ls.setup({
 -- })
 lsp.rust_analyzer.setup({
   on_attach = on_attach,
-  capabilities = capabilities,
+  -- capabilities = capabilities,
 })
 
 lsp.hls.setup({
   on_attach = on_attach,
-  capabilities = capabilities,
+  -- capabilities = capabilities,
 })
 lsp.lua_ls.setup({
   on_attach = on_attach,
-  capabilities = capabilities,
+  -- capabilities = capabilities,
 })
 lsp.solargraph.setup({
   on_attach = on_attach,
-  capabilities = capabilities,
+  -- capabilities = capabilities,
 })
 lsp.tailwindcss.setup({
   on_attach = on_attach,
@@ -123,13 +123,13 @@ lsp.tailwindcss.setup({
     "postcss.config.mjs",
     "postcss.config.ts"
   ),
-  capabilities = capabilities,
+  -- capabilities = capabilities,
 })
 lsp.yamlls.setup({
   on_attach = on_attach,
-  capabilities = capabilities,
+  -- capabilities = capabilities,
 })
 lsp.jsonls.setup({
   on_attach = on_attach,
-  capabilities = capabilities,
+  -- capabilities = capabilities,
 })
