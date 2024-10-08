@@ -45,7 +45,7 @@ local lsp = require("lspconfig")
 
 lsp.denols.setup({
   on_attach = on_attach,
-  root_dir = lsp.util.root_pattern("deno.json"),
+  root_dir = lsp.util.root_pattern("deno.json*"),
   -- capabilities = capabilities,
   init_options = {
     lint = true,
