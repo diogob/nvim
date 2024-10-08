@@ -3,7 +3,7 @@ This nvim configuration does not use any plugin manager. I took some code and id
 ## Adding plugins
 
 ```sh
-git submodule add --name <plugin-name-no-extension> --depth 1 https://github.com/<plugin-path> pack/plugins/opt/<plugin-name-no-extension>
+./add-plugin.sh https://github.com/<plugin-path> <plugin-name-no-extension>
 ```
 
 Then edit [lua/plugins.lua](./lua/plugins.lua) and add the code to load:
@@ -20,7 +20,7 @@ If the deferred loading does not work try using `packadd` instead of `packadd_de
 ## Updating plugins 
 
 ```sh
-git submodule update --init --recursive --remote
+./update-plugins.sh
 ```
 
 ## Removing plugins
