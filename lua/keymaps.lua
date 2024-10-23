@@ -30,6 +30,7 @@ vim.schedule(function()
       { "<leader>d",     group = "Diagnostics" },
       { "<leader>dd",    "<cmd>Telescope diagnostics<cr>",                                                                    desc = "Document diagnostics" },
       { "<leader>dq",    "<cmd>copen<cr>",                                                                                    desc = "Quickfix" },
+      { "<leader>e",    "<cmd>Telescope emoji<cr>",                                                                           desc = "Insert emoji" },
       { "<leader>f",     group = "File" },
       { "<leader>fe",    "<cmd>e %:p:h<cr>",                                                                                  desc = "Explore" },
       { "<leader>ff",    "<cmd>Telescope find_files wrap_results=true<cr>",                                                   desc = "Find File" },

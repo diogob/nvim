@@ -262,6 +262,7 @@ vim.schedule(function()
   })
 
   require("telescope").load_extension("textcase")
+  require("telescope").load_extension("emoji")
 end)
 
 packadd_defer("grug-far")
@@ -325,6 +326,12 @@ end)
 -- Manipulate text case
 packadd("text-case")
 require("textcase").setup({})
+
+-- Select emojis
+packadd("emoji.nvim")
+require("emoji").setup({
+  plugin_path = vim.fn.expand("$HOME/.config/nvim/pack/plugins/opt/"),
+})
 
 -- Improve built-in nvim comments
 packadd_defer("ts-comments")

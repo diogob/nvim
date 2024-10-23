@@ -145,3 +145,6 @@
 [submodule "blink.cmp"]
 	path = pack/plugins/opt/blink.cmp
 	url = https://github.com/Saghen/blink.cmp.git
+[submodule "emoji.nvim"]
+	path = pack/plugins/opt/emoji.nvim
+	url = https://github.com/Allaman/emoji.nvim.git
