@@ -159,7 +159,7 @@ vim.schedule(function()
       -- will be removed in a future release, assuming themes add support
       use_nvim_cmp_as_default = true,
     },
-    -- trigger = { signature_help = { enabled = true } },
+     keymap = { preset = 'enter' },   -- trigger = { signature_help = { enabled = true } },
   })
 end)
 
