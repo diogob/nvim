@@ -47,16 +47,8 @@ require("nvim-treesitter.configs").setup({
 -- Source plugin and its configuration immediately
 -- @param plugin String with name of plugin as subdirectory in 'pack'
 local packadd = function(plugin)
-  -- Add plugin. Using `packadd!` during startup is better for initialization
-  -- order (see `:h load-plugins`). Use `packadd` otherwise to also force
-  -- 'plugin' scripts to be executed right away.
-  -- local command = vim.v.vim_did_enter == 1 and 'packadd' or 'packadd!'
   local command = "packadd"
   vim.cmd(string.format([[%s %s]], command, plugin))
-
-  -- Try execute its configuration
-  -- NOTE: configuration file should have the same name as plugin directory
-  pcall(require, "ec.configs." .. plugin)
 end
 
 -- Defer plugin source right after Vim is loaded
@@ -70,9 +62,14 @@ local packadd_defer = function(plugin)
     packadd(plugin)
   end)
 end
+local packadd_defer_and_call = function(plugin, init_function)
+  vim.schedule(function()
+    packadd(plugin)
+    init_function()
+  end)
+end
 
-packadd_defer("blink.cmp")
-vim.schedule(function()
+packadd_defer_and_call("blink.cmp", function()
   require("blink.cmp").setup({
     highlight = {
       -- sets the fallback highlight groups to nvim-cmp's highlight groups
@@ -84,8 +81,7 @@ vim.schedule(function()
   })
 end)
 
-packadd_defer("which-key")
-vim.schedule(function()
+packadd_defer_and_call("which-key", function()
   require("which-key").setup({
     win = {
       border = "single",
@@ -94,24 +90,23 @@ vim.schedule(function()
 end)
 
 -- From this line it should be safe to remove without startup errors (keymaps might still be bogus)
-packadd("oil")
-require("oil").setup()
+packadd_defer_and_call("oil", function()
+  require("oil").setup()
+end)
 
-packadd_defer("nvim-lightbulb")
-vim.schedule(function()
+packadd_defer_and_call("nvim-lightbulb", function()
   require("nvim-lightbulb").setup({
     autocmd = { enabled = true },
   })
 end)
 
-packadd_defer("auto-save")
-vim.schedule(function()
+packadd_defer_and_call("auto-save", function()
   require("auto-save").setup({
     debounce_delay = 1000,
   })
 end)
-packadd_defer("conform")
-vim.schedule(function()
+
+packadd_defer_and_call("conform", function()
   require("conform").setup({
     formatters_by_ft = {
       lua = { "stylua" },
@@ -138,23 +133,19 @@ vim.schedule(function()
   vim.api.nvim_set_keymap("n", "<leader>bf", "<cmd>Format<CR>", { desc = "Format buffer" })
 end)
 
-packadd_defer("nvim-notify")
-vim.schedule(function()
+packadd_defer_and_call("nvim-notify", function()
   vim.notify = require("notify")
 end)
 
-packadd_defer("ultimate-autopair")
-vim.schedule(function()
+packadd_defer_and_call("ultimate-autopair", function()
   require("ultimate-autopair").setup()
 end)
 
-packadd_defer("mini.splitjoin")
-vim.schedule(function()
+packadd_defer_and_call("mini.splitjoin", function()
   require("mini.splitjoin").setup()
 end)
 
-packadd_defer("nvim-surround")
-vim.schedule(function()
+packadd_defer_and_call("nvim-surround", function()
   require("nvim-surround").setup({
     keymaps = {
       insert = "<C-g>s",
@@ -172,8 +163,7 @@ vim.schedule(function()
   })
 end)
 
-packadd_defer("telescope")
-vim.schedule(function()
+packadd_defer_and_call("telescope", function()
   local telescope = require("telescope")
 
   telescope.setup({
@@ -230,8 +220,7 @@ vim.schedule(function()
   vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>Telescope emoji<CR>", { desc = "Insert emoji" })
 end)
 
-packadd_defer("grug-far")
-vim.schedule(function()
+packadd_defer_and_call("grug-far", function()
   require("grug-far").setup()
 
   vim.api.nvim_set_keymap("n", "<leader>so", "<cmd>GrugFar<CR>", { desc = "Search in project" })
@@ -243,8 +232,7 @@ vim.schedule(function()
   )
 end)
 
-packadd_defer("gitsigns")
-vim.schedule(function()
+packadd_defer_and_call("gitsigns", function()
   require("gitsigns").setup({
     sign_priority = 100,
     current_line_blame = true,
@@ -257,8 +245,7 @@ vim.schedule(function()
   vim.api.nvim_set_keymap("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", { desc = "Stage hunks" })
 end)
 
-packadd_defer("vim-fugitive")
-vim.schedule(function()
+packadd_defer_and_call("vim-fugitive", function()
   vim.api.nvim_set_keymap("n", "<leader>gB", "<cmd>Git blame<cr>", { desc = "Blame" })
   vim.api.nvim_set_keymap("n", "<leader>gF", "<cmd>0GcLog<cr>", { desc = "File history" })
   vim.api.nvim_set_keymap("n", "<leader>gH", "<cmd>Gclog<cr>", { desc = "Project history" })
@@ -269,8 +256,7 @@ end)
 
 packadd_defer("nvim-treesitter-context")
 -- Telekasten
-packadd_defer("telekasten")
-vim.schedule(function()
+packadd_defer_and_call("telekasten", function()
   require("telekasten").setup({
     home = vim.fn.expand("~/zettelkasten"),
   })
@@ -282,8 +268,7 @@ vim.schedule(function()
   vim.api.nvim_set_keymap("n", "<leader>nt", "<cmd>Telekasten toggle_todo<cr>", { desc = "Toggle TODO" })
 end)
 
-packadd_defer("flash")
-vim.schedule(function()
+packadd_defer_and_call("flash", function()
   require("flash").setup()
   vim.keymap.set("n", "gj", function()
     require("flash").jump({
@@ -297,8 +282,7 @@ vim.schedule(function()
 end)
 
 --test runner
-packadd_defer("neotest")
-vim.schedule(function()
+packadd_defer_and_call("neotest", function()
   packadd("neotest-vitest")
   packadd("neotest-haskell")
   require("neotest").setup({
@@ -343,14 +327,12 @@ vim.schedule(function()
 end)
 
 -- Improve built-in nvim comments
-packadd_defer("ts-comments")
-vim.schedule(function()
+packadd_defer_and_call("ts-comments", function()
   require("ts-comments").setup()
 end)
 
 -- Incremental LSP rename
-packadd_defer("inc-rename")
-vim.schedule(function()
+packadd_defer_and_call("inc-rename", function()
   require("inc_rename").setup()
   vim.keymap.set("n", "<leader>lR", function()
     return ":IncRename " .. vim.fn.expand("<cword>")
