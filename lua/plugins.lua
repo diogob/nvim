@@ -80,7 +80,7 @@ vim.schedule(function()
       -- will be removed in a future release, assuming themes add support
       use_nvim_cmp_as_default = true,
     },
-     keymap = { preset = 'enter' },   -- trigger = { signature_help = { enabled = true } },
+    keymap = { preset = "enter" }, -- trigger = { signature_help = { enabled = true } },
   })
 end)
 
@@ -98,6 +98,24 @@ packadd("oil")
 require("oil").setup()
 
 packadd_defer("nvim-lightbulb")
+vim.schedule(function()
+  vim.opt.updatetime = 200
+  -- Automatically update the lightbulb on CursorHold and CursorHoldI
+  vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+    callback = function()
+      require("nvim-lightbulb").update_lightbulb()
+    end,
+  })
+  -- Check for file changes on FocusGained, BufEnter, CursorHold, and CursorHoldI
+  vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+    callback = function()
+      if vim.fn.mode() ~= "c" then
+        vim.cmd("checktime")
+      end
+    end,
+  })
+end)
+
 packadd_defer("auto-save")
 vim.schedule(function()
   require("auto-save").setup({

@@ -24,17 +24,11 @@ sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=
 sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=
 sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=
 
-"
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
-
-" lightbulb configuration
-set updatetime=200
-autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()
-autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 
 " notification after file change
 autocmd FileChangedShellPost * lua vim.notify("File changed on disk. Buffer reloaded.")
