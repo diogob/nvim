@@ -99,20 +99,8 @@ require("oil").setup()
 
 packadd_defer("nvim-lightbulb")
 vim.schedule(function()
-  vim.opt.updatetime = 200
-  -- Automatically update the lightbulb on CursorHold and CursorHoldI
-  vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-    callback = function()
-      require("nvim-lightbulb").update_lightbulb()
-    end,
-  })
-  -- Check for file changes on FocusGained, BufEnter, CursorHold, and CursorHoldI
-  vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
-    callback = function()
-      if vim.fn.mode() ~= "c" then
-        vim.cmd("checktime")
-      end
-    end,
+  require("nvim-lightbulb").setup({
+    autocmd = { enabled = true }
   })
 end)
 
