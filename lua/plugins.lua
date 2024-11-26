@@ -100,7 +100,7 @@ require("oil").setup()
 packadd_defer("nvim-lightbulb")
 vim.schedule(function()
   require("nvim-lightbulb").setup({
-    autocmd = { enabled = true }
+    autocmd = { enabled = true },
   })
 end)
 
@@ -188,6 +188,23 @@ vim.schedule(function()
     },
   })
 
+  -- keymaps to open
+  vim.api.nvim_set_keymap("n", "<leader>:", "<cmd>Telescope command_history<CR>", { desc = "Command history" })
+  vim.api.nvim_set_keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", { desc = "Document diagnostics" })
+  vim.api.nvim_set_keymap(
+    "n",
+    "<leader>ff",
+    "<cmd>Telescope find_files wrap_results=true<CR>",
+    { desc = "Find file" }
+  )
+  vim.api.nvim_set_keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Recent files" })
+  vim.api.nvim_set_keymap("n", "<leader>fs", "<cmd>Telescope live_grep<CR>", { desc = "Search in files" })
+  vim.api.nvim_set_keymap("n", "<leader>gf", "<cmd>Telescope git_status<CR>", { desc = "Changed files" })
+  vim.api.nvim_set_keymap("n", "<leader>gf", "<cmd>Telescope git_status<CR>", { desc = "Changed files" })
+  vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>Telescope lsp_definitions<CR>", { desc = "Definition" })
+  vim.api.nvim_set_keymap("n", "<leader>lr", "<cmd>Telescope lsp_references<CR>", { desc = "All references" })
+  vim.api.nvim_set_keymap("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<CR>", { desc = "Search symbol" })
+
   -- Manipulate text case
   packadd("text-case")
   require("textcase").setup({})
@@ -198,10 +215,11 @@ vim.schedule(function()
   })
 
   require("telescope").load_extension("textcase")
-  vim.api.nvim_set_keymap('n', 'ga.', '<cmd>TextCaseOpenTelescope<CR>', { desc = "Telescope" })
-  vim.api.nvim_set_keymap('v', 'ga.', "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
+  vim.api.nvim_set_keymap("n", "ga.", "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
+  vim.api.nvim_set_keymap("v", "ga.", "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
 
   require("telescope").load_extension("emoji")
+  vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>Telescope emoji<CR>", { desc = "Insert emoji" })
 end)
 
 packadd_defer("grug-far")
@@ -215,8 +233,8 @@ vim.schedule(function()
     sign_priority = 100,
     current_line_blame = true,
   })
-  vim.api.nvim_set_keymap('n', ']h', "<cmd>Gitsigns next_hunk<cr>", { desc = "Next Git Hunk" })
-  vim.api.nvim_set_keymap('n', '[h', "<cmd>Gitsigns prev_hunk<cr>", { desc = "Previous Git Hunk" })
+  vim.api.nvim_set_keymap("n", "]h", "<cmd>Gitsigns next_hunk<cr>", { desc = "Next Git Hunk" })
+  vim.api.nvim_set_keymap("n", "[h", "<cmd>Gitsigns prev_hunk<cr>", { desc = "Previous Git Hunk" })
 end)
 packadd_defer("vim-fugitive")
 
