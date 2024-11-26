@@ -134,6 +134,8 @@ vim.schedule(function()
     end
     require("conform").format({ async = true, lsp_fallback = true, range = range })
   end, { range = true })
+
+  vim.api.nvim_set_keymap("n", "<leader>bf", "<cmd>Format<CR>", { desc = "Format buffer" })
 end)
 
 packadd_defer("nvim-notify")
@@ -204,6 +206,12 @@ vim.schedule(function()
   vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>Telescope lsp_definitions<CR>", { desc = "Definition" })
   vim.api.nvim_set_keymap("n", "<leader>lr", "<cmd>Telescope lsp_references<CR>", { desc = "All references" })
   vim.api.nvim_set_keymap("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<CR>", { desc = "Search symbol" })
+  vim.api.nvim_set_keymap(
+    "n",
+    "<leader>bs",
+    "<cmd>lua require('custom/telescope').buffers_with_delete()<CR>",
+    { desc = "Buffers" }
+  )
 
   -- Manipulate text case
   packadd("text-case")
@@ -225,6 +233,11 @@ end)
 packadd_defer("grug-far")
 vim.schedule(function()
   require("grug-far").setup()
+
+  vim.api.nvim_set_keymap("n", "<leader>so", "<cmd>GrugFar<CR>", { desc = "Search in project" })
+  vim.api.nvim_set_keymap("n", "<leader>sw",
+    "<cmd>lua require('grug-far').grug_far({ prefills = { search = vim.fn.expand(\"<cword>\") } })<CR>",
+    { desc = "Search word" })
 end)
 
 packadd_defer("gitsigns")
@@ -235,8 +248,21 @@ vim.schedule(function()
   })
   vim.api.nvim_set_keymap("n", "]h", "<cmd>Gitsigns next_hunk<cr>", { desc = "Next Git Hunk" })
   vim.api.nvim_set_keymap("n", "[h", "<cmd>Gitsigns prev_hunk<cr>", { desc = "Previous Git Hunk" })
+  vim.api.nvim_set_keymap("n", "<leader>gd", "<cmd>Gitsigns preview_hunk<cr>", { desc = "Hunk diff" })
+  vim.api.nvim_set_keymap("n", "<leader>gh", "<cmd>Gitsigns setqflist<cr>", { desc = "List hunks" })
+  vim.api.nvim_set_keymap("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", { desc = "Reset hunks" })
+  vim.api.nvim_set_keymap("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", { desc = "Stage hunks" })
 end)
+
 packadd_defer("vim-fugitive")
+vim.schedule(function()
+  vim.api.nvim_set_keymap("n", "<leader>gB", "<cmd>Git blame<cr>", { desc = "Blame" })
+  vim.api.nvim_set_keymap("n", "<leader>gF", "<cmd>0GcLog<cr>", { desc = "File history" })
+  vim.api.nvim_set_keymap("n", "<leader>gH", "<cmd>Gclog<cr>", { desc = "Project history" })
+  vim.api.nvim_set_keymap("n", "<leader>gR", "<cmd>Gread<cr>", { desc = "Reset buffer" })
+  vim.api.nvim_set_keymap("n", "<leader>gS", "<cmd>Gwrite<cr>", { desc = "Stage buffer" })
+  vim.api.nvim_set_keymap("n", "<leader>gc", "<cmd>Git commit<cr>", { desc = "Commit" })
+end)
 
 packadd_defer("nvim-treesitter-context")
 -- Telekasten
@@ -286,6 +312,15 @@ vim.schedule(function()
       }),
     },
   })
+
+
+  vim.api.nvim_set_keymap("n", "<leader>tf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
+    { desc = "Run file tests" })
+  vim.api.nvim_set_keymap("n", "<leader>to", "<cmd>lua require('neotest').output.open({ enter = true })<cr>",
+    { desc = "Test output" })
+  vim.api.nvim_set_keymap("n", "<leader>ts", "<cmd>lua require('neotest').summary.toggle(); vim.cmd('w')<cr>",
+    { desc = "Test summary" })
+  vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>lua require('neotest').run.run()<cr>", { desc = "Run nearest test" })
 end)
 
 -- Improve built-in nvim comments
