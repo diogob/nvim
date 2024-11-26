@@ -64,24 +64,7 @@ endfunction
 onoremap A :<C-U>call TextObjectAll()<CR>
 nnoremap <silent> <Plug>(RestoreView) :call winrestview(g:restore_position)<CR>
 
-" replace from selection
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
 " Add underline for treesitter context so we do not depend too much on the
 " colorscheme 
 hi TreesitterContextBottom gui=underline guisp=Grey
 
-" keep line centered when navigatin in normal mode
-nnoremap <Up> kzz
-nnoremap <Down> jzz
-
-" Move lines around
-nnoremap <A-Down> :m .+1<CR>==
-nnoremap <A-Up> :m .-2<CR>==
-inoremap <A-Down> <Esc>:m .+1<CR>==gi
-inoremap <A-Up> <Esc>:m .-2<CR>==gi
-vnoremap <A-Down> :m '>+1<CR>gv=gv
-vnoremap <A-Up> :m '<-2<CR>gv=gv
-
-nnoremap g<Right> :diffget //2<CR>==
-nnoremap g<Left> :diffget //3<CR>==

@@ -12,6 +12,23 @@ vim.api.nvim_set_keymap('n', '[h', "<cmd>Gitsigns prev_hunk<cr>", { desc = "Prev
 vim.api.nvim_set_keymap('n', ']q', "<cmd>cnext<cr>", { desc = "Next quickfix" })
 vim.api.nvim_set_keymap('n', '[q', "<cmd>cprevious<cr>", { desc = "Previous quickfix" })
 
+vim.api.nvim_set_keymap('v', '<C-r>', "\"hy:%s/<C-r>h//gc<left><left><left>", { desc = "Replace from selection" })
+
+-- keep line centered when navigatin in normal mode
+vim.api.nvim_set_keymap('n', '<Up>', "kzz", {})
+vim.api.nvim_set_keymap('n', '<Down>', "jzz", {})
+
+-- Move lines around
+vim.api.nvim_set_keymap('n', '<A-Down>', "<cmd>m .+1<CR>==", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-Up>', "<cmd>m .-2<CR>==", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-Down>', "<Esc><cmd>m .+1<CR>==gi", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<A-Up>', "<Esc><cmd>m .-2<CR>==gi", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<A-Down>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<A-Up>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', 'g<Right>', ":diffget //2<CR>==", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'g<Left>', ":diffget //3<CR>==", { noremap = true, silent = true })
+
 vim.schedule(function()
   local wk = require("which-key")
 
