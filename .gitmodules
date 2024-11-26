@@ -13,9 +13,6 @@
 [submodule "nvim-code-action-menu"]
 	path = pack/plugins/opt/nvim-code-action-menu
 	url = https://github.com/weilbith/nvim-code-action-menu
-[submodule "FixCursorHold"]
-	path = pack/plugins/start/FixCursorHold
-	url = https://github.com/antoinemadec/FixCursorHold.nvim
 [submodule "nvim-lightbulb"]
 	path = pack/plugins/opt/nvim-lightbulb
 	url = https://github.com/kosayoda/nvim-lightbulb
@@ -136,9 +133,6 @@
 [submodule "ts-comments"]
 	path = pack/plugins/opt/ts-comments
 	url = https://github.com/folke/ts-comments.nvim.git
-[submodule "material"]
-	path = pack/plugins/start/material
-	url = https://github.com/marko-cerovac/material.nvim.git
 [submodule "inc-rename"]
 	path = pack/plugins/opt/inc-rename
 	url = https://github.com/smjonas/inc-rename.nvim.git

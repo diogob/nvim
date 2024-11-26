@@ -339,18 +339,6 @@ vim.schedule(function()
   require("ts-comments").setup()
 end)
 
-require("material").setup({
-  plugins = {
-    "flash",
-    "gitsigns",
-    "neotest",
-    "nvim-cmp",
-    "telescope",
-    "nvim-notify",
-    "which-key",
-  },
-})
-
 -- Incremental LSP rename
 packadd_defer("inc-rename")
 vim.schedule(function()
