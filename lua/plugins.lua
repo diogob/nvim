@@ -235,9 +235,12 @@ vim.schedule(function()
   require("grug-far").setup()
 
   vim.api.nvim_set_keymap("n", "<leader>so", "<cmd>GrugFar<CR>", { desc = "Search in project" })
-  vim.api.nvim_set_keymap("n", "<leader>sw",
+  vim.api.nvim_set_keymap(
+    "n",
+    "<leader>sw",
     "<cmd>lua require('grug-far').grug_far({ prefills = { search = vim.fn.expand(\"<cword>\") } })<CR>",
-    { desc = "Search word" })
+    { desc = "Search word" }
+  )
 end)
 
 packadd_defer("gitsigns")
@@ -313,14 +316,30 @@ vim.schedule(function()
     },
   })
 
-
-  vim.api.nvim_set_keymap("n", "<leader>tf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
-    { desc = "Run file tests" })
-  vim.api.nvim_set_keymap("n", "<leader>to", "<cmd>lua require('neotest').output.open({ enter = true })<cr>",
-    { desc = "Test output" })
-  vim.api.nvim_set_keymap("n", "<leader>ts", "<cmd>lua require('neotest').summary.toggle(); vim.cmd('w')<cr>",
-    { desc = "Test summary" })
-  vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>lua require('neotest').run.run()<cr>", { desc = "Run nearest test" })
+  vim.api.nvim_set_keymap(
+    "n",
+    "<leader>tf",
+    "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
+    { desc = "Run file tests" }
+  )
+  vim.api.nvim_set_keymap(
+    "n",
+    "<leader>to",
+    "<cmd>lua require('neotest').output.open({ enter = true })<cr>",
+    { desc = "Test output" }
+  )
+  vim.api.nvim_set_keymap(
+    "n",
+    "<leader>ts",
+    "<cmd>lua require('neotest').summary.toggle(); vim.cmd('w')<cr>",
+    { desc = "Test summary" }
+  )
+  vim.api.nvim_set_keymap(
+    "n",
+    "<leader>tt",
+    "<cmd>lua require('neotest').run.run()<cr>",
+    { desc = "Run nearest test" }
+  )
 end)
 
 -- Improve built-in nvim comments
