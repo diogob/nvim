@@ -14,8 +14,8 @@ vim.api.nvim_set_keymap('n', '[q', "<cmd>cprevious<cr>", { desc = "Previous quic
 vim.api.nvim_set_keymap('v', '<C-r>', "\"hy:%s/<C-r>h//gc<left><left><left>", { desc = "Replace from selection" })
 
 -- keep line centered when navigatin in normal mode
-vim.api.nvim_set_keymap('n', '<Up>', "kzz", {})
-vim.api.nvim_set_keymap('n', '<Down>', "jzz", {})
+vim.api.nvim_set_keymap('n', '<Up>', "kzz", { noremap = true })
+vim.api.nvim_set_keymap('n', '<Down>', "jzz", { noremap = true })
 
 -- Move lines around
 vim.api.nvim_set_keymap('n', '<A-Down>', "<cmd>m .+1<CR>==", { noremap = true, silent = true })
