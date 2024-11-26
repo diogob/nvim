@@ -3,15 +3,14 @@ vim.g.mapleader = ' '
 vim.keymap.set("n", "[c", function()
   require("treesitter-context").go_to_context()
 end, { silent = true, desc = "Previous context" })
-vim.api.nvim_set_keymap('n', 'ga.', '<cmd>TextCaseOpenTelescope<CR>', { desc = "Telescope" })
-vim.api.nvim_set_keymap('v', 'ga.', "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
+
+-- code navigation
 vim.api.nvim_set_keymap('n', ']d', "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next diagnostic" })
 vim.api.nvim_set_keymap('n', '[d', "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Previous diagnostic" })
-vim.api.nvim_set_keymap('n', ']h', "<cmd>Gitsigns next_hunk<cr>", { desc = "Next Git Hunk" })
-vim.api.nvim_set_keymap('n', '[h', "<cmd>Gitsigns prev_hunk<cr>", { desc = "Previous Git Hunk" })
 vim.api.nvim_set_keymap('n', ']q', "<cmd>cnext<cr>", { desc = "Next quickfix" })
 vim.api.nvim_set_keymap('n', '[q', "<cmd>cprevious<cr>", { desc = "Previous quickfix" })
 
+-- replace selection
 vim.api.nvim_set_keymap('v', '<C-r>', "\"hy:%s/<C-r>h//gc<left><left><left>", { desc = "Replace from selection" })
 
 -- keep line centered when navigatin in normal mode
@@ -26,6 +25,7 @@ vim.api.nvim_set_keymap('i', '<A-Up>', "<Esc><cmd>m .-2<CR>==gi", { noremap = tr
 vim.api.nvim_set_keymap('v', '<A-Down>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<A-Up>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
+-- 3-way diff helpers
 vim.api.nvim_set_keymap('n', 'g<Right>', ":diffget //2<CR>==", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'g<Left>', ":diffget //3<CR>==", { noremap = true, silent = true })
 
@@ -47,7 +47,7 @@ vim.schedule(function()
       { "<leader>d",     group = "Diagnostics" },
       { "<leader>dd",    "<cmd>Telescope diagnostics<cr>",                                                                    desc = "Document diagnostics" },
       { "<leader>dq",    "<cmd>copen<cr>",                                                                                    desc = "Quickfix" },
-      { "<leader>e",    "<cmd>Telescope emoji<cr>",                                                                           desc = "Insert emoji" },
+      { "<leader>e",     "<cmd>Telescope emoji<cr>",                                                                          desc = "Insert emoji" },
       { "<leader>f",     group = "File" },
       { "<leader>fe",    "<cmd>e %:p:h<cr>",                                                                                  desc = "Explore" },
       { "<leader>ff",    "<cmd>Telescope find_files wrap_results=true<cr>",                                                   desc = "Find File" },
@@ -78,11 +78,6 @@ vim.schedule(function()
       { "<leader>ls",    "<cmd>Telescope lsp_document_symbols<cr>",                                                           desc = "Search symbols" },
       { "<leader>lv",    "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>",                                                    desc = "Definition in split" },
       { "<leader>n",     group = "Notes" },
-      { "<leader>nf",    "<cmd>Telekasten find_notes<cr>",                                                                    desc = "Find notes" },
-      { "<leader>nl",    "<cmd>Telekasten insert_link<cr>",                                                                   desc = "Insert link" },
-      { "<leader>nn",    "<cmd>Telekasten new_note<cr>",                                                                      desc = "New note" },
-      { "<leader>ns",    "<cmd>Telekasten search_notes<cr>",                                                                  desc = "Search notes" },
-      { "<leader>nt",    "<cmd>Telekasten toggle_todo<cr>",                                                                   desc = "Toggle TODO" },
       { "<leader>o",     "<cmd>wincmd o<cr>",                                                                                 desc = "Close other windows" },
       { "<leader>q",     "<cmd>qall!<cr>",                                                                                    desc = "Quit" },
       { "<leader>r",     "<cmd>e!<cr>",                                                                                       desc = "Reload buffer" },

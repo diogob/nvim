@@ -12,9 +12,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set("n", "<leader>lS", vim.lsp.buf.signature_help, apply_defaults({ desc = "Signature help" }, bufopts))
   vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, apply_defaults({ desc = "Signature help" }, bufopts))
   vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, apply_defaults({ desc = "Format" }, bufopts))
-  vim.keymap.set("n", "<leader>lR", function()
-    return ":IncRename " .. vim.fn.expand("<cword>")
-  end, apply_defaults({ expr = true, desc = "Rename" }, bufopts))
 end
 
 local lsp = require("lspconfig")

@@ -200,7 +200,19 @@ vim.schedule(function()
     },
   })
 
+  -- Manipulate text case
+  packadd("text-case")
+  require("textcase").setup({})
+  -- Select emojis
+  packadd("emoji.nvim")
+  require("emoji").setup({
+    plugin_path = vim.fn.expand("$HOME/.config/nvim/pack/plugins/opt/"),
+  })
+
   require("telescope").load_extension("textcase")
+  vim.api.nvim_set_keymap('n', 'ga.', '<cmd>TextCaseOpenTelescope<CR>', { desc = "Telescope" })
+  vim.api.nvim_set_keymap('v', 'ga.', "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
+
   require("telescope").load_extension("emoji")
 end)
 
@@ -215,6 +227,8 @@ vim.schedule(function()
     sign_priority = 100,
     current_line_blame = true,
   })
+  vim.api.nvim_set_keymap('n', ']h', "<cmd>Gitsigns next_hunk<cr>", { desc = "Next Git Hunk" })
+  vim.api.nvim_set_keymap('n', '[h', "<cmd>Gitsigns prev_hunk<cr>", { desc = "Previous Git Hunk" })
 end)
 packadd_defer("vim-fugitive")
 
@@ -225,6 +239,12 @@ vim.schedule(function()
   require("telekasten").setup({
     home = vim.fn.expand("~/zettelkasten"),
   })
+
+  vim.api.nvim_set_keymap("n", "<leader>nf", "<cmd>Telekasten find_notes<cr>", { desc = "Find notes" })
+  vim.api.nvim_set_keymap("n", "<leader>nl", "<cmd>Telekasten insert_link<cr>", { desc = "Insert link" })
+  vim.api.nvim_set_keymap("n", "<leader>nn", "<cmd>Telekasten new_note<cr>", { desc = "New note" })
+  vim.api.nvim_set_keymap("n", "<leader>ns", "<cmd>Telekasten search_notes<cr>", { desc = "Search notes" })
+  vim.api.nvim_set_keymap("n", "<leader>nt", "<cmd>Telekasten toggle_todo<cr>", { desc = "Toggle TODO" })
 end)
 
 packadd_defer("flash")
@@ -262,16 +282,6 @@ vim.schedule(function()
   })
 end)
 
--- Manipulate text case
-packadd("text-case")
-require("textcase").setup({})
-
--- Select emojis
-packadd("emoji.nvim")
-require("emoji").setup({
-  plugin_path = vim.fn.expand("$HOME/.config/nvim/pack/plugins/opt/"),
-})
-
 -- Improve built-in nvim comments
 packadd_defer("ts-comments")
 vim.schedule(function()
@@ -282,4 +292,7 @@ end)
 packadd_defer("inc-rename")
 vim.schedule(function()
   require("inc_rename").setup()
+  vim.keymap.set("n", "<leader>lR", function()
+    return ":IncRename " .. vim.fn.expand("<cword>")
+  end, { expr = true, desc = "Rename" }, { noremap = true, silent = true })
 end)
