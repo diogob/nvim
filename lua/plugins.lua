@@ -53,10 +53,13 @@ end
 
 -- Defer plugin source right after Vim is loaded
 local packadd_defer = function(args)
-	setmetatable(args, { __index = { init_function = function() end } })
+	setmetatable(args, { __index = { init_function = function() end, keymaps = {} } })
 	vim.schedule(function()
 		packadd(args.plugin)
 		args.init_function()
+		for _, keymap in pairs(args.keymaps) do
+			vim.api.nvim_set_keymap(keymap.mode or "n", keymap.keys, keymap.command, keymap.options or {})
+		end
 	end)
 end
 
@@ -246,8 +249,8 @@ packadd_defer({
 		vim.api.nvim_set_keymap("v", "ga.", "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
 
 		require("telescope").load_extension("emoji")
-		vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>Telescope emoji<CR>", { desc = "Insert emoji" })
 	end,
+	keymaps = { { keys = "<leader>e", command = "<cmd>Telescope emoji<CR>", options = { desc = "Insert emoji" } } },
 })
 
 packadd_defer({
