@@ -394,3 +394,11 @@ packadd_defer({
 		end, { expr = true, desc = "Rename" }, { noremap = true, silent = true })
 	end,
 })
+
+-- file tree
+packadd_defer({
+  plugin = "neo-tree",
+  init_function = function()
+    packadd('nui')
+  end
+})

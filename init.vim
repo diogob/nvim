@@ -44,6 +44,8 @@ let g:netrw_fastbrowse=0
 " colorscheme 
 hi TreesitterContextBottom gui=underline guisp=Grey
 
+autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=300}
+
 lua << EOF
 require("plugins")
 require("lsp")

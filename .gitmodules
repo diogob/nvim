@@ -142,3 +142,9 @@
 [submodule "emoji.nvim"]
 	path = pack/plugins/opt/emoji.nvim
 	url = https://github.com/Allaman/emoji.nvim.git
+[submodule "neo-tree"]
+	path = pack/plugins/opt/neo-tree
+	url = https://github.com/nvim-neo-tree/neo-tree.nvim.git
+[submodule "nui"]
+	path = pack/plugins/opt/nui
+	url = https://github.com/MunifTanjim/nui.nvim.git
