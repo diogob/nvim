@@ -33,6 +33,7 @@ vim.schedule(function()
 	local wk = require("which-key")
 
 	wk.add({
+		{ "<leader><leader>", "<Cmd>lua require('custom/telescope').buffers_with_delete()<CR>", desc = "List buffers" },
 		{ "<leader><tab>", "<cmd>e#<cr>", desc = "Previous buffer" },
 		{ "<leader>b", group = "Buffer" },
 		{ "<leader>bC", "<cmd>%bd! | e# | bd#<cr>", desc = "Close others" },
