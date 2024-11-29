@@ -64,6 +64,15 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 vim.g.netrw_fastbrowse = 0
 
+-- Highlight when yanking
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 -- Add underline for Treesitter context
 vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true, sp = "grey" })
 
