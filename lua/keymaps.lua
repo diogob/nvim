@@ -57,6 +57,5 @@ vim.schedule(function()
 		{ "<leader>s", group = "Search & Replace" },
 		{ "<leader>t", group = "Tests" },
 		{ "<leader>x", "<cmd>xall!<cr>", desc = "Save and quit" },
-	}
-)
+	})
 end)
