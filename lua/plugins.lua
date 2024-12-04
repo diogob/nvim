@@ -416,3 +416,31 @@ packadd_defer({
 	end,
 	keymaps = { { keys = "\\", command = "<cmd>Neotree toggle<cr>", options = { desc = "Toggle Neotree" } } },
 })
+
+packadd_defer({
+	plugin = "codecompanion.nvim",
+	init_function = function()
+		require("codecompanion").setup({
+			adapters = {},
+      strategies = {
+        chat = {
+			    adapter = "ollama",
+        },
+        inline = {
+          adapter = "ollama"
+        },
+        agent = {
+          adapter = "ollama"
+        },
+        cmd = {
+          adapter = "ollama"
+        }
+      },
+			display = {
+			  chat = {
+			    show_settings = true
+			  }
+			},
+		})
+	end,
+})
