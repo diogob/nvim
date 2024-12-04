@@ -148,3 +148,6 @@
 [submodule "nui"]
 	path = pack/plugins/opt/nui
 	url = https://github.com/MunifTanjim/nui.nvim.git
+[submodule "codecompanion.nvim"]
+	path = pack/plugins/opt/codecompanion.nvim
+	url = https://github.com/olimorris/codecompanion.nvim.git

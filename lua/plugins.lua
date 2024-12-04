@@ -249,6 +249,31 @@ packadd_defer({
 		vim.api.nvim_set_keymap("v", "ga.", "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
 
 		require("telescope").load_extension("emoji")
+
+		packadd("codecompanion.nvim")
+		require("codecompanion").setup({
+			adapters = {},
+			strategies = {
+				chat = {
+					adapter = "ollama",
+				},
+				inline = {
+					adapter = "ollama",
+				},
+				agent = {
+					adapter = "ollama",
+				},
+				cmd = {
+					adapter = "ollama",
+				},
+			},
+			display = {
+				chat = {
+					show_settings = true,
+				},
+			},
+		})
+    require("telescope").load_extension("codecompanion")
 	end,
 	keymaps = { { keys = "<leader>e", command = "<cmd>Telescope emoji<CR>", options = { desc = "Insert emoji" } } },
 })
