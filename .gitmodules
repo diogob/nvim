@@ -31,9 +31,6 @@
 [submodule "lualine"]
 	path = pack/plugins/start/lualine
 	url = https://github.com/nvim-lualine/lualine.nvim
-[submodule "telescope"]
-	path = pack/plugins/opt/telescope
-	url = https://github.com/nvim-telescope/telescope.nvim
 [submodule "which-key"]
 	path = pack/plugins/opt/which-key
 	url = https://github.com/folke/which-key.nvim
@@ -68,9 +65,6 @@
 [submodule "cmp_luasnip"]
 	path = pack/plugins/opt/cmp_luasnip
 	url = https://github.com/saadparwaiz1/cmp_luasnip
-[submodule "telekasten"]
-	path = pack/plugins/opt/telekasten
-	url = https://github.com/renerocksai/telekasten.nvim.git
 [submodule "vim-fugitive"]
 	path = pack/plugins/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
