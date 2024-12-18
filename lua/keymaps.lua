@@ -33,7 +33,6 @@ vim.schedule(function()
 	local wk = require("which-key")
 
 	wk.add({
-		{ "<leader><leader>", "<Cmd>lua require('custom/telescope').buffers_with_delete()<CR>", desc = "List buffers" },
 		{ "<leader><tab>", "<cmd>e#<cr>", desc = "Previous buffer" },
 		{ "<leader>b", group = "Buffer" },
 		{ "<leader>bC", "<cmd>%bd! | e# | bd#<cr>", desc = "Close others" },
@@ -49,7 +48,6 @@ vim.schedule(function()
 		{ "<leader>gl", group = "List" },
 		{ "<leader>h", "<cmd>noh<cr>", desc = "Highlight" },
 		{ "<leader>l", group = "LSP" },
-		{ "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Actions" },
 		{ "<leader>lv", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", desc = "Definition in split" },
 		{ "<leader>n", group = "Notes" },
 		{ "<leader>o", "<cmd>wincmd o<cr>", desc = "Close other windows" },

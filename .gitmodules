@@ -148,3 +148,6 @@
 [submodule "nui"]
 	path = pack/plugins/opt/nui
 	url = https://github.com/MunifTanjim/nui.nvim.git
+[submodule "fzf-lua"]
+	path = pack/plugins/opt/fzf-lua
+	url = https://github.com/ibhagwan/fzf-lua.git
