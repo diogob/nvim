@@ -8,6 +8,10 @@ require("lualine").setup({
 require("mason").setup()
 require("nvim-web-devicons").setup()
 require("nvim-treesitter.configs").setup({
+	auto_install = false,
+	ignore_install = {},
+	sync_install = true,
+	modules = {},
 	ensure_installed = {
 		"lua",
 		"vim",
@@ -123,10 +127,10 @@ packadd_defer({
 			formatters_by_ft = {
 				lua = { "stylua" },
 				-- Use a sub-list to run only the first available formatter
-				javascript = { { "prettierd", "prettier" } },
-				typescript = { { "prettierd", "prettier" } },
-				typescriptreact = { { "prettierd", "prettier" } },
-				ruby = { { "rubocop" } },
+				javascript = { "prettierd" },
+				typescript = { "prettierd" },
+				typescriptreact = { "prettierd" },
+				ruby = { "rubocop" },
 			},
 		})
 		vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
@@ -189,68 +193,35 @@ packadd_defer({
 })
 
 packadd_defer({
-	plugin = "telescope",
-	init_function = function()
-		local telescope = require("telescope")
-
-		telescope.setup({
-			defaults = {
-				prompt_prefix = " 🔍 ",
-				selection_caret = "❯ ",
-				layout_strategy = "vertical",
-				layout_config = {
-					vertical = {
-						prompt_position = "top",
-						mirror = true,
-					},
-				},
-			},
-		})
-
+	plugin = "fzf-lua",
+	init_function = function() end,
+	keymaps = {
 		-- keymaps to open
-		vim.api.nvim_set_keymap("n", "<leader>:", "<cmd>Telescope command_history<CR>", { desc = "Command history" })
-		vim.api.nvim_set_keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", { desc = "Document diagnostics" })
-		vim.api.nvim_set_keymap(
-			"n",
-			"<leader>ff",
-			"<cmd>Telescope find_files wrap_results=true<CR>",
-			{ desc = "Find file" }
-		)
-		vim.api.nvim_set_keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Recent files" })
-		vim.api.nvim_set_keymap("n", "<leader>fs", "<cmd>Telescope live_grep<CR>", { desc = "Search in files" })
-		vim.api.nvim_set_keymap("n", "<leader>gf", "<cmd>Telescope git_status<CR>", { desc = "Changed files" })
-		vim.api.nvim_set_keymap("n", "<leader>gf", "<cmd>Telescope git_status<CR>", { desc = "Changed files" })
-		vim.api.nvim_set_keymap("n", "<leader>ld", "<cmd>Telescope lsp_definitions<CR>", { desc = "Definition" })
-		vim.api.nvim_set_keymap("n", "<leader>lr", "<cmd>Telescope lsp_references<CR>", { desc = "All references" })
-		vim.api.nvim_set_keymap(
-			"n",
-			"<leader>ls",
-			"<cmd>Telescope lsp_document_symbols<CR>",
-			{ desc = "Search symbol" }
-		)
-		vim.api.nvim_set_keymap(
-			"n",
-			"<leader>bs",
-			"<cmd>lua require('custom/telescope').buffers_with_delete()<CR>",
-			{ desc = "Buffers" }
-		)
-
-		-- Manipulate text case
-		packadd("text-case")
-		require("textcase").setup({})
-		-- Select emojis
-		packadd("emoji.nvim")
-		require("emoji").setup({
-			plugin_path = vim.fn.expand("$HOME/.config/nvim/pack/plugins/opt/"),
-		})
-
-		require("telescope").load_extension("textcase")
-		vim.api.nvim_set_keymap("n", "ga.", "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
-		vim.api.nvim_set_keymap("v", "ga.", "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
-
-		require("telescope").load_extension("emoji")
-	end,
-	keymaps = { { keys = "<leader>e", command = "<cmd>Telescope emoji<CR>", options = { desc = "Insert emoji" } } },
+		{ keys = "<leader>:", command = "<cmd>FzfLua command_history<CR>", options = { desc = "Command history" } },
+		{
+			keys = "<leader>dd",
+			command = "<cmd>FzfLua diagnostics_document<CR>",
+			options = { desc = "Document diagnostics" },
+		},
+		{
+			keys = "<leader>ff",
+			command = "<cmd>FzfLua files<CR>",
+			options = { desc = "Find file" },
+		},
+		{ keys = "<leader>fr", command = "<cmd>FzfLua oldfiles<CR>", options = { desc = "Recent files" } },
+		{ keys = "<leader>fs", command = "<cmd>FzfLua grep_visual<CR>", options = { desc = "Search in files" } },
+		{ keys = "<leader><leader>", command = "<cmd>FzfLua buffers<CR>", options = { desc = "Buffers" } },
+		{ keys = "<leader>gf", command = "<cmd>FzfLua git_status<CR>", options = { desc = "Changed files" } },
+		{ keys = "<leader>gf", command = "<cmd>FzfLua git_status<CR>", options = { desc = "Changed files" } },
+		{ keys = "<leader>ld", command = "<cmd>FzfLua lsp_definitions<CR>", options = { desc = "Definition" } },
+		{ keys = "<leader>lr", command = "<cmd>FzfLua lsp_references<CR>", options = { desc = "All references" } },
+		{ keys = "<leader>la", command = "<cmd>FzfLua lsp_code_actions<CR>", options = { desc = "Code actions" } },
+		{
+			keys = "<leader>ls",
+			command = "<cmd>FzfLua lsp_document_symbols<CR>",
+			options = { desc = "Search symbol" },
+		},
+	},
 })
 
 packadd_defer({
@@ -293,22 +264,6 @@ packadd_defer({
 		vim.api.nvim_set_keymap("n", "<leader>gR", "<cmd>Gread<cr>", { desc = "Reset buffer" })
 		vim.api.nvim_set_keymap("n", "<leader>gS", "<cmd>Gwrite<cr>", { desc = "Stage buffer" })
 		vim.api.nvim_set_keymap("n", "<leader>gc", "<cmd>Git commit<cr>", { desc = "Commit" })
-	end,
-})
-
--- Telekasten
-packadd_defer({
-	plugin = "telekasten",
-	init_function = function()
-		require("telekasten").setup({
-			home = vim.fn.expand("~/zettelkasten"),
-		})
-
-		vim.api.nvim_set_keymap("n", "<leader>nf", "<cmd>Telekasten find_notes<cr>", { desc = "Find notes" })
-		vim.api.nvim_set_keymap("n", "<leader>nl", "<cmd>Telekasten insert_link<cr>", { desc = "Insert link" })
-		vim.api.nvim_set_keymap("n", "<leader>nn", "<cmd>Telekasten new_note<cr>", { desc = "New note" })
-		vim.api.nvim_set_keymap("n", "<leader>ns", "<cmd>Telekasten search_notes<cr>", { desc = "Search notes" })
-		vim.api.nvim_set_keymap("n", "<leader>nt", "<cmd>Telekasten toggle_todo<cr>", { desc = "Toggle TODO" })
 	end,
 })
 
@@ -388,31 +343,9 @@ packadd_defer({
 packadd_defer({
 	plugin = "inc-rename",
 	init_function = function()
-		require("inc_rename").setup()
+		require("inc_rename").setup({})
 		vim.keymap.set("n", "<leader>lR", function()
 			return ":IncRename " .. vim.fn.expand("<cword>")
-		end, { expr = true, desc = "Rename" }, { noremap = true, silent = true })
+		end, { expr = true, desc = "Rename" })
 	end,
-})
-
--- file tree
-packadd_defer({
-	plugin = "neo-tree",
-	init_function = function()
-		packadd("nui")
-		require("neo-tree").setup({
-			window = {
-				position = "right",
-			},
-			filesystem = {
-				filtered_items = {
-					visible = true,
-					hide_dot_files = false,
-					hide_gitignored = false,
-					hide_hidden = false,
-				},
-			},
-		})
-	end,
-	keymaps = { { keys = "\\", command = "<cmd>Neotree toggle<cr>", options = { desc = "Toggle Neotree" } } },
 })
