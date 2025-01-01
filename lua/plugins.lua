@@ -38,10 +38,10 @@ require("nvim-treesitter.configs").setup({
 	incremental_selection = {
 		enable = true,
 		keymaps = {
-			init_selection = "<C-Up>", -- set to `false` to disable one of the mappings
-			node_incremental = "<C-Up>",
+			init_selection = "<C-S-Up>", -- set to `false` to disable one of the mappings
+			node_incremental = "<C-S-Up>",
 			scope_incremental = "grc",
-			node_decremental = "<C-Down>",
+			node_decremental = "<C-S-Down>",
 		},
 	},
 })
@@ -131,8 +131,12 @@ packadd_defer({
 				typescript = { "prettierd" },
 				typescriptreact = { "prettierd" },
 				ruby = { "rubocop" },
+				sql = { "pg_format" },
 			},
 		})
+    require("conform").formatters.pg_format = {
+      prepend_args = { "-u", "1", "-U", "1", "-f", "1", "-k", "-g" },
+    }
 		vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 		vim.api.nvim_create_user_command("Format", function(args)
 			local range = nil
@@ -281,6 +285,22 @@ packadd_defer({
 		end, { desc = "Jump" })
 		require("flash").toggle(false)
 	end,
+})
+
+packadd_defer({
+	plugin = "treewalker.nvim",
+	init_function = function()
+		require("treewalker").setup({
+			highlight = true, -- Whether to briefly highlight the node after jumping to it
+			highlight_duration = 250, -- Ho
+		})
+	end,
+	keymaps = {
+			{ keys = "<C-Down>", command = ":Treewalker Down<CR>", { noremap = true } },
+			{ keys = "<C-Up>", command = ":Treewalker Up<CR>", { noremap = true } },
+			{ keys = "<C-Left>", command = ":Treewalker Left<CR>", { noremap = true } },
+			{ keys = "<C-Right>", command = ":Treewalker Right<CR>", { noremap = true } },
+	},
 })
 
 --test runner

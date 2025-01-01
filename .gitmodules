@@ -142,3 +142,6 @@
 [submodule "fzf-lua"]
 	path = pack/plugins/opt/fzf-lua
 	url = https://github.com/ibhagwan/fzf-lua.git
+[submodule "treewalker.nvim"]
+	path = pack/plugins/opt/treewalker.nvim
+	url = https://github.com/aaronik/treewalker.nvim.git

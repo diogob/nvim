@@ -46,6 +46,16 @@ vim.api.nvim_create_autocmd("FileChangedShellPost", {
   end,
 })
 
+-- Configure spacing for SQL files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "sql" },
+  callback = function()
+    vim.o.tabstop = 4
+    vim.o.softtabstop = 4
+    vim.o.shiftwidth = 4
+  end,
+})
+
 -- Configure TypeScript as make command
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "typescript", "typescriptreact" },
