@@ -213,7 +213,7 @@ packadd_defer({
 			options = { desc = "Find file" },
 		},
 		{ keys = "<leader>fr", command = "<cmd>FzfLua oldfiles<CR>", options = { desc = "Recent files" } },
-		{ keys = "<leader>fs", command = "<cmd>FzfLua grep_visual<CR>", options = { desc = "Search in files" } },
+		{ keys = "<leader>fs", command = "<cmd>FzfLua live_grep<CR>", options = { desc = "Search in files" } },
 		{ keys = "<leader><leader>", command = "<cmd>FzfLua buffers<CR>", options = { desc = "Buffers" } },
 		{ keys = "<leader>gf", command = "<cmd>FzfLua git_status<CR>", options = { desc = "Changed files" } },
 		{ keys = "<leader>gf", command = "<cmd>FzfLua git_status<CR>", options = { desc = "Changed files" } },
