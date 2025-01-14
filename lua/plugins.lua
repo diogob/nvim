@@ -70,14 +70,26 @@ end
 packadd_defer({
 	plugin = "blink.cmp",
 	init_function = function()
+    packadd("blink-emoji")
 		require("blink.cmp").setup({
-			highlight = {
-				-- sets the fallback highlight groups to nvim-cmp's highlight groups
-				-- useful for when your theme doesn't support blink.cmp
-				-- will be removed in a future release, assuming themes add support
-				use_nvim_cmp_as_default = true,
-			},
-			keymap = { preset = "enter" }, -- trigger = { signature_help = { enabled = true } },
+      completion = {
+        menu = { border = 'single' },
+        documentation = { window = { border = 'single' } },
+        ghost_text = { enabled = false },
+        list = { selection = { preselect = false, auto_insert = false } },
+      },
+			keymap = { preset = "enter" },
+      sources = {
+        default = { "lsp", "path", "snippets", "emoji", "buffer" },
+        providers = {
+          emoji = {
+            module = "blink-emoji",
+            name = "Emoji",
+            score_offset = 15, -- Tune by preference
+            opts = { insert = true }, -- Insert emoji (default) or complete its name
+          }
+        }
+      }
 		})
 	end,
 })

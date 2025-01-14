@@ -51,6 +51,7 @@ vim.schedule(function()
 		{ "<leader>lv", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", desc = "Definition in split" },
 		{ "<leader>n", group = "Notes" },
 		{ "<leader>o", "<cmd>wincmd o<cr>", desc = "Close other windows" },
+		{ "<leader>p", "<cmd>let @+ = expand(\"%\")<cr>", desc = "Copy current file path" },
 		{ "<leader>q", "<cmd>qall!<cr>", desc = "Quit" },
 		{ "<leader>r", "<cmd>e!<cr>", desc = "Reload buffer" },
 		{ "<leader>s", group = "Search & Replace" },

@@ -145,3 +145,6 @@
 [submodule "treewalker.nvim"]
 	path = pack/plugins/opt/treewalker.nvim
 	url = https://github.com/aaronik/treewalker.nvim.git
+[submodule "blink-emoji"]
+	path = pack/plugins/opt/blink-emoji
+	url = https://github.com/moyiz/blink-emoji.nvim.git
