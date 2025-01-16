@@ -81,6 +81,7 @@ packadd_defer({
 			keymap = { preset = "enter" },
       sources = {
         default = { "lsp", "path", "snippets", "emoji", "buffer" },
+        cmdline = {},
         providers = {
           emoji = {
             module = "blink-emoji",
