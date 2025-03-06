@@ -13,10 +13,11 @@ vim.o.autoread = true
 vim.o.syntax = "on"
 vim.wo.signcolumn = "yes:2"
 
--- Folding with Treesitter
+-- Indenting and Folding with Treesitter
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = false -- Disable folding at startup
+vim.o.indentexpr = "nvim_treesitter#indentexpr()"
 
 -- Colorscheme
 vim.cmd("colorscheme tokyonight-moon")
@@ -53,6 +54,12 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.o.tabstop = 4
     vim.o.softtabstop = 4
     vim.o.shiftwidth = 4
+    vim.o.shiftwidth = 4
+
+    vim.o.foldmethod = "indent"
+    vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+
+    vim.o.indentexpr = 'autoindent'
   end,
 })
 
