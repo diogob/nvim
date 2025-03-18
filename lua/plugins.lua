@@ -81,7 +81,6 @@ packadd_defer({
       keymap = { preset = "enter" },
       sources = {
         default = { "lsp", "path", "snippets", "emoji", "buffer" },
-        cmdline = {},
         providers = {
           emoji = {
             module = "blink-emoji",
@@ -111,7 +110,12 @@ packadd_defer({ plugin = "nvim-treesitter-context" })
 packadd_defer({
   plugin = "oil",
   init_function = function()
-    require("oil").setup()
+    require("oil").setup({
+      float = {
+        preview_split = "below" 
+      },
+      watch_for_changes = true,
+    })
   end,
 })
 
@@ -140,9 +144,9 @@ packadd_defer({
       formatters_by_ft = {
         lua = { "stylua" },
         -- Use a sub-list to run only the first available formatter
-        javascript = { "prettierd" },
-        typescript = { "prettierd" },
-        typescriptreact = { "prettierd" },
+        javascript = { "biome" },
+        typescript = { "biome" },
+        typescriptreact = { "biome" },
         ruby = { "rubocop" },
         sql = { "pg_format" },
       },
