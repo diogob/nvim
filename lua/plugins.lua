@@ -149,6 +149,7 @@ packadd_defer({
         typescriptreact = { "biome" },
         ruby = { "rubocop" },
         sql = { "pg_format" },
+        c = { "clang-format" },
       },
     })
     require("conform").formatters.pg_format = {
