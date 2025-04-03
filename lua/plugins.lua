@@ -112,7 +112,7 @@ packadd_defer({
   init_function = function()
     require("oil").setup({
       float = {
-        preview_split = "below" 
+        preview_split = "below"
       },
       watch_for_changes = true,
     })
@@ -391,5 +391,33 @@ packadd_defer({
   plugin = "text-case",
   init_function = function()
     require("textcase").setup({})
+  end,
+})
+
+packadd_defer({
+  plugin = "codecompanion",
+  init_function = function()
+    require("codecompanion").setup({
+      adapters = {
+        codellama = function()
+          return require("codecompanion.adapters").extend("ollama", {
+            name = "codellama", -- Give this adapter a different name to differentiate it from the default ollama adapter
+            schema = {
+              model = {
+                default = "codellama",
+              },
+            },
+          })
+        end,
+      },
+      strategies = {
+        chat = {
+          adapter = "codellama",
+        },
+        inline = {
+          adapter = "codellama",
+        },
+      },
+    })
   end,
 })
