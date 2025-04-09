@@ -410,13 +410,35 @@ packadd_defer({
             },
           })
         end,
+        anthropic = function()
+          return require("codecompanion.adapters").extend("anthropic", {
+            env = {
+              api_key = function()
+                return os.getenv("CLAUDE_API_KEY")
+              end,
+            },
+          })
+        end,
       },
       strategies = {
         chat = {
-          adapter = "codellama",
+          adapter = "anthropic",
         },
         inline = {
-          adapter = "codellama",
+          adapter = "anthropic",
+          keymaps = {
+            accept_change = {
+              modes = { n = "gA" },
+              description = "Accept the suggested change",
+            },
+            reject_change = {
+              modes = { n = "gr" },
+              description = "Reject the suggested change",
+            },
+          },
+        },
+        cmd = {
+          adapter = "anthropic",
         },
       },
     })
