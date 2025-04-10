@@ -247,17 +247,9 @@ packadd_defer({
 })
 
 packadd_defer({
-  plugin = "grug-far",
+  plugin = "quicker",
   init_function = function()
-    require("grug-far").setup()
-
-    vim.api.nvim_set_keymap("n", "<leader>so", "<cmd>GrugFar<CR>", { desc = "Search in project" })
-    vim.api.nvim_set_keymap(
-      "n",
-      "<leader>sw",
-      "<cmd>lua require('grug-far').grug_far({ prefills = { search = vim.fn.expand(\"<cword>\") } })<CR>",
-      { desc = "Search word" }
-    )
+    require("quicker").setup()
   end,
 })
 

@@ -114,10 +114,6 @@
 [submodule "flash"]
 	path = pack/plugins/opt/flash
 	url = https://github.com/folke/flash.nvim.git
-[submodule "grug-far"]
-	path = pack/plugins/opt/grug-far
-	url = https://github.com/MagicDuck/grug-far.nvim.git
-  ignore = dirty
 [submodule "gitsigns"]
 	path = pack/plugins/opt/gitsigns
 	url = https://github.com/lewis6991/gitsigns.nvim.git
@@ -151,3 +147,6 @@
 [submodule "codecompanion"]
 	path = pack/plugins/opt/codecompanion
 	url = https://github.com/olimorris/codecompanion.nvim.git
+[submodule "quicker"]
+	path = pack/plugins/opt/quicker
+	url = https://github.com/stevearc/quicker.nvim.git
