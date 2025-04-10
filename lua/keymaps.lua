@@ -41,7 +41,6 @@ vim.schedule(function()
 		{ "<leader>cc", "<cmd>e $MYVIMRC<cr>", desc = "Edit init.vim" },
 		{ "<leader>cp", "<cmd>Mason<cr>", desc = "External Packages (Mason)" },
 		{ "<leader>d", group = "Diagnostics" },
-		{ "<leader>dq", "<cmd>copen<cr>", desc = "Quickfix" },
 		{ "<leader>f", group = "File" },
 		{ "<leader>fe", "<cmd>e %:p:h<cr>", desc = "Explore" },
 		{ "<leader>g", group = "Git" },

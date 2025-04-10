@@ -249,8 +249,34 @@ packadd_defer({
 packadd_defer({
   plugin = "quicker",
   init_function = function()
-    require("quicker").setup()
+    require("quicker").setup(
+      {
+        keys = {
+          {
+            ">",
+            function()
+              require("quicker").expand({ before = 2, after = 2, add_to_existing = true })
+            end,
+            desc = "Expand quickfix context",
+          },
+          {
+            "<",
+            function()
+              require("quicker").collapse()
+            end,
+            desc = "Collapse quickfix context",
+          },
+        },
+      }
+    )
   end,
+  keymaps = {
+    {
+      keys = "<leader>dq",
+      command = "<cmd>lua require('quicker').toggle()<cr>",
+      options = { desc = "Quickfix" }
+    },
+  }
 })
 
 packadd_defer({
