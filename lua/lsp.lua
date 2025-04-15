@@ -87,7 +87,7 @@ lsp.lua_ls.setup({
 		},
 	},
 })
-lsp.solargraph.setup({ on_attach = on_attach })
+lsp.ruby_lsp.setup({ on_attach = on_attach })
 lsp.yamlls.setup({ on_attach = on_attach })
 lsp.jsonls.setup({ on_attach = on_attach })
 lsp.clangd.setup({ on_attach = on_attach })

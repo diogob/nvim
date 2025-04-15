@@ -440,10 +440,10 @@ packadd_defer({
       },
       strategies = {
         chat = {
-          adapter = "anthropic",
+          adapter = "codellama",
         },
         inline = {
-          adapter = "anthropic",
+          adapter = "codellama",
           keymaps = {
             accept_change = {
               modes = { n = "gA" },
