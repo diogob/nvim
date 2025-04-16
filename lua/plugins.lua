@@ -105,6 +105,7 @@ packadd_defer({
   end,
 })
 packadd_defer({ plugin = "nvim-treesitter-context" })
+packadd_defer({ plugin = "nvim-treesitter-endwise" })
 
 -- From this line it should be safe to remove without startup errors (keymaps might still be bogus)
 packadd_defer({

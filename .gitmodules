@@ -150,3 +150,6 @@
 [submodule "quicker"]
 	path = pack/plugins/opt/quicker
 	url = https://github.com/stevearc/quicker.nvim.git
+[submodule "nvim-treesitter-endwise"]
+	path = pack/plugins/opt/nvim-treesitter-endwise
+	url = https://github.com/RRethy/nvim-treesitter-endwise.git
