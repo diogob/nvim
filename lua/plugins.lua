@@ -151,6 +151,7 @@ packadd_defer({
         ruby = { "rubocop" },
         sql = { "pg_format" },
         c = { "clang-format" },
+        haskell = { "ormolu" },
       },
     })
     require("conform").formatters.pg_format = {
