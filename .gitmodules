@@ -58,10 +58,6 @@
 [submodule "tokyonight"]
 	path = pack/plugins/start/tokyonight
 	url = https://github.com/folke/tokyonight.nvim
-[submodule "luasnip"]
-	path = pack/plugins/opt/luasnip
-	url = https://github.com/L3MON4D3/LuaSnip
-  ignore = dirty
 [submodule "cmp_luasnip"]
 	path = pack/plugins/opt/cmp_luasnip
 	url = https://github.com/saadparwaiz1/cmp_luasnip
@@ -132,9 +128,6 @@
 [submodule "emoji.nvim"]
 	path = pack/plugins/opt/emoji.nvim
 	url = https://github.com/Allaman/emoji.nvim.git
-[submodule "nui"]
-	path = pack/plugins/opt/nui
-	url = https://github.com/MunifTanjim/nui.nvim.git
 [submodule "fzf-lua"]
 	path = pack/plugins/opt/fzf-lua
 	url = https://github.com/ibhagwan/fzf-lua.git
