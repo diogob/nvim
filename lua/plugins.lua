@@ -218,7 +218,9 @@ packadd_defer({
 
 packadd_defer({
   plugin = "fzf-lua",
-  init_function = function() end,
+  init_function = function()
+    require("fzf-lua").setup({ winopts = { preview = { layout = "vertical", vertical = "down:65%" } } })
+  end,
   keymaps = {
     -- keymaps to open
     { keys = "<leader>:",        command = "<cmd>FzfLua command_history<CR>",  options = { desc = "Command history" } },
