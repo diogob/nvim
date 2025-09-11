@@ -14,7 +14,7 @@ vim.o.syntax = "on"
 vim.wo.signcolumn = "yes:2"
 
 -- Indenting and Folding with Treesitter
-vim.o.foldmethod = "expr"
+vim.o.foldmethod = "indent"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = false -- Disable folding at startup
 vim.o.indentexpr = "nvim_treesitter#indentexpr()"
