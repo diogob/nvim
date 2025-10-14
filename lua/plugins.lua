@@ -1,51 +1,24 @@
 -- Configure plugins from start directory here
-local function treesitter_statusline()
-  return vim.fn["nvim_treesitter#statusline"](90)
-end
 require("lualine").setup({
-  sections = { lualine_c = { "filename", treesitter_statusline } },
+  sections = { lualine_c = { "filename" } },
 })
 require("mason").setup()
 require("nvim-web-devicons").setup()
-require("nvim-treesitter.configs").setup({
-  auto_install = false,
-  ignore_install = {},
-  sync_install = true,
-  modules = {},
-  ensure_installed = {
-    "lua",
-    "vim",
-    "vimdoc",
-    "query",
-    "typescript",
-    "haskell",
-    "tsx",
-    "yaml",
-    "json",
-    "markdown",
-    "bash",
-    "git_rebase",
-    "csv",
-    "sql",
-  },
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-  indent = {
-    enable = false,
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "<C-S-Up>", -- set to `false` to disable one of the mappings
-      node_incremental = "<C-S-Up>",
-      scope_incremental = "grc",
-      node_decremental = "<C-S-Down>",
-    },
-  },
-})
 
+require'nvim-treesitter'.install({
+  'lua',
+  'vim',
+  'vimdoc',
+  'yaml',
+  'json',
+  'markdown',
+  'bash',
+  'git_rebase',
+  'csv',
+  'sql',
+  'ruby',
+  'embedded_template'
+})
 -- Next we configure the opt plugins
 
 -- Source plugin and its configuration immediately
