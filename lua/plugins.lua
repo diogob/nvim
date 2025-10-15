@@ -396,49 +396,6 @@ packadd_defer({
 packadd_defer({
   plugin = "codecompanion",
   init_function = function()
-    require("codecompanion").setup({
-      adapters = {
-        codellama = function()
-          return require("codecompanion.adapters").extend("ollama", {
-            name = "codellama", -- Give this adapter a different name to differentiate it from the default ollama adapter
-            schema = {
-              model = {
-                default = "codellama",
-              },
-            },
-          })
-        end,
-        anthropic = function()
-          return require("codecompanion.adapters").extend("anthropic", {
-            env = {
-              api_key = function()
-                return os.getenv("CLAUDE_API_KEY")
-              end,
-            },
-          })
-        end,
-      },
-      strategies = {
-        chat = {
-          adapter = "codellama",
-        },
-        inline = {
-          adapter = "codellama",
-          keymaps = {
-            accept_change = {
-              modes = { n = "gA" },
-              description = "Accept the suggested change",
-            },
-            reject_change = {
-              modes = { n = "gr" },
-              description = "Reject the suggested change",
-            },
-          },
-        },
-        cmd = {
-          adapter = "anthropic",
-        },
-      },
-    })
+    require("codecompanion").setup()
   end,
 })
