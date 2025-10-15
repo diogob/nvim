@@ -96,3 +96,24 @@ vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true, sp = "grey
 require("plugins")
 require("lsp")
 require("keymaps")
+
+-- Start Treesitter dynamically for any filetype that has a parser installed
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
+  callback = function(args)
+    local function contains(tbl, str)
+      for _, v in ipairs(tbl) do
+        if v == str then
+          return true
+        end
+      end
+      return false
+    end
+    local parsers = require('nvim-treesitter').get_installed('parsers')
+    local lang = args.match  -- same as vim.bo[buf].filetype
+
+    if contains(parsers, lang) then
+      vim.treesitter.start(args.buf, lang)
+    end
+  end,
+})
