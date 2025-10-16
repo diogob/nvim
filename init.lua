@@ -15,9 +15,7 @@ vim.wo.signcolumn = "yes:2"
 
 -- Indenting and Folding with Treesitter
 vim.o.foldmethod = "indent"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = false -- Disable folding at startup
-vim.o.indentexpr = "nvim_treesitter#indentexpr()"
 
 -- Colorscheme
 vim.cmd("colorscheme tokyonight-moon")
@@ -114,6 +112,10 @@ vim.api.nvim_create_autocmd('FileType', {
 
     if contains(parsers, lang) then
       vim.treesitter.start(args.buf, lang)
+
+      vim.wo.foldmethod = 'expr'
+      vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
     end
   end,
 })
