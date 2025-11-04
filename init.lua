@@ -17,6 +17,10 @@ vim.wo.signcolumn = "yes:2"
 vim.o.foldmethod = "indent"
 vim.o.foldenable = false -- Disable folding at startup
 
+-- tpope ruby plugin is shipped with neovim
+-- it can overwrite editorconfig if the following line is not set
+vim.g.ruby_recommended_style = false
+
 -- Colorscheme
 vim.cmd("colorscheme tokyonight-moon")
 
