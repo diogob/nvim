@@ -13,6 +13,10 @@ vim.o.autoread = true
 vim.o.syntax = "on"
 vim.wo.signcolumn = "yes:2"
 
+-- show tabs and trailing spaces
+-- see :help 'listchars' for details
+vim.o.list = true
+
 -- Indenting and Folding with Treesitter
 vim.o.foldmethod = "indent"
 vim.o.foldenable = false -- Disable folding at startup
