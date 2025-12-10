@@ -392,10 +392,3 @@ packadd_defer({
     require("textcase").setup({})
   end,
 })
-
-packadd_defer({
-  plugin = "codecompanion",
-  init_function = function()
-    require("codecompanion").setup()
-  end,
-})

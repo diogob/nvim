@@ -137,9 +137,6 @@
 [submodule "blink-emoji"]
 	path = pack/plugins/opt/blink-emoji
 	url = https://github.com/moyiz/blink-emoji.nvim.git
-[submodule "codecompanion"]
-	path = pack/plugins/opt/codecompanion
-	url = https://github.com/olimorris/codecompanion.nvim.git
 [submodule "quicker"]
 	path = pack/plugins/opt/quicker
 	url = https://github.com/stevearc/quicker.nvim.git
