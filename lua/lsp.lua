@@ -1,7 +1,5 @@
 local apply_defaults = require("plenary").tbl.apply_defaults
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -14,11 +12,9 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, apply_defaults({ desc = "Format" }, bufopts))
 end
 
-local lsp = require("lspconfig")
-
-lsp.denols.setup({
+vim.lsp.config('denols', {
 	on_attach = on_attach,
-	root_dir = lsp.util.root_pattern("deno.json*"),
+	root_dir = vim.fs.root(0, {"deno.json*"}),
 	init_options = {
 		lint = true,
 		documentFormatting = false,
@@ -28,7 +24,7 @@ lsp.denols.setup({
 vim.g.markdown_fenced_languages = { -- required by denols config
 	"ts=typescript",
 }
-lsp.eslint.setup({
+vim.lsp.config('eslint', {
 	on_attach = on_attach,
 })
 
@@ -41,9 +37,9 @@ local function organize_imports()
 	vim.lsp.buf.execute_command(params)
 end
 
-lsp.ts_ls.setup({
+vim.lsp.config('ts_ls', {
 	on_attach = on_attach,
-	root_dir = lsp.util.root_pattern("package.json"),
+	root_dir = vim.fs.root(0, {"package.json"}),
 	init_options = {
 		lint = true,
 	},
@@ -56,23 +52,22 @@ lsp.ts_ls.setup({
 	single_file_support = false,
 })
 
-lsp.tailwindcss.setup({
+vim.lsp.config('tailwindcss', {
 	on_attach = on_attach,
-	root_dir = lsp.util.root_pattern(
-		"tailwind.config.js",
-		"tailwind.config.cjs",
-		"tailwind.config.mjs",
-		"tailwind.config.ts",
-		"postcss.config.js",
-		"postcss.config.cjs",
-		"postcss.config.mjs",
-		"postcss.config.ts"
-	),
+  root_dir = vim.fs.root(0,
+    {"tailwind.config.js",
+      "tailwind.config.cjs",
+      "tailwind.config.mjs",
+      "tailwind.config.ts",
+      "postcss.config.js",
+      "postcss.config.cjs",
+      "postcss.config.mjs",
+      "postcss.config.ts"}
+  ),
 })
 
-lsp.rust_analyzer.setup({ on_attach = on_attach })
-lsp.hls.setup({ on_attach = on_attach })
-lsp.lua_ls.setup({
+vim.lsp.config('hls', { on_attach = on_attach })
+vim.lsp.config('lua_ls', {
 	on_attach = on_attach,
 	settings = {
 		Lua = {
@@ -87,9 +82,13 @@ lsp.lua_ls.setup({
 		},
 	},
 })
-lsp.ruby_lsp.setup({ on_attach = on_attach })
-lsp.yamlls.setup({ on_attach = on_attach })
-lsp.jsonls.setup({ on_attach = on_attach })
-lsp.clangd.setup({ on_attach = on_attach })
-lsp.gopls.setup({ on_attach = on_attach })
-lsp.pylsp.setup({ on_attach = on_attach })
+vim.lsp.config('ruby_lsp', { on_attach = on_attach })
+vim.lsp.config('yamlls', { on_attach = on_attach })
+vim.lsp.config('jsonls', { on_attach = on_attach })
+vim.lsp.config('clangd', { on_attach = on_attach })
+vim.lsp.config('gopls', { on_attach = on_attach })
+vim.lsp.config('pylsp', { on_attach = on_attach })
+
+vim.lsp.enable('ruby_lsp')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('hls')

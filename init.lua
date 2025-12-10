@@ -12,6 +12,7 @@ vim.o.smarttab = true
 vim.o.autoread = true
 vim.o.syntax = "on"
 vim.wo.signcolumn = "yes:2"
+vim.o.winborder = 'rounded'
 
 -- show tabs and trailing spaces
 -- see :help 'listchars' for details
