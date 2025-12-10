@@ -12,13 +12,16 @@ vim.o.smarttab = true
 vim.o.autoread = true
 vim.o.syntax = "on"
 vim.wo.signcolumn = "yes:2"
+
+-- global border style for windows such as hover info
 vim.o.winborder = 'rounded'
 
 -- show tabs and trailing spaces
 -- see :help 'listchars' for details
 vim.o.list = true
 
--- Indenting and Folding with Treesitter
+-- Indenting and Folding with indentation by default
+-- bellow we set the method to foldexpr depending on the installed treesitter parsers
 vim.o.foldmethod = "indent"
 vim.o.foldenable = false -- Disable folding at startup
 
@@ -30,10 +33,22 @@ vim.g.ruby_recommended_style = false
 vim.cmd("colorscheme tokyonight-moon")
 
 -- Diagnostic signs
-vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
-vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn", linehl = "", numhl = "" })
-vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo", linehl = "", numhl = "" })
-vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint", linehl = "", numhl = "" })
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.INFO] = '',
+      [vim.diagnostic.severity.HINT] = '',
+    },
+    linehl = {
+      [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+    },
+    numhl = {
+      [vim.diagnostic.severity.WARN] = 'WarningMsg',
+    },
+  },
+})
 
 -- Return to last edit position when opening files
 vim.api.nvim_create_autocmd("BufReadPost", {
