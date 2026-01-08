@@ -143,3 +143,9 @@
 [submodule "nvim-treesitter-endwise"]
 	path = pack/plugins/opt/nvim-treesitter-endwise
 	url = https://github.com/RRethy/nvim-treesitter-endwise.git
+[submodule "codediff"]
+	path = pack/plugins/opt/codediff
+	url = https://github.com/esmuellert/codediff.nvim.git
+[submodule "nui"]
+	path = pack/plugins/opt/nui
+	url = https://github.com/MunifTanjim/nui.nvim.git

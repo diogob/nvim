@@ -392,3 +392,11 @@ packadd_defer({
     require("textcase").setup({})
   end,
 })
+
+packadd_defer({
+  plugin = "codediff",
+  init_function = function()
+    packadd("nui")
+    require("codediff").setup({})
+  end,
+})
