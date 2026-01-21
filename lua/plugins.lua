@@ -401,3 +401,12 @@ packadd_defer({
     require("codediff").setup({})
   end,
 })
+
+packadd_defer({
+  plugin = "marks",
+  init_function = function()
+    require("marks").setup({})
+    packadd('oil-git')
+  end,
+})
+

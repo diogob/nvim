@@ -152,3 +152,6 @@
 [submodule "oil-git"]
 	path = pack/plugins/opt/oil-git
 	url = https://github.com/benomahony/oil-git.nvim.git
+[submodule "marks"]
+	path = pack/plugins/opt/marks
+	url = https://github.com/chentoast/marks.nvim.git
