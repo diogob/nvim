@@ -90,6 +90,7 @@ packadd_defer({
       },
       watch_for_changes = true,
     })
+    packadd('oil-git')
   end,
 })
 

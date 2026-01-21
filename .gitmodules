@@ -149,3 +149,6 @@
 [submodule "nui"]
 	path = pack/plugins/opt/nui
 	url = https://github.com/MunifTanjim/nui.nvim.git
+[submodule "oil-git"]
+	path = pack/plugins/opt/oil-git
+	url = https://github.com/benomahony/oil-git.nvim.git
