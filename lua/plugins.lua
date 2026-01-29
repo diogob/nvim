@@ -219,6 +219,7 @@ packadd_defer({
     { keys = "<leader>ld",       command = "<cmd>FzfLua lsp_definitions<CR>",  options = { desc = "Definition" } },
     { keys = "<leader>lr",       command = "<cmd>FzfLua lsp_references<CR>",   options = { desc = "All references" } },
     { keys = "<leader>la",       command = "<cmd>FzfLua lsp_code_actions<CR>", options = { desc = "Code actions" } },
+    { keys = "<leader>m",       command = "<cmd>MarksQFListAll<CR>", options = { desc = "Search in marks" } },
     {
       keys = "<leader>ls",
       command = "<cmd>FzfLua lsp_document_symbols<CR>",
