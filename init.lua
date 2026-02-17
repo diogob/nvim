@@ -12,6 +12,7 @@ vim.o.smarttab = true
 vim.o.autoread = true
 vim.o.syntax = "on"
 vim.wo.signcolumn = "yes:2"
+vim.o.scrolloff = 8
 
 -- global border style for windows such as hover info
 vim.o.winborder = 'rounded'
