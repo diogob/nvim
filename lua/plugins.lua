@@ -327,12 +327,16 @@ packadd_defer({
   init_function = function()
     packadd("neotest-vitest")
     packadd("neotest-haskell")
+    packadd("neotest-ruby-minitest")
     require("neotest").setup({
       discovery = {
         enabled = false,
         concurrent = 1,
       },
       adapters = {
+        require("neotest-ruby-minitest")({
+          command = "rails test"
+        }),
         require("neotest-vitest")({
           vitestCommand = "npx vitest",
         }),

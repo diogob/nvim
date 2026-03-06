@@ -155,3 +155,6 @@
 [submodule "marks"]
 	path = pack/plugins/opt/marks
 	url = https://github.com/chentoast/marks.nvim.git
+[submodule "neotest-ruby-minitest"]
+	path = pack/plugins/opt/neotest-ruby-minitest
+	url = https://github.com/volodya-lombrozo/neotest-ruby-minitest.git
