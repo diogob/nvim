@@ -82,7 +82,18 @@ vim.lsp.config('lua_ls', {
 		},
 	},
 })
-vim.lsp.config('ruby_lsp', { on_attach = on_attach })
+
+vim.lsp.config('ruby_lsp', {
+  on_attach = on_attach,
+  init_options = {
+    addonSettings = {
+      ["Ruby LSP Rails"] = {
+        enablePendingMigrationsPrompt = false,
+      },
+    },
+  }
+})
+
 vim.lsp.config('yamlls', { on_attach = on_attach })
 vim.lsp.config('jsonls', { on_attach = on_attach })
 vim.lsp.config('clangd', { on_attach = on_attach })
