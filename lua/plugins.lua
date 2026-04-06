@@ -156,9 +156,9 @@ packadd_defer({
 })
 
 packadd_defer({
-  plugin = "ultimate-autopair",
+  plugin = "nvim-autopairs",
   init_function = function()
-    require("ultimate-autopair").setup()
+    require("nvim-autopairs").setup()
   end,
 })
 

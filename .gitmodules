@@ -84,9 +84,6 @@
 [submodule "typescript-tools"]
 	path = pack/plugins/opt/typescript-tools
 	url = https://github.com/pmizio/typescript-tools.nvim.git
-[submodule "ultimate-autopair"]
-	path = pack/plugins/opt/ultimate-autopair
-	url = https://github.com/altermo/ultimate-autopair.nvim.git
 [submodule "neotest"]
 	path = pack/plugins/opt/neotest
 	url = https://github.com/nvim-neotest/neotest.git
@@ -158,3 +155,6 @@
 [submodule "neotest-ruby-minitest"]
 	path = pack/plugins/opt/neotest-ruby-minitest
 	url = https://github.com/volodya-lombrozo/neotest-ruby-minitest.git
+[submodule "nvim-autopairs"]
+	path = pack/plugins/opt/nvim-autopairs
+	url = https://github.com/windwp/nvim-autopairs.git
