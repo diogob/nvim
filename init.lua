@@ -144,3 +144,10 @@ vim.api.nvim_create_autocmd('FileType', {
     end
   end,
 })
+
+-- we dont want * to jump to next ocurrent (can always use n for that)
+vim.keymap.set('n', '*', function()
+  local word = vim.fn.expand('<cword>')
+  vim.fn.setreg('/', '\\<' .. word .. '\\>', 'c')
+  vim.opt.hlsearch = true
+end, { noremap = true })
