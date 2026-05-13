@@ -1,4 +1,4 @@
 #!/bin/sh
 
-git submodule deinit $1
+git submodule deinit -f $1
 git rm -f $1
