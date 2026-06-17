@@ -193,7 +193,20 @@ packadd_defer({
 packadd_defer({
   plugin = "fzf-lua",
   init_function = function()
-    require("fzf-lua").setup({ winopts = { preview = { layout = "vertical", vertical = "down:65%" } } })
+    require("fzf-lua").setup({
+      winopts = {
+        preview = {layout = "vertical", vertical = "down:65%"}
+      },
+      previewers = {
+        builtin = {
+          extensions      = {
+            ["png"]       = { "viu", "-b" },
+            ["svg"]       = { "chafa", "{file}" },
+            ["jpg"]       = { "ueberzug" }
+          }
+        }
+      }
+    })
   end,
   keymaps = {
     -- keymaps to open
