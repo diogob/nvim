@@ -1,3 +1,5 @@
+## Moved to https://codeberg.org/diogob/nvim
+
 This nvim configuration does not use any plugin manager. I took some code and ideas from [https://github.com/echasnovski/nvim](https://github.com/echasnovski/nvim)
 
 ## Adding plugins
